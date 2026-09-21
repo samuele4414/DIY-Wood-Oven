@@ -1,0 +1,13 @@
+# Cache e file temporanei di MATLAB / Simulink
+slprj/
+*.slxc
+*.asv
+*.autosave
+*.m~
+*_ert_rtw/
+*_grt_rtw/
+
+# File temporanei di elaborazione e anteprima
+**/tmp/
+__pycache__/
+*.pyc
