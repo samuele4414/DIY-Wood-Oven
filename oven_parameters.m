@@ -118,7 +118,7 @@ h_gas_floor = 20;      % W/(m^2 K) - valore iniziale
 %  COMBUSTIONE LEGNA
 %  =========================
 
-mdot_wood = 0.0005;        % kg/s - portata iniziale di legna
+mdot_wood = 0.00131;        % kg/s - portata iniziale di legna
 LHV_wood = 15e6;           % J/kg - potere calorifico inferiore
 eta_comb = 0.70;           % rendimento effettivo iniziale
 
@@ -180,6 +180,10 @@ T_evap = 373.15;    % K
 
 %% VELOCITA' EVAPORAZIONE
 k_evap = 1e-5;   % kg/(s K)
+
+%% TARGET OPERATIVO
+T_floor_target = 450 + 273.15;
+
 
 %% =========================
 %  STAMPA RISULTATI

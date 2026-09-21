@@ -1,23 +1,31 @@
-# DIY Wood Oven — modello V1
+# DIY Wood Oven — modello V2
 
-Modello termico del forno a legna con cinque stati: temperatura del piano,
-della volta, dei gas e della pizza, più la massa d'acqua nella pizza.
+Variante parametrica del modello V1, con lo stesso diagramma Simulink e cinque
+stati: temperatura del piano, della volta, dei gas e della pizza, più la massa
+d'acqua nella pizza.
 
-Rispetto alla V0 comprende combustione della legna, convezione tra gas e
-superfici, scambio piano-pizza, irraggiamento dalla volta, dispersioni del
-piano e della volta, perdite al camino ed evaporazione dell'acqua.
+La V2 aumenta la portata di legna da 0,0005 a 0,00131 kg/s e aggiunge il
+parametro `T_floor_target = 450 + 273.15` K. Il modello non utilizza questa
+variabile: non introduce un controllo automatico né garantisce il raggiungimento
+di 450 gradi Celsius.
+
+Restano gli scambi e i bilanci della V1: combustione, convezione tra gas e
+superfici, scambio piano-pizza, irraggiamento dalla volta, dispersioni,
+perdite al camino ed evaporazione dell'acqua.
 
 ## File della versione
 
-- `oven_model.slx`: modello Simulink V1.
+- `oven_model.slx`: diagramma Simulink V1 riutilizzato senza modifiche.
 - `oven_parameters.m`: geometria, proprietà termiche, condizioni iniziali e
-  parametri di combustione, camino e pizza della V1.
+  parametri di combustione, camino e pizza della V2.
 - `.gitignore`: esclusione delle cache e dei file temporanei.
 
-Il modello e i parametri sono copie identiche dei file disponibili
-`oven_model_V1.slx` e `oven_parameters_V1.m`, rinominati per mantenere percorsi
-stabili nel repository. L'intestazione iniziale dello script conserva la
-vecchia etichetta `MODEL V0`; la stampa a schermo identifica la V1.
+Non è disponibile un file `.slx` distinto per la V2. Il modello e i parametri
+sono copie identiche dei file disponibili `oven_model_V1.slx` e
+`oven_parameters_V2.m`, rinominati per mantenere percorsi stabili nel repository.
+Lo script conserva le etichette originali obsolete: `MODEL V0` nell'intestazione
+e `PIZZA OVEN V1` nella stampa a schermo. Questo README identifica la versione
+parametrica effettiva.
 
 ## Avvio
 
@@ -43,21 +51,22 @@ lo script prima della simulazione.
 | Altezza della camera | 250 mm |
 | Volta in acciaio | Spessore 2 mm, area assunta uguale al piano |
 | Temperatura ambiente e iniziale | 25 gradi Celsius |
-| Portata di legna | 0,0005 kg/s, pari a 1,8 kg/h |
+| Portata di legna | 0,00131 kg/s, pari a 4,716 kg/h |
 | Potere calorifico / rendimento effettivo | 15 MJ/kg / 0,70 |
-| Potenza effettiva di combustione | 5250 W |
+| Potenza effettiva di combustione | 13755 W |
+| Obiettivo dichiarato per il piano | 450 gradi Celsius; variabile non utilizzata dal modello |
 | Camino | Diametro interno 100 mm, altezza 500 mm |
 | Pizza rappresentata | Una, diametro 320 mm, massa 250 g |
 | Acqua iniziale nella pizza | 150 g |
 
-Le quote e le ipotesi appartengono alla bozza V1. Il modello non rappresenta
+Le quote e le ipotesi appartengono alla bozza V2. Il modello non rappresenta
 ancora due piastre rotanti separate e non è un dimensionamento costruttivo
 validato del forno completo.
 
-Questa versione ricostruisce la V1 dai file oggi disponibili. Il modello
-sorgente è stato salvato il 21 settembre 2026, dopo lo script dei parametri
-del 20 settembre: non è verificabile che il diagramma coincida esattamente
-con la primissima revisione storica V1.
+Questa versione combina il diagramma V1 e i parametri V2 oggi disponibili.
+Il modello sorgente è stato salvato il 21 settembre 2026, dopo gli script dei
+parametri del 20 settembre: non è verificabile che il diagramma coincida
+esattamente con quello delle prime fasi storiche V1 e V2.
 
 ## Cronologia delle versioni
 
@@ -67,6 +76,7 @@ consultabili nella cronologia Git, senza cartelle o ZIP di backup.
 
 Report e immagini vengono conservati con il numero della versione nel nome.
 
-La V0 è conservata nel commit `35cda97`. Non sono stati individuati report
-o immagini separati attribuibili alla V1; quelli delle versioni successive
+La V0 è conservata nel commit `35cda97` e la V1 nel commit `fe674e3`.
+Non sono stati individuati report o immagini separati attribuibili alla V2;
+quelli delle versioni successive
 non vengono inclusi in questo passaggio.
