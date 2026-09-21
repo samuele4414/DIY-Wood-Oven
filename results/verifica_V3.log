@@ -1,0 +1,11 @@
+Verifica organizzazione V3: 21-Sep-2026 14:33:03
+MATLAB 26.1.0.3346908 (R2026a) Update 5
+Modello Simulink creato: C:\Users\samue\Desktop\forno\oven_model.slx
+V3: 13 verifiche numeriche superate; residuo 9.37e-10 W; convergenza 0.00349 K.
+Modello Simulink creato: C:\Users\samue\Desktop\forno\oven_model.slx
+Confronto grezzo: 0.071803 K, 0 kg.
+MATLAB/Simulink: differenza massima 0.071803 K e 0 kg.
+Modello Simulink creato: C:\Users\samue\Desktop\forno\oven_model.slx
+[Warning: Scrollable is set to 'on' on all figures because the Windows accessibility text size setting is greater than 100%.
+To prevent this behavior, revert the text size setting back to 100% and instead use the Windows system display scale setting to increase the size of on-screen elements.]
+PASS: modello stabile caricato; script parametri; 90 stati; 13 verifiche numeriche; confronto MATLAB/Simulink; risultati V3.
