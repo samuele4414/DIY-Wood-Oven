@@ -1,0 +1,111 @@
+{
+  "study_id": "C03",
+  "engine": "Gmsh 4.15.2, OpenCASCADE backend",
+  "units": "mm",
+  "production_approved": false,
+  "supplier_sources": [
+    {
+      "file": "PG5_fornitore.STEP",
+      "sha256": "c5db376fe83c9410b13d7535f3deb9598c506231760f190c7f91ae8d852e3d4c",
+      "solid_count": 1,
+      "bbox_mm_xyz_min_max": [
+        -21.163549032412767,
+        -39.153549032412755,
+        -47.30386956065314,
+        21.16354903241275,
+        22.50354903241358,
+        48.00630791121145
+      ],
+      "sum_geometric_volume_mm3_not_weight": 113536.04991806127,
+      "import_succeeded": true,
+      "tolerances_or_product_revision_validated": false
+    },
+    {
+      "file": "WGA_fornitore.STEP",
+      "sha256": "8ed6751259333d001efee5cf7e6852c6734929bc43611ef4cf3b7d6b776520ee",
+      "solid_count": 10,
+      "bbox_mm_xyz_min_max": [
+        -29.001183371345675,
+        -20.194997165689323,
+        -10.32070087521923,
+        86.0000001,
+        20.186747164205276,
+        46.500111326853556
+      ],
+      "sum_geometric_volume_mm3_not_weight": 35322.3235394027,
+      "import_succeeded": true,
+      "tolerances_or_product_revision_validated": false
+    }
+  ],
+  "layout_sha256": "235e5b8ad33daf7b8d70dcb0143c046f5c0c3bd4327662e005f79a7edad73193",
+  "componenti_sha256": "c0a4f5c2dce3fafe6107b40a7030f606ea825728e901765a2e2039e8fada8cec",
+  "geometry_py_sha256": "c96b04986fbcf3c8d4277519f2d69ddfde26a4b5a58a32fd390627d9eef013ad",
+  "checks_py_sha256": "f988c004fe76c8833aa12ea4b97fd8ae758d39bd5883b22e11384bfb998d2799",
+  "motor_transformation": {
+    "rotation_X_deg": 180,
+    "translation_xyz_mm": [
+      131.02865050329342,
+      205,
+      -155.3
+    ],
+    "supplier_output_face_z_mm": -27.3
+  },
+  "envelope_part_labels": {
+    "1": "P01_STEP_fornitore",
+    "2": "vassoio_RISERVA",
+    "3": "albero12_solo_tratto_freddo_RISERVA",
+    "4": "cartuccia46_sedi_NON_quotate",
+    "5": "7201_1_INVILUPPO_NON_CAD_SKF",
+    "6": "7201_2_INVILUPPO_NON_CAD_SKF",
+    "7": "piastra_cartuccia_RISERVA",
+    "8": "supporto_cart_-1_-1_RISERVA",
+    "9": "supporto_cart_-1_1_RISERVA",
+    "10": "supporto_cart_1_-1_RISERVA",
+    "11": "supporto_cart_1_1_RISERVA",
+    "12": "piastra_FACCIA_motore_RISERVA",
+    "13": "montante_motore_-1_-1_RISERVA",
+    "14": "montante_motore_-1_1_RISERVA",
+    "15": "montante_motore_1_-1_RISERVA",
+    "16": "montante_motore_1_1_RISERVA",
+    "17": "T5_16_mozzo_INVILUPPO",
+    "18": "T5_16_flange_INVILUPPO_senza_denti",
+    "19": "T5_32_mozzo_INVILUPPO",
+    "20": "T5_32_flange_INVILUPPO_senza_denti",
+    "21": "schermo_solidale_cassetta_RISERVA"
+  },
+  "solid_count": 21,
+  "bbox_mm_xyz_min_max": [
+    89.9999999,
+    114.9999999,
+    -221.0000001,
+    330.0000001,
+    295.0000001,
+    -84.9999999
+  ],
+  "positive_volume_overlap_pairs": [],
+  "boolean_pairs_checked_after_AABB_filter": 32,
+  "positive_overlap_reporting_threshold_mm3": 0.001,
+  "audit_cad_py_sha256": "200bac8efd91514c69eeaf8ed3ad262123be5a41506d2fa4296a123adc8d2432",
+  "roundtrip_solid_count": 21,
+  "roundtrip_bbox_mm_xyz_min_max": [
+    89.9999999,
+    114.9999999,
+    -221.0000001,
+    330.0000001,
+    295.0000001,
+    -84.9999999
+  ],
+  "artefacts_sha256": {
+    "modulo_freddo_C03_NON_ESECUTIVO.step": "1195dc433b193d691d9f81ed9d743d8dc9dcffecff20abf5327794b92e741b21",
+    "PG5_mesh_preview.json": "88ef35b7f094029c5f97c139217ee644c5863533d24325764fd05870f75acb64"
+  },
+  "excluded_from_collision_check": [
+    "belt solid/teeth and elastic deflection",
+    "coupling and hot carrier",
+    "screws/clamps and detailed bearing seats",
+    "seals and cable routing",
+    "actual frame and rails",
+    "service sweep against actual oven"
+  ],
+  "scope": "Positive-volume nominal overlap and STEP read-back only. One real supplier motor; every other solid is an ENVELOPE. Contact/zero clearance may be intentional. Not a fit, motion, stiffness, load, material, thermal or complete-assembly validation."
+}

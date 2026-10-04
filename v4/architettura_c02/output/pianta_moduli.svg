@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950"
+viewBox="0 0 1400 950" role="img" aria-label="PIANTA / Due moduli indipendenti">
+<title>PIANTA / Due moduli indipendenti</title><desc>Geometria V4 in proiezione; componenti inferiori sono riserve, non prodotti selezionati. Studio non esecutivo.</desc>
+<defs><marker id="arrow-t01" viewBox="0 0 10 10" refX="9" refY="5"
+markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#223542}
+.small{font-size:18px} .note{font-size:20px} .label{font-size:22px}
+.subtitle{font-size:20px;fill:#526673} .title{font-size:32px;font-weight:700}
+.dim{font-size:19px}</style>
+<rect width="1400" height="950" fill="#fff"/>
+<path d="M40 95 H1360 M40 880 H1360" fill="none" stroke="#c8d3d9"/>
+<text x="40" y="48" class="title">PIANTA / Due moduli indipendenti</text>
+<text x="40" y="78" class="subtitle">Geometria V4 in proiezione; componenti inferiori sono riserve, non prodotti selezionati</text>
+<text x="40" y="911" class="small">C02 · quote/riserve in mm salvo indicazione · NON ESECUTIVO · 03/10/2026</text>
+<text x="1345" y="911" text-anchor="end" class="small">T01</text>
+<polygon points="80,328.4 680.4,328.4 574,138.4 186.4,138.4" fill="#f1e2d4" stroke="#223542" stroke-width="2" opacity="1"/>
+<rect x="80" y="328.4" width="600.4" height="311.6" fill="#f5eee0" stroke="#223542" stroke-width="2" opacity="1"/>
+<text x="380.2" y="225.8" class="note" text-anchor="middle"><tspan x="380.2" dy="0">FOCOLARE POSTERIORE</tspan><tspan x="380.2" dy="29">botola V4 300 × 140</tspan></text>
+<line x1="266.2" y1="138.4" x2="494.2" y2="138.4" stroke="#b54a36" stroke-width="7"/>
+<circle cx="239.6" cy="484.2" r="121.6" fill="#e8d8b6" stroke="#223542" stroke-width="2"/>
+<rect x="148.4" y="415.8" width="182.4" height="136.8" fill="#d6eaf4" stroke="#267999" stroke-width="2" opacity="0.85" stroke-dasharray="9 6"/>
+<rect x="289" y="457.6" width="38" height="53.2" fill="#c1d6df" stroke="#267999" stroke-width="2" opacity="1"/>
+<circle cx="239.6" cy="484.2" r="17" fill="#b5c1c8" stroke="#267999" stroke-width="2"/>
+<line x1="249.6" y1="475.2" x2="308" y2="472.2" stroke="#267999" stroke-width="2"/>
+<line x1="249.6" y1="493.2" x2="308" y2="496.2" stroke="#267999" stroke-width="2"/>
+<line x1="213.6" y1="484.2" x2="265.6" y2="484.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<line x1="239.6" y1="458.2" x2="239.6" y2="510.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<text x="239.6" y="442.2" class="label" text-anchor="middle"><tspan x="239.6" dy="0">DISCO 1 / Ø320</tspan></text>
+<text x="239.6" y="568.2" class="small" text-anchor="middle"><tspan x="239.6" dy="0">(210; 205)</tspan></text>
+<circle cx="520.8" cy="484.2" r="121.6" fill="#e8d8b6" stroke="#223542" stroke-width="2"/>
+<rect x="429.6" y="415.8" width="182.4" height="136.8" fill="#d6eaf4" stroke="#267999" stroke-width="2" opacity="0.85" stroke-dasharray="9 6"/>
+<rect x="433.4" y="457.6" width="38" height="53.2" fill="#c1d6df" stroke="#267999" stroke-width="2" opacity="1"/>
+<circle cx="520.8" cy="484.2" r="17" fill="#b5c1c8" stroke="#267999" stroke-width="2"/>
+<line x1="510.8" y1="475.2" x2="452.4" y2="472.2" stroke="#267999" stroke-width="2"/>
+<line x1="510.8" y1="493.2" x2="452.4" y2="496.2" stroke="#267999" stroke-width="2"/>
+<line x1="494.8" y1="484.2" x2="546.8" y2="484.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<line x1="520.8" y1="458.2" x2="520.8" y2="510.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<text x="520.8" y="442.2" class="label" text-anchor="middle"><tspan x="520.8" dy="0">DISCO 2 / Ø320</tspan></text>
+<text x="520.8" y="568.2" class="small" text-anchor="middle"><tspan x="520.8" dy="0">(580; 205)</tspan></text>
+<line x1="106.6" y1="700.8" x2="653.8" y2="700.8" stroke="#223542" stroke-width="5"/>
+<text x="380.2" y="727.4" class="small" text-anchor="middle"><tspan x="380.2" dy="0">BOCCA V4 720 × 160</tspan></text>
+<line x1="80" y1="681.04" x2="680.4" y2="681.04" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t01)" marker-start="url(#arrow-t01)"/>
+<text x="380.2" y="672.04" class="dim" text-anchor="middle"><tspan x="380.2" dy="0">790</tspan></text>
+<line x1="730" y1="328.4" x2="730" y2="640" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t01)" marker-start="url(#arrow-t01)"/>
+<text x="730.0" y="475.2" class="dim" text-anchor="middle"><tspan x="730.0" dy="0">410</tspan></text>
+<line x1="239.6" y1="605.8" x2="520.8" y2="605.8" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t01)" marker-start="url(#arrow-t01)"/>
+<text x="380.2" y="596.8" class="dim" text-anchor="middle"><tspan x="380.2" dy="0">370 tra assi</tspan></text>
+<line x1="210" y1="790" x2="210" y2="840" stroke="#267999" stroke-width="2" marker-end="url(#arrow-t01)"/>
+<line x1="525" y1="790" x2="525" y2="840" stroke="#267999" stroke-width="2" marker-end="url(#arrow-t01)"/>
+<text x="365" y="785" class="small" text-anchor="middle"><tspan x="365" dy="0">ESTRAZIONE FRONTALE A FREDDO</tspan></text>
+<text x="365" y="867" class="small" text-anchor="middle"><tspan x="365" dy="0">Riserva servizio 300 · tratto non in scala</tspan></text>
+<text x="825" y="155" class="label" text-anchor="start"><tspan x="825" dy="0">Mantenuti dalla V4</tspan></text>
+<text x="825" y="193" class="note" text-anchor="start"><tspan x="825" dy="0">Dischi e centri originali.</tspan><tspan x="825" dy="29">Focolare posteriore / camino anteriore.</tspan><tspan x="825" dy="29">Nessuno spostamento per far stare il motore.</tspan></text>
+<text x="825" y="320" class="label" text-anchor="start" style="fill:#267999"><tspan x="825" dy="0">Riserve inferiori C02</tspan></text>
+<text x="825" y="358" class="note" text-anchor="start"><tspan x="825" dy="0">2 × moduli 240 × 180 in pianta.</tspan><tspan x="825" dy="29">Separazione nominale moduli: 130.</tspan><tspan x="825" dy="29">Motore laterale: h70 riservati.</tspan><tspan x="825" dy="29">Cartuccia distinta: h45 riservati.</tspan><tspan x="825" dy="29">Cinghia/giunti: solo nel vano qualificato.</tspan></text>
+<text x="825" y="548" class="label" text-anchor="start"><tspan x="825" dy="0">Vano e manutenzione</tspan></text>
+<text x="825" y="586" class="note" text-anchor="start"><tspan x="825" dy="0">Proposta: 160 netti, non 120 congelati.</tspan><tspan x="825" dy="29">Riserva parallela: 117; residuo: 43.</tspan><tspan x="825" dy="29">Carter, cavi e fissaggi non disegnati.</tspan><tspan x="825" dy="29">Estrazione senza sollevare il forno:</tspan><tspan x="825" dy="29">sequenza da dimostrare sul banco.</tspan></text>
+<rect x="810" y="760" width="525" height="88" fill="#fff1e5" stroke="#c59460" stroke-width="2" opacity="1"/>
+<text x="830" y="796" class="small" text-anchor="start"><tspan x="830" dy="0">Questi rettangoli NON selezionano motori</tspan><tspan x="830" dy="29">e NON provano temperatura o accessibilità.</tspan></text>
+</svg>

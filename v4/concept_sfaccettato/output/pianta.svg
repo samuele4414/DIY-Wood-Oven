@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1050" viewBox="0 0 1400 1050" role="img"><title>C01 / PIANTA DI INGOMBRO</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60.000" y="55.000" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#193345" text-anchor="start">C01 / PIANTA DI INGOMBRO</text>
+<text x="60.000" y="88.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Scocca inox sfaccettata; camera V4 conservata. Collettore e camino sono proiezioni ALTE.</text>
+<line x1="60.000" y1="110.000" x2="1340.000" y2="110.000" stroke="#cbd6dc" stroke-width="1.5"/>
+<polygon points="158.750,816.371 194.629,852.250 798.371,852.250 834.250,816.371 834.250,432.018 710.900,211.750 282.100,211.750 158.750,432.018" fill="#eef2f4" fill-opacity="1" stroke="#465a66" stroke-width="2.2"/>
+<polygon points="220.000,791.000 773.000,791.000 773.000,448.000 675.000,273.000 318.000,273.000 220.000,448.000" fill="#fffdf7" fill-opacity="1" stroke="#23779a" stroke-width="2"/>
+<polygon points="220.000,735.000 773.000,735.000 773.000,448.000 220.000,448.000" fill="#eee5d0" fill-opacity="1" stroke="#23779a" stroke-width="1.5"/>
+<polygon points="220.000,448.000 773.000,448.000 675.000,273.000 318.000,273.000" fill="#f4ddc3" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="269.000,777.000 724.000,777.000 724.000,651.000 269.000,651.000" fill="none" fill-opacity="1" stroke="#9556a1" stroke-width="1.5" stroke-dasharray="8 5"/>
+<circle cx="367.000" cy="591.500" r="112.000" fill="#dfd0ad" stroke="#ad6630" stroke-width="1.6"/>
+<circle cx="367.000" cy="591.500" r="105.000" fill="none" stroke="#607580" stroke-width="1.6" stroke-dasharray="4 5"/>
+<polygon points="318.000,640.500 416.000,640.500 416.000,542.500 318.000,542.500" fill="none" fill-opacity="1" stroke="#23779a" stroke-width="1.5" stroke-dasharray="5 5"/>
+<line x1="358.600" y1="591.500" x2="375.400" y2="591.500" stroke="#23779a" stroke-width="1.5"/>
+<line x1="367.000" y1="599.900" x2="367.000" y2="583.100" stroke="#23779a" stroke-width="1.5"/>
+<text x="367.000" y="571.200" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#193345" text-anchor="middle">DISCO 1</text>
+<text x="367.000" y="619.500" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#193345" text-anchor="middle">Ø320 / pizza Ø300</text>
+<circle cx="626.000" cy="591.500" r="112.000" fill="#dfd0ad" stroke="#ad6630" stroke-width="1.6"/>
+<circle cx="626.000" cy="591.500" r="105.000" fill="none" stroke="#607580" stroke-width="1.6" stroke-dasharray="4 5"/>
+<polygon points="577.000,640.500 675.000,640.500 675.000,542.500 577.000,542.500" fill="none" fill-opacity="1" stroke="#23779a" stroke-width="1.5" stroke-dasharray="5 5"/>
+<line x1="617.600" y1="591.500" x2="634.400" y2="591.500" stroke="#23779a" stroke-width="1.5"/>
+<line x1="626.000" y1="599.900" x2="626.000" y2="583.100" stroke="#23779a" stroke-width="1.5"/>
+<text x="626.000" y="571.200" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#193345" text-anchor="middle">DISCO 2</text>
+<text x="626.000" y="619.500" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#193345" text-anchor="middle">Ø320 / pizza Ø300</text>
+<circle cx="496.500" cy="703.500" r="66.500" fill="none" stroke="#9556a1" stroke-width="1.6" stroke-dasharray="8 5"/>
+<circle cx="496.500" cy="703.500" r="45.500" fill="none" stroke="#9556a1" stroke-width="1.6"/>
+<text x="496.500" y="707.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#9556a1" text-anchor="middle">C</text>
+<line x1="244.500" y1="791.000" x2="748.500" y2="791.000" stroke="#193345" stroke-width="4"/>
+<line x1="244.500" y1="852.250" x2="748.500" y2="852.250" stroke="#193345" stroke-width="5"/>
+<line x1="391.500" y1="273.000" x2="601.500" y2="273.000" stroke="#ad6630" stroke-width="3" stroke-dasharray="7 4"/>
+<line x1="391.500" y1="211.750" x2="601.500" y2="211.750" stroke="#ad6630" stroke-width="4"/>
+<text x="496.500" y="364.000" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#ad6630" text-anchor="middle">FOCOLARE POSTERIORE</text>
+<text x="496.500" y="390.600" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#ad6630" text-anchor="middle">790 → 510 / profondità 250</text>
+<text x="496.500" y="470.400" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#23779a" text-anchor="middle">PIANO 790 × 410</text>
+<text x="496.500" y="813.400" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#193345" text-anchor="middle">BOCCA 720 × 160</text>
+<line x1="158.750" y1="906.500" x2="834.250" y2="906.500" stroke="#607580" stroke-width="1"/>
+<line x1="158.750" y1="911.400" x2="158.750" y2="901.600" stroke="#607580" stroke-width="1"/>
+<line x1="834.250" y1="911.400" x2="834.250" y2="901.600" stroke="#607580" stroke-width="1"/>
+<text x="496.500" y="897.500" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle">965</text>
+<line x1="101.000" y1="852.250" x2="101.000" y2="211.750" stroke="#607580" stroke-width="1"/>
+<line x1="96.100" y1="852.250" x2="105.900" y2="852.250" stroke="#607580" stroke-width="1"/>
+<line x1="96.100" y1="211.750" x2="105.900" y2="211.750" stroke="#607580" stroke-width="1"/>
+<text x="89.000" y="532.000" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle" transform="rotate(-90 89.00000000000001 532.0)">915</text>
+<text x="940.000" y="185.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">BASELINE DI STUDIO</text>
+<text x="940.000" y="215.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Isolamento corpo: 75 mm</text>
+<text x="940.000" y="240.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Acciaio caldo / esterno: 1,5 / 1 mm</text>
+<text x="940.000" y="265.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Riserva montaggio: 10 mm</text>
+<text x="940.000" y="290.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Piano / dischi: 20 mm</text>
+<text x="940.000" y="315.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Fondo focolare: 30 mm</text>
+<text x="940.000" y="340.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Vano meccanico netto: 120 mm</text>
+<text x="940.000" y="410.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">PERCORSO E ACCESSI</text>
+<text x="940.000" y="440.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Caricamento legna dal retro.</text>
+<text x="940.000" y="465.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Porta interna di riferimento: y = −80.</text>
+<text x="940.000" y="490.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Pelle esterna fronte: y = −167,5.</text>
+<text x="940.000" y="515.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Centri dischi dalla pelle: 372,5 mm.</text>
+<text x="940.000" y="540.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Il tunnel aggiunto richiede prova pala.</text>
+<text x="940.000" y="565.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Camino alto: asse (395; 45).</text>
+<text x="940.000" y="635.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">DA NON CONFONDERE</text>
+<text x="940.000" y="665.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Cerchi = dischi, non fori di taglio.</text>
+<text x="940.000" y="690.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Viola = spazio ALTO per raccolta fumi.</text>
+<text x="940.000" y="715.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Blu tratteggiato = azionamenti sotto.</text>
+<text x="940.000" y="740.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Non sono condotti o motori selezionati.</text>
+<text x="940.000" y="765.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Porta e botola: dettagli da sviluppare.</text>
+<text x="60.000" y="945.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Riferimento: v4/quote_v4.json · origine sul bordo anteriore sinistro del piano, z=0 sulla pietra.</text>
+<line x1="60.000" y1="990.000" x2="1340.000" y2="990.000" stroke="#cbd6dc" stroke-width="1.5"/>
+<text x="60.000" y="1017.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#607580" text-anchor="start">C01 · STUDIO NON ESECUTIVO · Nessun profilo di taglio, dimensionamento strutturale o validazione termica.</text>
+<text x="1340.000" y="1017.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#607580" text-anchor="end">Quote in mm</text>
+</svg>

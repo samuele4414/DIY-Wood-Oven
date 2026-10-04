@@ -1,0 +1,85 @@
+{
+  "case_id": "c1_v4_two_rotating__front",
+  "fds_input": "C:\\Users\\samue\\Desktop\\forno\\cfd\\runs\\screen_dx25_t30\\c1_v4_two_rotating__front\\c1_v4_two_rotating__front.fds",
+  "cell_size_m": 0.025,
+  "mesh": {
+    "ijk": [
+      48,
+      46,
+      59
+    ],
+    "xb": [
+      -0.2,
+      1.0,
+      -0.30000000000000004,
+      0.8500000000000001,
+      -0.025,
+      1.4500000000000002
+    ]
+  },
+  "meshes": [
+    {
+      "id": "MESH01",
+      "ijk": [
+        48,
+        46,
+        15
+      ],
+      "xb": [
+        -0.2,
+        1.0,
+        -0.30000000000000004,
+        0.8500000000000001,
+        -0.025,
+        0.35000000000000003
+      ]
+    },
+    {
+      "id": "MESH02",
+      "ijk": [
+        12,
+        12,
+        44
+      ],
+      "xb": [
+        0.25,
+        0.55,
+        -0.1,
+        0.2,
+        0.35000000000000003,
+        1.4500000000000002
+      ]
+    }
+  ],
+  "resolved": {
+    "obstacle_columns": 1875,
+    "pizza_voxel_rows": 24,
+    "burner_bounds_m": [
+      0.25,
+      0.525,
+      0.47500000000000003,
+      0.625
+    ],
+    "burner_area_m2": 0.041249999999999995,
+    "hrr_kw_gross_prescribed": 18.75,
+    "hrrpua_kw_m2": 454.5454545454546,
+    "mouth_open_area_m2": 0.10875000000000001,
+    "flue_bore_area_m2": 0.0125,
+    "flue_connected_to_top": true,
+    "chimney_base_m": 0.16,
+    "chimney_outlet_height_m": 1.28,
+    "chimney_effective_vertical_length_m": 1.12,
+    "mesh_interface_height_m": 0.35000000000000003
+  },
+  "assumptions": [
+    "Preheated fixed wall temperatures: inner roof/walls 500 C, floor 450 C, pizza 100 C; outer shell 25 C.",
+    "Chimney inner wall is prescribed 200 C above the vault, not 500 C along the full flue.",
+    "Prescribed gross HRR wood proxy with propane stoichiometry and soot yield 0.015; not wood emissions or combustion validation.",
+    "Radiation enabled; radiation fraction 0.35 is an assumed sensitivity input.",
+    "Discs/pizzas are stationary CFD geometry; rotation is exposure post-processing/visualisation only.",
+    "Voxel stair-step walls and round flue; results require mesh and physical validation before design use.",
+    "Mass-flow signs: mouth +Y is inward, so outward flow is the negative component; flue +Z is outward.",
+    "Two conformal adjacent meshes: full lower oven/exterior and a narrow upper chimney/exterior; their shared interface is not OPEN.",
+    "Layout label flue_position=front; physical pickup is case chimney.center."
+  ]
+}

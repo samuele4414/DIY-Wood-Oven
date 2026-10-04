@@ -1,0 +1,244 @@
+{
+  "study_id": "C03",
+  "production_approved": false,
+  "physical_tests_executed": false,
+  "hot_integration_validated": false,
+  "CFD_executed": false,
+  "drive": {
+    "planet_ratio": 5.181818181818182,
+    "external_ratio": 2.0,
+    "total_motor_to_disc_ratio": 10.363636363636363,
+    "small_pitch_radius_mm": 12.732395447351628,
+    "large_pitch_radius_mm": 25.464790894703256,
+    "centre_distance_mm": 78.97134949670658,
+    "belt_length_residual_mm": 5.684341886080802e-14,
+    "small_wrap_deg": 161.4436341914879,
+    "small_teeth_in_contact_geometric": 7.175272630732794,
+    "inside_tension_slot_range": true,
+    "required_geared_motor_torque_screening_Nm": 0.7475444008004589,
+    "catalogue_torque_conflict_Nm": [
+      2,
+      3
+    ],
+    "running_torque_available_validated": false,
+    "speed_rows": [
+      {
+        "disc_rpm": 0.3,
+        "geared_output_rpm": 0.6,
+        "bare_motor_rpm": 3.109090909090909,
+        "microsteps_per_fullstep": 10,
+        "pulse_frequency_Hz": 103.63636363636364,
+        "disc_turns_in_90s": 0.44999999999999996
+      },
+      {
+        "disc_rpm": 0.3,
+        "geared_output_rpm": 0.6,
+        "bare_motor_rpm": 3.109090909090909,
+        "microsteps_per_fullstep": 16,
+        "pulse_frequency_Hz": 165.8181818181818,
+        "disc_turns_in_90s": 0.44999999999999996
+      },
+      {
+        "disc_rpm": 0.6,
+        "geared_output_rpm": 1.2,
+        "bare_motor_rpm": 6.218181818181818,
+        "microsteps_per_fullstep": 10,
+        "pulse_frequency_Hz": 207.27272727272728,
+        "disc_turns_in_90s": 0.8999999999999999
+      },
+      {
+        "disc_rpm": 0.6,
+        "geared_output_rpm": 1.2,
+        "bare_motor_rpm": 6.218181818181818,
+        "microsteps_per_fullstep": 16,
+        "pulse_frequency_Hz": 331.6363636363636,
+        "disc_turns_in_90s": 0.8999999999999999
+      },
+      {
+        "disc_rpm": 1.0,
+        "geared_output_rpm": 2.0,
+        "bare_motor_rpm": 10.363636363636363,
+        "microsteps_per_fullstep": 10,
+        "pulse_frequency_Hz": 345.4545454545454,
+        "disc_turns_in_90s": 1.5
+      },
+      {
+        "disc_rpm": 1.0,
+        "geared_output_rpm": 2.0,
+        "bare_motor_rpm": 10.363636363636363,
+        "microsteps_per_fullstep": 16,
+        "pulse_frequency_Hz": 552.7272727272726,
+        "disc_turns_in_90s": 1.5
+      }
+    ]
+  },
+  "mechanics": {
+    "axial_scenario_N": 110.45628465790017,
+    "stone_mass_kg": 4.182088140458732,
+    "moving_mass_with_pizza_assumed_kg": 7.182088140458732,
+    "tool_moment_Nm": 6.4,
+    "direct_axial_motor_limit_N": 50,
+    "direct_axial_support_incompatible": true,
+    "startup_torque_assumed_Nm": 1.3455799214408262,
+    "belt_pretension_sensitivity": [
+      {
+        "pretension_each_branch_N": 20,
+        "delta_branch_N": 52.84079995020537,
+        "tight_N": 46.42039997510268,
+        "slack_N": -6.420399975102686,
+        "positive_slack_assumption": false,
+        "radial_resultant_N": null,
+        "below_motor_radial_catalogue_limit_only": false
+      },
+      {
+        "pretension_each_branch_N": 30,
+        "delta_branch_N": 52.84079995020537,
+        "tight_N": 56.42039997510268,
+        "slack_N": 3.5796000248973137,
+        "positive_slack_assumption": true,
+        "radial_resultant_N": 59.82474708446856,
+        "below_motor_radial_catalogue_limit_only": true
+      },
+      {
+        "pretension_each_branch_N": 40,
+        "delta_branch_N": 52.84079995020537,
+        "tight_N": 66.42039997510268,
+        "slack_N": 13.579600024897314,
+        "positive_slack_assumption": true,
+        "radial_resultant_N": 79.41168567896115,
+        "below_motor_radial_catalogue_limit_only": true
+      },
+      {
+        "pretension_each_branch_N": 50,
+        "delta_branch_N": 52.84079995020537,
+        "tight_N": 76.42039997510268,
+        "slack_N": 23.579600024897314,
+        "positive_slack_assumption": true,
+        "radial_resultant_N": 99.05874871905942,
+        "below_motor_radial_catalogue_limit_only": true
+      },
+      {
+        "pretension_each_branch_N": 60,
+        "delta_branch_N": 52.84079995020537,
+        "tight_N": 86.42039997510268,
+        "slack_N": 33.57960002489732,
+        "positive_slack_assumption": true,
+        "radial_resultant_N": 118.73609388031734,
+        "below_motor_radial_catalogue_limit_only": false
+      }
+    ],
+    "belt_force_comparison": {
+      "delta_branch_N": 52.84079995020537,
+      "tight_N": 66.42039997510268,
+      "slack_N": 13.579600024897314,
+      "positive_slack_assumption": true,
+      "radial_resultant_N": 79.41168567896115
+    },
+    "bearing_geometric_centre_span_mm": 25,
+    "bearing_pressure_point_span_DB_hypothesis_mm": 43.0,
+    "upper_lower_pressure_points_z_mm": [
+      -132.0,
+      -175.0
+    ],
+    "belt_overhang_to_upper_pressure_point_mm": 20.5,
+    "tool_only_radial_couple_per_bearing_N": 148.8372093023256,
+    "upper_radial_reaction_envelope_N": 266.1079544328845,
+    "lower_radial_reaction_envelope_N": 186.69626875392333,
+    "bearing_equivalent_load_or_life_validated": false,
+    "shaft_max_moment_superposition_assumed_Nm": 8.027939556418705,
+    "shaft_bending_nominal_MPa": 47.32171345359239,
+    "shaft_torsion_nominal_MPa": 3.965846218935402,
+    "shaft_von_mises_nominal_MPa": 47.817657542801484,
+    "stub_only_rigid_clamp_length_mm": 47.0,
+    "stub_only_tool_moment_rim_displacement_mm": 0.24885669594303897,
+    "whole_disc_deflection_validated": false,
+    "shaft_conduction_1D_each_W": 8.482300164692441,
+    "motor_copper_two_phase_Irms_reference_W": 10.160639999999999
+  },
+  "packaging": {
+    "modules": [
+      {
+        "centre_xy_mm": [
+          210,
+          205
+        ],
+        "motor_centre_xy_mm": [
+          131.02865050329342,
+          205
+        ],
+        "bounds_xy_mm": [
+          90.0,
+          330.0,
+          115.0,
+          295.0
+        ]
+      },
+      {
+        "centre_xy_mm": [
+          580,
+          205
+        ],
+        "motor_centre_xy_mm": [
+          658.9713494967066,
+          205
+        ],
+        "bounds_xy_mm": [
+          460.0,
+          700.0,
+          115.0,
+          295.0
+        ]
+      }
+    ],
+    "module_gap_mm": 130.0,
+    "tray_top_z_mm": -217,
+    "cassette_bottom_top_z_mm": [
+      -221,
+      -85
+    ],
+    "cassette_height_mm": 136,
+    "bay_bottom_top_z_mm": [
+      -245,
+      -85
+    ],
+    "bottom_raw_clearance_mm": 24,
+    "bottom_after_service_reserve_mm": 14,
+    "motor_mount_outer_side_margin_at_max_slot_mm": 5.0,
+    "pulley_to_shield_gap_mm": 3,
+    "pulley_to_cartridge_gap_mm": 6,
+    "motor_shaft_pulley_bore_overlap_min_mm": 16,
+    "all_fit_and_tolerances_validated": false
+  },
+  "service": {
+    "port_bottom_top_z_mm": [
+      -237,
+      -93
+    ],
+    "proposed_drop_mm": 12,
+    "unlowered_top_passage_margin_mm": -11,
+    "lowered_top_passage_margin_mm": 1,
+    "lowered_bottom_passage_margin_mm": 1,
+    "lowered_bay_bottom_after_reserve_mm": 2,
+    "port_horizontal_extra_after_margins_mm": 34,
+    "horizontal_translation_to_fully_clear_front_mm": 465.5,
+    "front_projection_of_cassette_when_clear_mm": 183,
+    "workspace_remaining_geometric_only_mm": 117,
+    "requires_cold_supported_disc_disconnection": true,
+    "shield_must_move_with_cassette": true,
+    "rails_frame_coupling_cables_and_sweep_validated": false,
+    "condition": "Fit ONLY in empty rectangular path with shield attached to drawer; no real-frame/sweep or ergonomic approval"
+  },
+  "temperature_limits": {
+    "motor_ambient_max_C": 50,
+    "driver_ambient_max_C": 40,
+    "belt_max_C": 80,
+    "bay_reference_C02_C": 50,
+    "driver_inside_reference_bay_compatible": false,
+    "thermal_prediction_performed": false
+  },
+  "software_validation": {
+    "tests_run": 40,
+    "successful": true,
+    "scope": "Software/input consistency ONLY; no real-oven validation"
+  }
+}

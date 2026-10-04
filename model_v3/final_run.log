@@ -1,0 +1,28 @@
+Modello Simulink creato: C:\Users\samue\Desktop\forno\model_v3\oven_model_V3.slx
+Confronto grezzo: 0.071803 K, 0 kg.
+MATLAB/Simulink: differenza massima 0.071803 K e 0 kg.
+Modello Simulink creato: C:\Users\samue\Desktop\forno\model_v3\oven_model_V3.slx
+V3: 13 verifiche numeriche superate; residuo 9.37e-10 W; convergenza 0.00349 K.
+Caso 1/8: Acciaio riferimento
+Caso 2/8: Refrattario 30 mm
+Caso 3/8: Volta piana
+Caso 4/8: Focolare profondo 24 cm
+Caso 5/8: Camino diametro 13 cm
+Caso 6/8: Camino alto 1 m
+Caso 7/8: Camino posteriore
+Caso 8/8: Dischi fermi
+[Warning: Scrollable is set to 'on' on all figures because the Windows accessibility text size setting is greater than 100%.
+To prevent this behavior, revert the text size setting back to 100% and instead use the Windows system display scale setting to increase the size of on-screen elements.] 
+              Caso               DischiCarico_C    VoltaCarico_C    BasePizza60s_C    BasePizza90s_C    SopraPizza90s_C    EscursioneSettoriPizza90s_K    CaloDischi_K    MassaGuscio_kg    VolumeCamera_L    TempoDischi400C_min    AcquaResiduaPerPizza_g
+    _________________________    ______________    _____________    ______________    ______________    _______________    ___________________________    ____________    ______________    ______________    ___________________    ______________________
+
+    "Acciaio riferimento"            569.24           673.36            176.91            329.34            301.94                     7.3213                157.57           12.836            89.895              19.333                 2.6497e-09      
+    "Refrattario 30 mm"              263.72           311.73               102               102               102                 0.00020136                68.831           51.837            89.895                 NaN                     75.057      
+    "Volta piana"                    548.15           653.48            140.72            306.76            276.32                     5.5821                154.91           15.068            103.73              20.417                 1.4697e-19      
+    "Focolare profondo 24 cm"        510.88           612.18               102            262.64            225.63                     4.3874                150.56           14.267            103.98              22.333                 6.9318e-21      
+    "Camino diametro 13 cm"          453.26            565.5               102            175.77               142                     6.7514                142.66           12.836            89.895                  25                 2.2421e-11      
+    "Camino alto 1 m"                488.63           598.05               102            230.66            189.74                     6.4787                148.46           12.836            89.895               22.75                 1.3945e-20      
+    "Camino posteriore"              484.91           618.18               102            230.47            192.24                     10.214                146.85           12.836            89.895               23.75                 3.8205e-09      
+    "Dischi fermi"                   568.13           674.45            173.58            327.58            300.94                     131.17                157.22           12.836            89.895              19.333                 8.9057e-21      
+
+Risultati: C:\Users\samue\Desktop\forno\model_v3\results

@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "stage": "preheat",
+  "sample_count": 361,
+  "time_interval_s": [
+    0.0,
+    3600.0
+  ],
+  "final_probes": {
+    "mouth_net_y": {
+      "value": 0.017941636,
+      "unit": "kg/s"
+    },
+    "mouth_outward_y_negative": {
+      "value": -0.0086836064,
+      "unit": "kg/s"
+    },
+    "mouth_inward_y_positive": {
+      "value": 0.026625242,
+      "unit": "kg/s"
+    },
+    "mouth_soot_outward_negative": {
+      "value": -2.1427277e-06,
+      "unit": "kg/s"
+    },
+    "flue_net_z": {
+      "value": 0.019319112,
+      "unit": "kg/s"
+    },
+    "flue_outward_z_positive": {
+      "value": 0.019319112,
+      "unit": "kg/s"
+    },
+    "flue_soot_outward_positive": {
+      "value": 1.6618087e-05,
+      "unit": "kg/s"
+    },
+    "gas_L": {
+      "value": 226.4778,
+      "unit": "C"
+    },
+    "gas_R": {
+      "value": 226.24349,
+      "unit": "C"
+    },
+    "gas_REAR": {
+      "value": 363.91005,
+      "unit": "C"
+    },
+    "gas_FLUE": {
+      "value": 545.71549,
+      "unit": "C"
+    },
+    "floor_p1_C": {
+      "value": 331.32009,
+      "unit": "C"
+    },
+    "floor_p1_L": {
+      "value": 288.75626,
+      "unit": "C"
+    },
+    "floor_p1_R": {
+      "value": 361.24367,
+      "unit": "C"
+    },
+    "floor_p1_F": {
+      "value": 289.45091,
+      "unit": "C"
+    },
+    "floor_p1_B": {
+      "value": 357.6637,
+      "unit": "C"
+    },
+    "vault_p1_F": {
+      "value": 404.52371,
+      "unit": "C"
+    },
+    "vault_p1_B": {
+      "value": 439.83429,
+      "unit": "C"
+    },
+    "floor_p2_C": {
+      "value": 336.5956,
+      "unit": "C"
+    },
+    "floor_p2_L": {
+      "value": 364.3605,
+      "unit": "C"
+    },
+    "floor_p2_R": {
+      "value": 305.40439,
+      "unit": "C"
+    },
+    "floor_p2_F": {
+      "value": 295.64966,
+      "unit": "C"
+    },
+    "floor_p2_B": {
+      "value": 362.26952,
+      "unit": "C"
+    },
+    "vault_p2_F": {
+      "value": 415.8921,
+      "unit": "C"
+    },
+    "vault_p2_B": {
+      "value": 446.98578,
+      "unit": "C"
+    },
+    "hearth": {
+      "value": 412.22346,
+      "unit": "C"
+    },
+    "flue_liner": {
+      "value": 209.70244,
+      "unit": "C"
+    }
+  },
+  "interpretation": "Point probes only. Values do not establish whether a pizza is cooked.",
+  "source_run": "C:\\Users\\samue\\Desktop\\forno\\cfd\\home_pc\\campaign\\preheat",
+  "input_sha256": "76caacbaf9a130a841c529e338468f99ad525ca637d04219d63cce54161ea26d",
+  "config_sha256": "8d422cc292f0bdf3127e9582b661ff6880fe5a222d981d28432dcf49023d1f2b"
+}

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1150" viewBox="0 0 1400 1150" role="img"><title>C01 / SEZIONE LONGITUDINALE</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60.000" y="55.000" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#193345" text-anchor="start">C01 / SEZIONE LONGITUDINALE</text>
+<text x="60.000" y="88.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Taglio x=210 nel disco sinistro. Camino e collettore centrali sono PROIETTATI, non tagliati.</text>
+<line x1="60.000" y1="110.000" x2="1340.000" y2="110.000" stroke="#cbd6dc" stroke-width="1.5"/>
+<polygon points="92.750,812.100 733.250,812.100 733.250,438.637 709.977,425.201 116.023,425.201 92.750,438.637" fill="#eef2f4" fill-opacity="1" stroke="#465a66" stroke-width="2"/>
+<polygon points="154.000,670.000 672.000,670.000 672.000,507.159 665.525,505.852 659.050,504.621 652.575,503.459 646.100,502.363 639.625,501.326 633.150,500.346 626.675,499.417 620.200,498.536 613.725,497.701 607.250,496.907 600.775,496.153 594.300,495.435 587.825,494.752 581.350,494.101 574.875,493.480 568.400,492.887 561.925,492.321 555.450,491.780 548.975,491.262 542.500,490.767 536.025,490.293 529.550,489.839 523.075,489.403 516.600,488.986 510.125,488.584 503.650,488.199 497.175,487.829 490.700,487.819 484.225,487.819 477.750,487.819 471.275,487.819 464.800,487.819 458.325,487.819 451.850,487.819 445.375,487.819 438.900,487.819 432.425,487.819 425.950,487.819 419.475,487.819 413.000,487.819 406.525,487.819 400.050,487.819 393.575,487.819 387.100,487.819 380.625,487.819 374.150,487.819 367.675,487.819 361.200,487.819 354.725,487.819 348.250,487.819 341.775,487.819 335.300,487.819 328.825,487.819 322.350,487.819 315.875,487.819 309.400,487.819 302.925,487.819 296.450,487.819 289.975,487.819 283.500,487.819 277.025,487.819 270.550,487.819 264.075,487.819 257.600,487.819 251.125,487.819 244.650,487.819 238.175,487.819 231.700,487.819 225.225,487.819 218.750,487.819 212.275,487.819 205.800,487.819 199.325,487.819 192.850,487.819 186.375,487.819 179.900,487.819 173.425,487.819 166.950,487.819 160.475,487.819 154.000,487.819" fill="#fffaf0" fill-opacity="1" stroke="#23779a" stroke-width="2"/>
+<polygon points="210.000,684.000 497.000,684.000 497.000,670.000 210.000,670.000" fill="#dfd0ad" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="497.000,691.000 672.000,691.000 672.000,670.000 497.000,670.000" fill="#d1b28d" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="210.000,719.000 497.000,719.000 497.000,684.000 210.000,684.000" fill="#e0eadb" fill-opacity="1" stroke="#719264" stroke-width="1.5"/>
+<polygon points="497.000,726.000 672.000,726.000 672.000,691.000 497.000,691.000" fill="#e0eadb" fill-opacity="1" stroke="#719264" stroke-width="1.5"/>
+<polygon points="241.500,684.000 465.500,684.000 465.500,670.000 241.500,670.000" fill="#eadbb8" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="304.500,804.050 402.500,804.050 402.500,734.050 304.500,734.050" fill="#d9eaf0" fill-opacity="1" stroke="#23779a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="353.500" y1="734.050" x2="353.500" y2="719.000" stroke="#23779a" stroke-width="4"/>
+<line x1="154.000" y1="670.000" x2="154.000" y2="558.000" stroke="#193345" stroke-width="4" stroke-dasharray="7 4"/>
+<text x="136.500" y="614.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#193345" text-anchor="end">porta</text>
+<text x="353.500" y="596.500" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#ad6630" text-anchor="middle">DISCO 1</text>
+<text x="584.500" y="600.000" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#ad6630" text-anchor="middle">LEGNA</text>
+<polygon points="168.000,544.000 294.000,544.000 294.000,519.500 168.000,519.500" fill="none" fill-opacity="1" stroke="#9556a1" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text x="294.000" y="512.500" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#9556a1" text-anchor="start">riserva collettore (proiezione)</text>
+<line x1="196.000" y1="495.000" x2="196.000" y2="222.000" stroke="#9556a1" stroke-width="1.5" stroke-dasharray="8 5"/>
+<line x1="187.600" y1="285.000" x2="204.400" y2="272.400" stroke="#9556a1" stroke-width="2"/>
+<line x1="187.600" y1="270.300" x2="204.400" y2="257.700" stroke="#9556a1" stroke-width="2"/>
+<line x1="287.000" y1="495.000" x2="287.000" y2="222.000" stroke="#9556a1" stroke-width="1.5" stroke-dasharray="8 5"/>
+<line x1="278.600" y1="285.000" x2="295.400" y2="272.400" stroke="#9556a1" stroke-width="2"/>
+<line x1="278.600" y1="270.300" x2="295.400" y2="257.700" stroke="#9556a1" stroke-width="2"/>
+<text x="304.500" y="236.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#9556a1" text-anchor="start">CAMINO: proiezione interrotta</text>
+<text x="304.500" y="260.500" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#9556a1" text-anchor="start">H candidata 1000 / 1500 dal collare</text>
+<text x="304.500" y="285.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#9556a1" text-anchor="start">Raccordo interno NON dimensionato</text>
+<line x1="92.750" y1="880.000" x2="733.250" y2="880.000" stroke="#607580" stroke-width="1"/>
+<line x1="92.750" y1="884.900" x2="92.750" y2="875.100" stroke="#607580" stroke-width="1"/>
+<line x1="733.250" y1="884.900" x2="733.250" y2="875.100" stroke="#607580" stroke-width="1"/>
+<text x="413.000" y="871.000" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle">915 esterno</text>
+<line x1="154.000" y1="918.500" x2="210.000" y2="918.500" stroke="#607580" stroke-width="1"/>
+<line x1="154.000" y1="923.400" x2="154.000" y2="913.600" stroke="#607580" stroke-width="1"/>
+<line x1="210.000" y1="923.400" x2="210.000" y2="913.600" stroke="#607580" stroke-width="1"/>
+<text x="182.000" y="909.500" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle">80</text>
+<line x1="210.000" y1="918.500" x2="497.000" y2="918.500" stroke="#607580" stroke-width="1"/>
+<line x1="210.000" y1="923.400" x2="210.000" y2="913.600" stroke="#607580" stroke-width="1"/>
+<line x1="497.000" y1="923.400" x2="497.000" y2="913.600" stroke="#607580" stroke-width="1"/>
+<text x="353.500" y="909.500" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle">410 piano</text>
+<line x1="497.000" y1="918.500" x2="672.000" y2="918.500" stroke="#607580" stroke-width="1"/>
+<line x1="497.000" y1="923.400" x2="497.000" y2="913.600" stroke="#607580" stroke-width="1"/>
+<line x1="672.000" y1="923.400" x2="672.000" y2="913.600" stroke="#607580" stroke-width="1"/>
+<text x="584.500" y="909.500" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle">250 fuoco</text>
+<line x1="92.750" y1="829.600" x2="733.250" y2="829.600" stroke="#607580" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="930.000" y="170.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">INGOMBRI COMPLETI</text>
+<text x="930.000" y="200.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Corpo + piedini: 617 mm</text>
+<text x="930.000" y="225.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Con canna H1000: 1717 mm</text>
+<text x="930.000" y="250.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Con canna H1500: 2217 mm</text>
+<text x="930.000" y="275.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Quote dal piano d&#x27;appoggio.</text>
+<text x="930.000" y="300.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Altezza canna ancora da verificare.</text>
+<text x="930.000" y="365.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">VISTA COMPLETA, SCALA RIDOTTA</text>
+<polygon points="964.800,1013.720 1184.400,1013.720 1184.400,885.676 1160.075,871.631 989.125,871.631 964.800,885.676" fill="#eef2f4" fill-opacity="1" stroke="#193345" stroke-width="1.5"/>
+<polygon points="993.000,871.631 1038.600,871.631 1031.400,847.631 1000.200,847.631" fill="#d8dfe4" fill-opacity="1" stroke="#9556a1" stroke-width="1.5"/>
+<polygon points="1000.200,847.631 1031.400,847.631 1031.400,607.631 1000.200,607.631" fill="#d8dfe4" fill-opacity="1" stroke="#9556a1" stroke-width="1.5"/>
+<polygon points="989.400,1019.720 1001.400,1019.720 1001.400,1013.720 989.400,1013.720" fill="#26343d" fill-opacity="1" stroke="#193345" stroke-width="1.5"/>
+<polygon points="1143.000,1019.720 1155.000,1019.720 1155.000,1013.720 1143.000,1013.720" fill="#26343d" fill-opacity="1" stroke="#193345" stroke-width="1.5"/>
+<line x1="1211.400" y1="1019.720" x2="1211.400" y2="607.631" stroke="#607580" stroke-width="1"/>
+<line x1="1209.720" y1="1019.720" x2="1213.080" y2="1019.720" stroke="#607580" stroke-width="1"/>
+<line x1="1209.720" y1="607.631" x2="1213.080" y2="607.631" stroke="#607580" stroke-width="1"/>
+<text x="1199.400" y="813.676" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle" transform="rotate(-90 1199.4 813.6756720722176)">1717 con H1000</text>
+<text x="60.000" y="1005.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Bocca e botola NON devono interrompere lo scarico fumi. Servono presa d&#x27;aria, collettore, terminale e verifiche di captazione.</text>
+<line x1="60.000" y1="1090.000" x2="1340.000" y2="1090.000" stroke="#cbd6dc" stroke-width="1.5"/>
+<text x="60.000" y="1117.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#607580" text-anchor="start">C01 · STUDIO NON ESECUTIVO · Nessun profilo di taglio, dimensionamento strutturale o validazione termica.</text>
+<text x="1340.000" y="1117.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#607580" text-anchor="end">Quote in mm</text>
+</svg>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno C02 — architettura e verifiche preliminari</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#223542;background:#e9eff2;line-height:1.42}
+*{box-sizing:border-box}body{margin:0}a{color:#206986}nav{max-width:1080px;margin:22px auto;padding:0 18px;font-size:14px}
+nav a{display:inline-block;margin:0 18px 10px 0}main{max-width:1080px;margin:auto}
+.page{position:relative;width:100%;background:white;margin:22px 0;padding:28px 34px;aspect-ratio:277/190}
+.drawing{padding:0;display:flex;align-items:center}.drawing svg{width:100%;height:auto;max-height:100%}
+h1{font-size:31px;line-height:1.13;margin:8px 0 16px}h2{font-size:20px;line-height:1.2;margin:10px 0}h3{font-size:14px;margin:4px 0}
+p{margin:7px 0}ul,ol{padding-left:19px;margin:7px 0}.eyebrow{color:#526673;letter-spacing:1.3px;font-size:12px;text-transform:uppercase}
+.lead{font-size:15px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.banner{background:#edf5f8;border-left:4px solid #267999;padding:12px 16px;margin:14px 0}
+.warning{background:#fff1e5;border-left:4px solid #b97a44;padding:10px 14px;margin:12px 0;font-size:13px}
+.card{border:1px solid #c9d5db;padding:12px 15px;font-size:13px}.number{font-size:24px;line-height:1.2;font-weight:700;color:#267999}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:6px 8px;border-bottom:1px solid #ccd7dd;text-align:left;vertical-align:top}
+th{background:#edf3f6}.compact{font-size:11px}.compact td,.compact th{padding:4px 6px}
+.foot{position:absolute;bottom:14px;left:34px;right:34px;display:flex;justify-content:space-between;border-top:1px solid #c9d5db;padding-top:7px;font-size:10px;color:#526673}
+.material-page{font-size:12px}.material-page h1{font-size:25px}.material-page .grid{gap:20px}.material-page .warning{font-size:11px;padding:7px 10px}
+.sources{font-size:10px;color:#526673}.small{font-size:12px;color:#526673}
+@page{size:A4 landscape;margin:10mm}
+@media print{
+:root{background:white;line-height:1.34;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+nav{display:none}main{max-width:none;margin:0}.page{width:277mm;height:189mm;aspect-ratio:auto;margin:0;padding:7mm 8mm;break-after:page}
+.page:last-child{break-after:auto}.drawing{padding:0}.drawing svg{width:100%;height:100%}
+h1{font-size:25px}h2{font-size:17px}.lead{font-size:13px}.card{font-size:12px;padding:9px 12px}.banner{padding:10px 13px;margin:10px 0}
+.number{font-size:22px}.warning{font-size:12px;margin:10px 0}.grid{gap:20px}
+.foot{bottom:3mm;left:8mm;right:8mm}.material-page{font-size:11px}.material-page h1{font-size:23px}
+.compact{font-size:10px}.compact td,.compact th{padding:3px 5px}.sources{font-size:9px}
+}
+@media screen and (max-width:760px){.page{aspect-ratio:auto;margin:12px 0;padding:20px}.grid{grid-template-columns:1fr;gap:10px}.drawing{padding:0}.foot{position:static;margin-top:15px}.material-page{font-size:13px}}
+</style>
+</head>
+<body>
+<nav aria-label="Consegne">
+<a href="Scheda_C02.pdf">Scarica scheda PDF (6 pagine)</a>
+<a href="rapporto.html">Rapporto completo</a><a href="calcoli_C02.json">Calcoli JSON</a>
+<a href="rete_pressione.csv">Scenari CSV</a><a href="richieste_fornitori.html">Richieste tecniche</a>
+<a href="distinta_preliminare.csv">Distinta preliminare</a>
+<a href="piano_banco.html">Piano del banco</a>
+<a href="../../concept_sfaccettato/output/index.html">Visualizzatore C01 preservato</a>
+</nav>
+<main>
+<section class="page" id="sintesi">
+<div class="eyebrow">Forno due pizze / evoluzione tecnica del concept sfaccettato</div>
+<h1>C02 — architettura prima dei componenti</h1>
+<p class="lead">Studio meccanico, materiali candidati e circuito aria–fumi. Conservati piano 790 × 410,
+dischi Ø320 ai centri V4 e focolare posteriore. <strong>Non è un progetto pronto per fabbricazione.</strong></p>
+<div class="banner"><strong>Configurazione proposta:</strong> due moduli indipendenti con motori laterali,
+pietre flottanti su supporti qualificati, vano 160 netti, aria separata dalla meccanica,
+collettore rialzato e camino coibentato anteriore.</div>
+<div class="grid">
+<div class="card"><h3>Budget del corpo, con piedini</h3><div class="number">965 × 915 × 671 mm</div>
+<p>Incremento rispetto C01: +53,5 mm. Collare, camino e raccordi esclusi;
+supporti e attraversamenti non integrati nel CAD.</p></div>
+<div class="card"><h3>Riserve di azionamento laterale</h3><div class="number">160 − 117 = 43 mm</div>
+<p>Nel vano 120 resterebbero solo 3 mm. h45 cartuccia/h70 motore sono riserve:
+nessun codice commerciale selezionato.</p></div>
+</div>
+<div class="grid" style="margin-top:14px">
+<div><h2>Interfacce da correggere</h2><ul class="lead">
+<li>Collare C01 stretto: il DN130/25 reale ha esterno 180.</li>
+<li>Riserva superiore 260; base ottagonale 440 candidata per il budget della piastra.</li>
+<li>Collo 170 × 90 per Ø130: risale fuori dalla vecchia scatola bassa.</li>
+</ul></div>
+<div><h2>Tiraggio: risultato condizionato</h2><p class="lead">90 cm² netti / Ø130 / H1,5:
+margine 2,23 Pa nelle ipotesi favorevoli; -5,04 Pa con T150/K8/vento 3 Pa.</p>
+<p class="lead">Porta aperta: criticità ancora presente nella rete 1D. Nessuna nuova CFD o prova fisica.</p></div>
+</div>
+<div class="warning"><strong>Prestazioni e sicurezza non dimostrate:</strong> preriscaldamento 45–60 min,
+temperature accessibili, captazione/CO, portanza e durata. Prossimo gate: schede/CAD reali,
+montaggio a freddo di un modulo, poi campione termomeccanico strumentato.</div>
+<div class="foot"><span>C02 · 03/10/2026 · fonti produttori archiviate · V4/C01/CFD preservati</span><span>1 /6</span></div>
+</section>
+<section class="page drawing" id="pianta"><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950"
+viewBox="0 0 1400 950" role="img" aria-label="PIANTA / Due moduli indipendenti">
+<title>PIANTA / Due moduli indipendenti</title><desc>Geometria V4 in proiezione; componenti inferiori sono riserve, non prodotti selezionati. Studio non esecutivo.</desc>
+<defs><marker id="arrow-t01" viewBox="0 0 10 10" refX="9" refY="5"
+markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#223542}
+.small{font-size:18px} .note{font-size:20px} .label{font-size:22px}
+.subtitle{font-size:20px;fill:#526673} .title{font-size:32px;font-weight:700}
+.dim{font-size:19px}</style>
+<rect width="1400" height="950" fill="#fff"/>
+<path d="M40 95 H1360 M40 880 H1360" fill="none" stroke="#c8d3d9"/>
+<text x="40" y="48" class="title">PIANTA / Due moduli indipendenti</text>
+<text x="40" y="78" class="subtitle">Geometria V4 in proiezione; componenti inferiori sono riserve, non prodotti selezionati</text>
+<text x="40" y="911" class="small">C02 · quote/riserve in mm salvo indicazione · NON ESECUTIVO · 03/10/2026</text>
+<text x="1345" y="911" text-anchor="end" class="small">T01</text>
+<polygon points="80,328.4 680.4,328.4 574,138.4 186.4,138.4" fill="#f1e2d4" stroke="#223542" stroke-width="2" opacity="1"/>
+<rect x="80" y="328.4" width="600.4" height="311.6" fill="#f5eee0" stroke="#223542" stroke-width="2" opacity="1"/>
+<text x="380.2" y="225.8" class="note" text-anchor="middle"><tspan x="380.2" dy="0">FOCOLARE POSTERIORE</tspan><tspan x="380.2" dy="29">botola V4 300 × 140</tspan></text>
+<line x1="266.2" y1="138.4" x2="494.2" y2="138.4" stroke="#b54a36" stroke-width="7"/>
+<circle cx="239.6" cy="484.2" r="121.6" fill="#e8d8b6" stroke="#223542" stroke-width="2"/>
+<rect x="148.4" y="415.8" width="182.4" height="136.8" fill="#d6eaf4" stroke="#267999" stroke-width="2" opacity="0.85" stroke-dasharray="9 6"/>
+<rect x="289" y="457.6" width="38" height="53.2" fill="#c1d6df" stroke="#267999" stroke-width="2" opacity="1"/>
+<circle cx="239.6" cy="484.2" r="17" fill="#b5c1c8" stroke="#267999" stroke-width="2"/>
+<line x1="249.6" y1="475.2" x2="308" y2="472.2" stroke="#267999" stroke-width="2"/>
+<line x1="249.6" y1="493.2" x2="308" y2="496.2" stroke="#267999" stroke-width="2"/>
+<line x1="213.6" y1="484.2" x2="265.6" y2="484.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<line x1="239.6" y1="458.2" x2="239.6" y2="510.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<text x="239.6" y="442.2" class="label" text-anchor="middle"><tspan x="239.6" dy="0">DISCO 1 / Ø320</tspan></text>
+<text x="239.6" y="568.2" class="small" text-anchor="middle"><tspan x="239.6" dy="0">(210; 205)</tspan></text>
+<circle cx="520.8" cy="484.2" r="121.6" fill="#e8d8b6" stroke="#223542" stroke-width="2"/>
+<rect x="429.6" y="415.8" width="182.4" height="136.8" fill="#d6eaf4" stroke="#267999" stroke-width="2" opacity="0.85" stroke-dasharray="9 6"/>
+<rect x="433.4" y="457.6" width="38" height="53.2" fill="#c1d6df" stroke="#267999" stroke-width="2" opacity="1"/>
+<circle cx="520.8" cy="484.2" r="17" fill="#b5c1c8" stroke="#267999" stroke-width="2"/>
+<line x1="510.8" y1="475.2" x2="452.4" y2="472.2" stroke="#267999" stroke-width="2"/>
+<line x1="510.8" y1="493.2" x2="452.4" y2="496.2" stroke="#267999" stroke-width="2"/>
+<line x1="494.8" y1="484.2" x2="546.8" y2="484.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<line x1="520.8" y1="458.2" x2="520.8" y2="510.2" stroke="#223542" stroke-width="1" stroke-dasharray="9 6"/>
+<text x="520.8" y="442.2" class="label" text-anchor="middle"><tspan x="520.8" dy="0">DISCO 2 / Ø320</tspan></text>
+<text x="520.8" y="568.2" class="small" text-anchor="middle"><tspan x="520.8" dy="0">(580; 205)</tspan></text>
+<line x1="106.6" y1="700.8" x2="653.8" y2="700.8" stroke="#223542" stroke-width="5"/>
+<text x="380.2" y="727.4" class="small" text-anchor="middle"><tspan x="380.2" dy="0">BOCCA V4 720 × 160</tspan></text>
+<line x1="80" y1="681.04" x2="680.4" y2="681.04" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t01)" marker-start="url(#arrow-t01)"/>
+<text x="380.2" y="672.04" class="dim" text-anchor="middle"><tspan x="380.2" dy="0">790</tspan></text>
+<line x1="730" y1="328.4" x2="730" y2="640" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t01)" marker-start="url(#arrow-t01)"/>
+<text x="730.0" y="475.2" class="dim" text-anchor="middle"><tspan x="730.0" dy="0">410</tspan></text>
+<line x1="239.6" y1="605.8" x2="520.8" y2="605.8" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t01)" marker-start="url(#arrow-t01)"/>
+<text x="380.2" y="596.8" class="dim" text-anchor="middle"><tspan x="380.2" dy="0">370 tra assi</tspan></text>
+<line x1="210" y1="790" x2="210" y2="840" stroke="#267999" stroke-width="2" marker-end="url(#arrow-t01)"/>
+<line x1="525" y1="790" x2="525" y2="840" stroke="#267999" stroke-width="2" marker-end="url(#arrow-t01)"/>
+<text x="365" y="785" class="small" text-anchor="middle"><tspan x="365" dy="0">ESTRAZIONE FRONTALE A FREDDO</tspan></text>
+<text x="365" y="867" class="small" text-anchor="middle"><tspan x="365" dy="0">Riserva servizio 300 · tratto non in scala</tspan></text>
+<text x="825" y="155" class="label" text-anchor="start"><tspan x="825" dy="0">Mantenuti dalla V4</tspan></text>
+<text x="825" y="193" class="note" text-anchor="start"><tspan x="825" dy="0">Dischi e centri originali.</tspan><tspan x="825" dy="29">Focolare posteriore / camino anteriore.</tspan><tspan x="825" dy="29">Nessuno spostamento per far stare il motore.</tspan></text>
+<text x="825" y="320" class="label" text-anchor="start" style="fill:#267999"><tspan x="825" dy="0">Riserve inferiori C02</tspan></text>
+<text x="825" y="358" class="note" text-anchor="start"><tspan x="825" dy="0">2 × moduli 240 × 180 in pianta.</tspan><tspan x="825" dy="29">Separazione nominale moduli: 130.</tspan><tspan x="825" dy="29">Motore laterale: h70 riservati.</tspan><tspan x="825" dy="29">Cartuccia distinta: h45 riservati.</tspan><tspan x="825" dy="29">Cinghia/giunti: solo nel vano qualificato.</tspan></text>
+<text x="825" y="548" class="label" text-anchor="start"><tspan x="825" dy="0">Vano e manutenzione</tspan></text>
+<text x="825" y="586" class="note" text-anchor="start"><tspan x="825" dy="0">Proposta: 160 netti, non 120 congelati.</tspan><tspan x="825" dy="29">Riserva parallela: 117; residuo: 43.</tspan><tspan x="825" dy="29">Carter, cavi e fissaggi non disegnati.</tspan><tspan x="825" dy="29">Estrazione senza sollevare il forno:</tspan><tspan x="825" dy="29">sequenza da dimostrare sul banco.</tspan></text>
+<rect x="810" y="760" width="525" height="88" fill="#fff1e5" stroke="#c59460" stroke-width="2" opacity="1"/>
+<text x="830" y="796" class="small" text-anchor="start"><tspan x="830" dy="0">Questi rettangoli NON selezionano motori</tspan><tspan x="830" dy="29">e NON provano temperatura o accessibilità.</tspan></text>
+</svg>
+</section>
+<section class="page drawing" id="disco"><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950"
+viewBox="0 0 1400 950" role="img" aria-label="DISCO / Catena di carico e separazione termica">
+<title>DISCO / Catena di carico e separazione termica</title><desc>Schema funzionale di un modulo; scala non uniforme, quote del carrier ancora da dettagliare. Studio non esecutivo.</desc>
+<defs><marker id="arrow-t02" viewBox="0 0 10 10" refX="9" refY="5"
+markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#223542}
+.small{font-size:18px} .note{font-size:20px} .label{font-size:22px}
+.subtitle{font-size:20px;fill:#526673} .title{font-size:32px;font-weight:700}
+.dim{font-size:19px}</style>
+<rect width="1400" height="950" fill="#fff"/>
+<path d="M40 95 H1360 M40 880 H1360" fill="none" stroke="#c8d3d9"/>
+<text x="40" y="48" class="title">DISCO / Catena di carico e separazione termica</text>
+<text x="40" y="78" class="subtitle">Schema funzionale di un modulo; scala non uniforme, quote del carrier ancora da dettagliare</text>
+<text x="40" y="911" class="small">C02 · quote/riserve in mm salvo indicazione · NON ESECUTIVO · 03/10/2026</text>
+<text x="1345" y="911" text-anchor="end" class="small">T02</text>
+<rect x="135" y="205" width="560" height="40" fill="#e8d8b6" stroke="#223542" stroke-width="2" opacity="1"/>
+<text x="415" y="190" class="label" text-anchor="middle"><tspan x="415" dy="0">Pietra Ø320 × 20 / flottante</tspan></text>
+<rect x="145" y="251" width="540" height="10" fill="#b5c1c8" stroke="#223542" stroke-width="2" opacity="1"/>
+<rect x="150" y="273" width="530" height="90" fill="#d9e6d2" stroke="#38775c" stroke-width="2" opacity="1"/>
+<rect x="235" y="261" width="30" height="110" fill="#f2e6d9" stroke="#b54a36" stroke-width="2" opacity="1"/>
+<rect x="585" y="261" width="30" height="110" fill="#f2e6d9" stroke="#b54a36" stroke-width="2" opacity="1"/>
+<rect x="140" y="369" width="550" height="25" fill="#b5c1c8" stroke="#223542" stroke-width="2" opacity="1"/>
+<text x="415" y="321" class="small" text-anchor="middle"><tspan x="415" dy="0">Isolante incapsulato / nominale 50</tspan><tspan x="415" dy="29">NON assunto portante</tspan></text>
+<rect x="100" y="424" width="680" height="262" fill="#f5f9fb" stroke="#267999" stroke-width="2" opacity="1" stroke-dasharray="9 6"/>
+<rect x="405" y="394" width="20" height="230" fill="#b5c1c8" stroke="#223542" stroke-width="2" opacity="1"/>
+<line x1="110" y1="436" x2="387" y2="436" stroke="#223542" stroke-width="5"/>
+<line x1="441" y1="436" x2="770" y2="436" stroke="#223542" stroke-width="5"/>
+<path d="M387 436 V451 H400 M441 436 V451 H430" fill="none" stroke="#223542" stroke-width="2"/>
+<rect x="390" y="475" width="50" height="30" fill="#b6d7e6" stroke="#267999" stroke-width="2" opacity="1"/>
+<rect x="602" y="520" width="110" height="120" fill="#b6d7e6" stroke="#267999" stroke-width="2" opacity="1"/>
+<rect x="633" y="475" width="45" height="30" fill="#b6d7e6" stroke="#267999" stroke-width="2" opacity="1"/>
+<rect x="645" y="505" width="20" height="15" fill="#b5c1c8" stroke="#267999" stroke-width="2" opacity="1"/>
+<line x1="416" y1="478" x2="651" y2="478" stroke="#267999" stroke-width="3"/>
+<line x1="416" y1="502" x2="651" y2="502" stroke="#267999" stroke-width="3"/>
+<rect x="378" y="529" width="75" height="78" fill="#d7e4eb" stroke="#267999" stroke-width="2" opacity="1"/>
+<line x1="380" y1="542" x2="449" y2="542" stroke="#267999" stroke-width="8"/>
+<line x1="380" y1="584" x2="449" y2="584" stroke="#267999" stroke-width="8"/>
+<line x1="120" y1="618" x2="570" y2="618" stroke="#223542" stroke-width="7"/>
+<line x1="570" y1="650" x2="735" y2="650" stroke="#223542" stroke-width="7"/>
+<line x1="350" y1="607" x2="480" y2="607" stroke="#223542" stroke-width="5"/>
+<line x1="350" y1="607" x2="350" y2="618" stroke="#223542" stroke-width="5"/>
+<line x1="480" y1="607" x2="480" y2="618" stroke="#223542" stroke-width="5"/>
+<line x1="602" y1="640" x2="602" y2="650" stroke="#223542" stroke-width="5"/>
+<line x1="712" y1="640" x2="712" y2="650" stroke="#223542" stroke-width="5"/>
+<text x="412" y="579" class="small" text-anchor="middle"><tspan x="412" dy="0">h45*</tspan></text>
+<text x="657" y="565" class="small" text-anchor="middle"><tspan x="657" dy="0">Motore</tspan><tspan x="657" dy="29">h70*</tspan><tspan x="657" dy="29">24 V*</tspan></text>
+<text x="120" y="726" class="note" text-anchor="start"><tspan x="120" dy="0">* Riserve / candidati, non componenti commerciali.</tspan><tspan x="120" dy="29">Vano netto 160; stack laterale 117; residuo 43.</tspan><tspan x="120" dy="29">Cartuccia prende peso e momento; motore dà coppia.</tspan></text>
+<line x1="60" y1="424" x2="60" y2="686" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t02)" marker-start="url(#arrow-t02)"/>
+<text x="60.0" y="546.0" class="dim" text-anchor="middle"><tspan x="60.0" dy="0">160*</tspan></text>
+<line x1="686" y1="257" x2="825" y2="240" stroke="#223542" stroke-width="2"/>
+<line x1="610" y1="279" x2="825" y2="304" stroke="#b54a36" stroke-width="2"/>
+<line x1="690" y1="380" x2="825" y2="390" stroke="#223542" stroke-width="2"/>
+<line x1="741" y1="436" x2="825" y2="475" stroke="#223542" stroke-width="2"/>
+<text x="845" y="235" class="small" text-anchor="start"><tspan x="845" dy="0">Ripartitore caldo Ø310 candidato.</tspan><tspan x="845" dy="29">Appoggio ampio, niente pietra serrata.</tspan></text>
+<text x="845" y="309" class="small" text-anchor="start" style="fill:#b54a36"><tspan x="845" dy="0">Supporti ceramici strutturali qualificati.</tspan><tspan x="845" dy="29">Non tre carichi puntuali sulla pietra.</tspan></text>
+<text x="845" y="387" class="small" text-anchor="start"><tspan x="845" dy="0">Carrier: riserva altezza 15, NON lamiera 15.</tspan><tspan x="845" dy="29">Fissaggi e stabilità a caldo da verificare.</tspan></text>
+<text x="845" y="477" class="small" text-anchor="start"><tspan x="845" dy="0">Schermo fisso e labirinto ispezionabile.</tspan><tspan x="845" dy="29">Raccoglibriciole separato dalla meccanica.</tspan></text>
+<text x="845" y="584" class="small" text-anchor="start"><tspan x="845" dy="0">Carico assiale di scenario: 110,5 N.</tspan><tspan x="845" dy="29">Spinta al bordo: momento 6,4 Nm.</tspan><tspan x="845" dy="29">Misurare coppia sporco/caldo prima del motore.</tspan><tspan x="845" dy="29">Misurare anche il picco dopo spegnimento.</tspan></text>
+<rect x="830" y="748" width="510" height="100" fill="#fff1e5" stroke="#c59460" stroke-width="2" opacity="1"/>
+<text x="850" y="780" class="small" text-anchor="start"><tspan x="850" dy="0">L&#x27;isolamento non dimostra un vano freddo.</tspan><tspan x="850" dy="29">Aria vano 50 °C: obiettivo, NON misura.</tspan><tspan x="850" dy="29">La portanza e le temperature restano aperte.</tspan></text>
+</svg>
+</section>
+<section class="page drawing" id="aria"><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950"
+viewBox="0 0 1400 950" role="img" aria-label="ARIA–FUMI / Percorsi separati">
+<title>ARIA–FUMI / Percorsi separati</title><desc>Sezione funzionale non quotata: forma di raccordi, distributori e attraversamenti ancora da integrare. Studio non esecutivo.</desc>
+<defs><marker id="arrow-t03" viewBox="0 0 10 10" refX="9" refY="5"
+markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#223542}
+.small{font-size:18px} .note{font-size:20px} .label{font-size:22px}
+.subtitle{font-size:20px;fill:#526673} .title{font-size:32px;font-weight:700}
+.dim{font-size:19px}</style>
+<rect width="1400" height="950" fill="#fff"/>
+<path d="M40 95 H1360 M40 880 H1360" fill="none" stroke="#c8d3d9"/>
+<text x="40" y="48" class="title">ARIA–FUMI / Percorsi separati</text>
+<text x="40" y="78" class="subtitle">Sezione funzionale non quotata: forma di raccordi, distributori e attraversamenti ancora da integrare</text>
+<text x="40" y="911" class="small">C02 · quote/riserve in mm salvo indicazione · NON ESECUTIVO · 03/10/2026</text>
+<text x="1345" y="911" text-anchor="end" class="small">T03</text>
+<rect x="100" y="425" width="740" height="235" fill="#fff8ed" stroke="#223542" stroke-width="2" opacity="1"/>
+<line x1="100" y1="425" x2="100" y2="540" stroke="#223542" stroke-width="6"/>
+<text x="72" y="584" class="small" text-anchor="middle"><tspan x="72" dy="0">Bocca</tspan><tspan x="72" dy="29">720 × 160</tspan></text>
+<rect x="133" y="658" width="500" height="22" fill="#e8d8b6" stroke="#223542" stroke-width="2" opacity="1"/>
+<rect x="665" y="638" width="175" height="42" fill="#d8bc98" stroke="#223542" stroke-width="2" opacity="1"/>
+<polygon points="100,425 200,360 480,330 840,400" fill="#e4eacf" stroke="#38775c" stroke-width="2" opacity="1"/>
+<line x1="135" y1="397" x2="840" y2="427" stroke="#223542" stroke-width="4"/>
+<text x="643" y="547" class="note" text-anchor="middle"><tspan x="643" dy="0">Focolare</tspan><tspan x="643" dy="29">posteriore</tspan></text>
+<rect x="833" y="492" width="18" height="110" fill="#d7dfe4" stroke="#223542" stroke-width="2" opacity="1"/>
+<line x1="850" y1="546" x2="870" y2="567" stroke="#223542" stroke-width="2"/>
+<text x="875" y="574" class="small" text-anchor="start"><tspan x="875" dy="0">Botola ricarica 300 × 140</tspan><tspan x="875" dy="29">Interferenza con l&#x27;aria</tspan><tspan x="875" dy="29">da verificare</tspan></text>
+<rect x="160" y="357" width="330" height="65" fill="#e8def0" stroke="#85609c" stroke-width="2" opacity="1"/>
+<polygon points="252,357 312,280 408,280 434,357" fill="#e8def0" stroke="#85609c" stroke-width="2" opacity="1"/>
+<rect x="310" y="122" width="100" height="158" fill="#b5c1c8" stroke="#223542" stroke-width="2" opacity="1"/>
+<rect x="337" y="122" width="46" height="158" fill="#e8def0" stroke="#85609c" stroke-width="2" opacity="1"/>
+<path d="M740 478 C700 451 580 449 473 394 L365 382 L365 153" fill="none" stroke="#85609c" stroke-width="5" marker-end="url(#arrow-t03)"/>
+<text x="485" y="235" class="small" text-anchor="start"><tspan x="485" dy="0">Camino anteriore, asse V4 mantenuto.</tspan><tspan x="485" dy="29">Collare/supporto da ingrandire.</tspan><tspan x="485" dy="29">Continuità a porta chiusa da verificare.</tspan></text>
+<text x="180" y="480" class="small" text-anchor="start" style="fill:#85609c"><tspan x="180" dy="0">Ingresso libero 640 × 30</tspan><tspan x="180" dy="29">Collo rialzato 170 × 90</tspan><tspan x="180" dy="29">Raccordo graduale a Ø130</tspan></text>
+<rect x="135" y="689" width="665" height="25" fill="#d8e6d3" stroke="#38775c" stroke-width="2" opacity="1"/>
+<rect x="135" y="725" width="665" height="125" fill="#f2f7fa" stroke="#267999" stroke-width="2" opacity="1"/>
+<text x="439" y="772" class="small" text-anchor="middle" style="fill:#267999"><tspan x="439" dy="0">VANO MECCANICO</tspan><tspan x="439" dy="29">Ventilazione distinta da combustione e cenere</tspan></text>
+<rect x="880" y="693" width="175" height="50" fill="#e0eee3" stroke="#38775c" stroke-width="2" opacity="1"/>
+<path d="M1035 718 H847 V616 H797" fill="none" stroke="#38775c" stroke-width="5" marker-end="url(#arrow-t03)"/>
+<path d="M850 686 V594 H745" fill="none" stroke="#38775c" stroke-width="3" marker-end="url(#arrow-t03)"/>
+<text x="1080" y="709" class="small" text-anchor="start" style="fill:#38775c"><tspan x="1080" dy="0">Presa 90 cm² NETTI*</tspan><tspan x="1080" dy="29">Griglia + condotto chiuso</tspan><tspan x="1080" dy="29">* punto di confronto</tspan></text>
+<text x="885" y="806" class="small" text-anchor="start"><tspan x="885" dy="0">Le uscite laterali e la ripartizione</tspan><tspan x="885" dy="29">primaria/secondaria non sono quotate.</tspan><tspan x="885" dy="29">Nessun passaggio aperto ai motori.</tspan></text>
+<text x="980" y="171" class="label" text-anchor="start"><tspan x="980" dy="0">Cosa manca per la nuova CFD</tspan></text>
+<text x="980" y="209" class="small" text-anchor="start"><tspan x="980" dy="0">Forma tridimensionale reale.</tspan><tspan x="980" dy="29">Perdite di presa e braci.</tspan><tspan x="980" dy="29">Pulizia e tenuta a caldo.</tspan><tspan x="980" dy="29">Aperture frontale/posteriore.</tspan><tspan x="980" dy="29">Verifica vento e temperatura.</tspan></text>
+<rect x="960" y="398" width="375" height="155" fill="#fff1e5" stroke="#c59460" stroke-width="2" opacity="1"/>
+<text x="980" y="432" class="small" text-anchor="start"><tspan x="980" dy="0">L&#x27;area del passaggio non prova</tspan><tspan x="980" dy="29">captazione né assenza di CO.</tspan><tspan x="980" dy="29">La rete 1D non valida questo schema.</tspan><tspan x="980" dy="29">Nessuna nuova CFD eseguita.</tspan></text>
+</svg>
+</section>
+<section class="page drawing" id="camino"><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950"
+viewBox="0 0 1400 950" role="img" aria-label="CAMINO / Collare, piastra e tiraggio">
+<title>CAMINO / Collare, piastra e tiraggio</title><desc>Confronti di inviluppo e rete 1D a temperature assegnate: nessuna approvazione di captazione. Studio non esecutivo.</desc>
+<defs><marker id="arrow-t04" viewBox="0 0 10 10" refX="9" refY="5"
+markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#223542}
+.small{font-size:18px} .note{font-size:20px} .label{font-size:22px}
+.subtitle{font-size:20px;fill:#526673} .title{font-size:32px;font-weight:700}
+.dim{font-size:19px}</style>
+<rect width="1400" height="950" fill="#fff"/>
+<path d="M40 95 H1360 M40 880 H1360" fill="none" stroke="#c8d3d9"/>
+<text x="40" y="48" class="title">CAMINO / Collare, piastra e tiraggio</text>
+<text x="40" y="78" class="subtitle">Confronti di inviluppo e rete 1D a temperature assegnate: nessuna approvazione di captazione</text>
+<text x="40" y="911" class="small">C02 · quote/riserve in mm salvo indicazione · NON ESECUTIVO · 03/10/2026</text>
+<text x="1345" y="911" text-anchor="end" class="small">T04</text>
+<polygon points="392.4,403.055 306.055,489.4 183.945,489.4 97.6,403.055 97.6,280.945 183.945,194.6 306.055,194.6 392.4,280.945" fill="#e6edf1" stroke="#223542" stroke-width="2" opacity="1"/>
+<polygon points="358.9,389.179 292.179,455.9 197.821,455.9 131.1,389.179 131.1,294.821 197.821,228.1 292.179,228.1 358.9,294.821" fill="none" stroke="#b54a36" stroke-width="2" opacity="1" stroke-dasharray="9 6"/>
+<rect x="157.9" y="232.12" width="174.2" height="219.76" fill="none" stroke="#b54a36" stroke-width="2" opacity="1" stroke-dasharray="9 6"/>
+<rect x="165.27" y="239.49" width="159.46" height="205.02" fill="#d0e0ea" stroke="#267999" stroke-width="2" opacity="1"/>
+<circle cx="245" cy="342" r="60.3" fill="#f8fbfd" stroke="#267999" stroke-width="2"/>
+<text x="245" y="332" class="small" text-anchor="middle"><tspan x="245" dy="0">Tubo Ø180</tspan><tspan x="245" dy="29">DN130/25</tspan></text>
+<text x="65" y="145" class="label" text-anchor="start"><tspan x="65" dy="0">BASE / inviluppo prudenziale</tspan></text>
+<text x="65" y="543" class="small" text-anchor="start"><tspan x="65" dy="0">Piastra catalogo A238 / B306.</tspan><tspan x="65" dy="29">Budget 260 × 328 con margine + cover.</tspan><tspan x="65" dy="29">Ottagono minimo: 415,8 tra facce.</tspan><tspan x="65" dy="29">340 tratteggiato: NON contiene i vertici.</tspan><tspan x="65" dy="29">440 riservati; CAD della piastra da chiedere.</tspan></text>
+<line x1="97.6" y1="525" x2="392.4" y2="525" stroke="#526673" stroke-width="1.2" marker-end="url(#arrow-t04)" marker-start="url(#arrow-t04)"/>
+<text x="245.0" y="516.0" class="dim" text-anchor="middle"><tspan x="245.0" dy="0">440 esterni*</tspan></text>
+<polygon points="689,368.078 628.078,429 541.922,429 481,368.078 481,281.922 541.922,221 628.078,221 689,281.922" fill="#e6edf1" stroke="#223542" stroke-width="2" opacity="1"/>
+<circle cx="585" cy="325" r="93.6" fill="#f3f8f5" stroke="#38775c" stroke-width="2"/>
+<circle cx="585" cy="325" r="72" fill="#d2e1e9" stroke="#267999" stroke-width="2"/>
+<polygon points="645.8,325 627.992,367.992 585,385.8 542.008,367.992 524.2,325 542.008,282.008 585,264.2 627.992,282.008" fill="none" stroke="#b54a36" stroke-width="2" opacity="1" stroke-dasharray="9 6"/>
+<text x="470" y="145" class="label" text-anchor="start"><tspan x="470" dy="0">SOMMITÀ / cover 260*</tspan></text>
+<text x="465" y="492" class="small" text-anchor="start"><tspan x="465" dy="0">C01: circa 140,4 tra facce.</tspan><tspan x="465" dy="29">Catalogo 130/25: esterno 180.</tspan><tspan x="465" dy="29">Budget 130/50: esterno 234*.</tspan><tspan x="465" dy="29">Con margine 10 e cover 1:</tspan><tspan x="465" dy="29">richiesti 256* → riserva 260.</tspan><tspan x="465" dy="29">*50: non è il CAD di un prodotto.</tspan></text>
+<line x1="805" y1="125" x2="805" y2="833" stroke="#cad5db" stroke-width="1"/>
+<text x="845" y="145" class="label" text-anchor="start"><tspan x="845" dy="0">MARGINE PORTA CHIUSA / Pa</tspan></text>
+<text x="845" y="180" class="small" text-anchor="start"><tspan x="845" dy="0">Confronto a lambda 2; non criterio di sicurezza</tspan></text>
+<text x="845" y="226" class="small" text-anchor="start"><tspan x="845" dy="0">Base 60 / H1</tspan></text>
+<rect x="1120.99" y="250" width="29.0062" height="25" fill="#b54a36" stroke="#b54a36" stroke-width="2" opacity="1"/>
+<text x="1111.9938172213094" y="270" class="small" text-anchor="end"><tspan x="1111.9938172213094" dy="0">-0,97</tspan></text>
+<text x="845" y="339" class="small" text-anchor="start"><tspan x="845" dy="0">C02 90 / H1,5</tspan></text>
+<rect x="1150" y="363" width="66.7525" height="25" fill="#38775c" stroke="#38775c" stroke-width="2" opacity="1"/>
+<text x="1225.7524880497015" y="383" class="small" text-anchor="start"><tspan x="1225.7524880497015" dy="0">2,23</tspan></text>
+<text x="845" y="452" class="small" text-anchor="start"><tspan x="845" dy="0">T150 °C / K8 / vento 3 Pa</tspan></text>
+<rect x="998.72" y="476" width="151.28" height="25" fill="#b54a36" stroke="#b54a36" stroke-width="2" opacity="1"/>
+<text x="989.7200325473752" y="496" class="small" text-anchor="end"><tspan x="989.7200325473752" dy="0">-5,04</tspan></text>
+<line x1="1150" y1="221" x2="1150" y2="522" stroke="#223542" stroke-width="1.3"/>
+<text x="1150" y="550" class="small" text-anchor="middle"><tspan x="1150" dy="0">0</tspan></text>
+<rect x="830" y="587" width="505" height="224" fill="#fff1e5" stroke="#c59460" stroke-width="2" opacity="1"/>
+<text x="852" y="623" class="small" text-anchor="start"><tspan x="852" dy="0">Porta aperta: 57,4 kg/h di gas uscenti</tspan><tspan x="852" dy="29">nel modello 1D, NON massa di fumo/CO.</tspan><tspan x="852" dy="29">H della rete: dal colmo caldo al terminale.</tspan><tspan x="852" dy="29">Tubo H1000: utile 955; H500: utile 455.</tspan><tspan x="852" dy="29">Peso e vento al telaio, non alla volta.</tspan><tspan x="852" dy="29">Raccordo, DoP e temperature da qualificare.</tspan></text>
+<text x="65" y="760" class="small" text-anchor="start"><tspan x="65" dy="0">Asse V4 mantenuto; base 440: sporgenza frontale 7,5 mm rispetto C01.</tspan><tspan x="65" dy="29">Ottagono: normali facce X/Y e 45°; raccordo/scocca da integrare.</tspan><tspan x="65" dy="29">L&#x27;ingombro completo non è ancora congelato.</tspan></text>
+</svg>
+</section>
+<section class="page material-page" id="materiali">
+<div class="eyebrow">Materiali e uscita della fase</div>
+<h1>Shortlist qualificabile, non distinta acquisti</h1>
+<table class="compact"><thead><tr><th>Zona</th><th>Candidato</th><th>Gate prima del prototipo</th></tr></thead><tbody>
+<tr><td>Camera/collettore</td><td>310S / 1.4845, confronto 253 MA / 1.4835 [S01]</td><td>Cicli, picchi fiamma, creep, saldatura, condensati e uso alimentare</td></tr>
+<tr><td>Scocca fredda</td><td>304 / 1.4301; 316L con cloruri, scheda fornitura mancante</td><td>Rigidità, fissaggi flottanti, bordi e superficie accessibile</td></tr>
+<tr><td>Pareti/volta</td><td>ProRox WM970 SW, nominale 75 [S02]</td><td>Faccia calda, binder, assestamento e contenimento fibre</td></tr>
+<tr><td>Sotto piano/carrier</td><td>Famiglia PROMASIL, grado aperto [S03]</td><td>lambda/cp, ritiro, umidità e carico; non assunto portante</td></tr>
+<tr><td>Pietre e appoggi</td><td>Cordierite alimentare e ceramici strutturali, prodotto non scelto</td><td>MOCA, shock, flessione, planarità e supporto distribuito</td></tr>
+<tr><td>Rotazione</td><td>2 cartucce + 2 motoriduttori 24 V, codici aperti</td><td>CAD, coppia sporco/caldo, momento pala, grassi e temperature</td></tr>
+<tr><td>Camino</td><td>SUPER ICS DN130/25; 50 su richiesta; DN150 confronto [S04]</td><td>DoP attuale, servizio, flange, sostegni/vento e raccordo al forno</td></tr>
+</tbody></table>
+<div class="warning">WM970: servizio 680 °C; lambda 0,096 a 400 °C / 0,157 a 600 °C W/(m K).
+Un limite materiale non certifica il sandwich o il forno. Tutti gli isolanti incapsulati;
+nessuna fibra esposta ad alimenti/aria di combustione. Il vano 50 °C è solo un obiettivo.</div>
+<div class="grid">
+<div><h2>Sequenza proposta</h2><ol>
+<li><strong>Componenti:</strong> codici, schede, CAD, temperature e carichi.</li>
+<li><strong>Banco a freddo:</strong> portanza, giochi, pala, estrazione.</li>
+<li><strong>Campione caldo:</strong> carrier/sandwich, coppia e picchi dopo arresto.</li>
+<li><strong>Circuito reale:</strong> collettore quotato, nuova CFD calibrata e captazione.</li>
+<li><strong>Forno completo:</strong> 3 avvii freddi, 2 pizze, 5 doppie consecutive, vento e durata.</li>
+</ol></div>
+<div><h2>Calcoli e limiti</h2><p>33 test del software superati; 25 righe di confronto nella rete.
+Le temperature e la legna sono assegnate. H dal colmo caldo al terminale:
+non coincide con i metri commerciali sopra il collare.</p>
+<p>Base ottagonale 440: budget piastra compatibile solo in proiezione;
+sporge 7,5 mm davanti alla pelle C01. Il raccordo/ingombro completo resta da ridisegnare.</p>
+<p>Nessun ordine, contatto con fornitori, nuova CFD o prova fisica effettuati.
+Questa scheda è una sintesi: criteri e caveat nel rapporto e nelle richieste tecniche.</p></div>
+</div>
+<p class="sources">[S01] Outokumpu Therma, novembre 2022, tabella 14 e cicli/creep.
+[S02] ROCKWOOL WM970, PDS PEN-00-2-003-ENG, 16/04/2021.
+[S03] Promat PROMASIL, pagina generale (nessun grado esatto).
+[S04] Schiedel Italia SUPER ICS, pp. stampate 6–7,14,19–20.
+Documenti consultati 03/10/2026; aggiornamento/fornitura da confermare.</p>
+<div class="foot"><span>C02 · screening preliminare · non esecutivo · nessuna approvazione di produzione</span><span>6 /6</span></div>
+</section>
+</main>
+</body>
+</html>

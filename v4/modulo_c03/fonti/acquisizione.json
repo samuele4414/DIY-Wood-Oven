@@ -1,0 +1,192 @@
+{
+  "scope": "Public downloads only; no supplier contact/order",
+  "files": [
+    {
+      "source_id": "P01",
+      "owner": "STEPPERONLINE",
+      "file": "PG5_pagina.html",
+      "url": "https://www.omc-stepperonline.com/nema-17-stepper-motor-bipolar-l-48mm-w-gear-ratio-5-1-planetary-gearbox-17hs19-1684s-pg5",
+      "resolved_url": "https://www.omc-stepperonline.com/nema-17-stepper-motor-bipolar-l-48mm-w-gear-ratio-5-1-planetary-gearbox-17hs19-1684s-pg5",
+      "checked": "2026-10-03",
+      "bytes": 774810,
+      "sha256": "7d1e8ca3d1aa894fadda5b8652dea563978e9a402f2a1b65946f38e1ddee953d"
+    },
+    {
+      "source_id": "P01",
+      "owner": "STEPPERONLINE",
+      "file": "PG5_scheda.pdf",
+      "url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5_Full_Datasheet.pdf",
+      "global_catalogue_link": "https://www.omc-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5_Full_Datasheet.pdf",
+      "resolved_url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5_Full_Datasheet.pdf",
+      "checked": "2026-10-03",
+      "bytes": 141847,
+      "sha256": "0411b78271d3cdd2b38271747f18a36e2aae66ef8f09d18d391011c9477e2324"
+    },
+    {
+      "source_id": "P01",
+      "owner": "STEPPERONLINE",
+      "file": "PG5_fornitore.STEP",
+      "url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5.STEP",
+      "global_catalogue_link": "https://www.omc-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5.STEP",
+      "resolved_url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5.STEP",
+      "checked": "2026-10-03",
+      "bytes": 2484035,
+      "sha256": "c5db376fe83c9410b13d7535f3deb9598c506231760f190c7f91ae8d852e3d4c"
+    },
+    {
+      "source_id": "P01",
+      "owner": "STEPPERONLINE",
+      "file": "PG5_curva_coppia.pdf",
+      "url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5_Torque_Curve.pdf",
+      "global_catalogue_link": "https://www.omc-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5_Torque_Curve.pdf",
+      "resolved_url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=183/17HS19-1684S-PG5_Torque_Curve.pdf",
+      "checked": "2026-10-03",
+      "bytes": 200146,
+      "sha256": "d1640035887dadb2741f636bc8dbcf75105cfdacca28f7d0467d2877a8a1656e"
+    },
+    {
+      "source_id": "P02",
+      "owner": "STEPPERONLINE",
+      "file": "WGA_pagina.html",
+      "url": "https://www.omc-stepperonline.com/brushed-24v-dc-gear-motor-22kg-cm-8rpm-w-422-1-worm-gearbox-wga-4058247000-g422",
+      "resolved_url": "https://www.omc-stepperonline.com/brushed-24v-dc-gear-motor-22kg-cm-8rpm-w-422-1-worm-gearbox-wga-4058247000-g422",
+      "checked": "2026-10-03",
+      "bytes": 759641,
+      "sha256": "f8318059fda134efb8cbf26cbf0454b5f49a80b4d464c7914db72152655529c5"
+    },
+    {
+      "source_id": "P02",
+      "owner": "STEPPERONLINE",
+      "file": "WGA_scheda.pdf",
+      "url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=3054/WGA-4058247000-G422.pdf",
+      "global_catalogue_link": "https://www.omc-stepperonline.com/index.php?route=product/product/get_file&file=3054/WGA-4058247000-G422.pdf",
+      "resolved_url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=3054/WGA-4058247000-G422.pdf",
+      "checked": "2026-10-03",
+      "bytes": 175135,
+      "sha256": "53cc6bf9a2658f8dc0f846a81f65bff1329321d234f53d366e769b0d43410408"
+    },
+    {
+      "source_id": "P02",
+      "owner": "STEPPERONLINE",
+      "file": "WGA_fornitore.STEP",
+      "url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=3054/WGA-4058247000-G422.STEP",
+      "global_catalogue_link": "https://www.omc-stepperonline.com/index.php?route=product/product/get_file&file=3054/WGA-4058247000-G422.STEP",
+      "resolved_url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=3054/WGA-4058247000-G422.STEP",
+      "checked": "2026-10-03",
+      "bytes": 7019834,
+      "sha256": "8ed6751259333d001efee5cf7e6852c6734929bc43611ef4cf3b7d6b776520ee"
+    },
+    {
+      "source_id": "P03",
+      "owner": "SKF (copia pubblicata da RS)",
+      "file": "SKF_7201_BEGAP_RS.pdf",
+      "url": "https://docs.rs-online.com/31d5/A700000013821012.pdf",
+      "resolved_url": "https://docs.rs-online.com/31d5/A700000013821012.pdf",
+      "checked": "2026-10-03",
+      "bytes": 494347,
+      "sha256": "3e3089f55f7fdc6203cb5af57563180ecf0f2ad81f6a222b3d3018b23876eccd"
+    },
+    {
+      "source_id": "P04",
+      "owner": "MAEDLER",
+      "file": "pulegge_T5.pdf",
+      "url": "https://smarthost.maedler.de/datenblaetter/K43_150_EN.pdf",
+      "resolved_url": "https://smarthost.maedler.de/datenblaetter/K43_150_EN.pdf",
+      "checked": "2026-10-03",
+      "bytes": 500724,
+      "sha256": "e4657d92ef83a1542ef47ca8a6e8ef3d1c6e74cba03350ef8c875ec4033201f7"
+    },
+    {
+      "source_id": "P04",
+      "owner": "MAEDLER",
+      "file": "puleggia_16_pagina.html",
+      "url": "https://www.maedler.de/Article/16221600",
+      "resolved_url": "https://www.maedler.de/Article/16221600",
+      "checked": "2026-10-03",
+      "bytes": 21811,
+      "sha256": "e501b52e435a8db45ff2fa11450c89ae8bd78c22c60f446805f533ddefd7696a"
+    },
+    {
+      "source_id": "P04",
+      "owner": "MAEDLER",
+      "file": "puleggia_32_pagina.html",
+      "url": "https://www.maedler.de/Article/16223200",
+      "resolved_url": "https://www.maedler.de/Article/16223200",
+      "checked": "2026-10-03",
+      "bytes": 21813,
+      "sha256": "3ac8054d6c8034031f52d041e994e0ec37a287c4a182ffd1ee34fa1115df7028"
+    },
+    {
+      "source_id": "P05",
+      "owner": "MAEDLER",
+      "file": "cinghia_280_pagina.html",
+      "url": "https://www.maedler.de/Article/16261300",
+      "resolved_url": "https://www.maedler.de/Article/16261300",
+      "checked": "2026-10-03",
+      "bytes": 21517,
+      "sha256": "04ae5fdfe2449e572a0f5b9172e77336910a754d94d77fd015569b93cf7b5a91"
+    },
+    {
+      "source_id": "P05",
+      "owner": "MAEDLER",
+      "file": "cinghie_T5.pdf",
+      "url": "https://smarthost.maedler.de/datenblaetter/K43_207_EN.pdf",
+      "resolved_url": "https://smarthost.maedler.de/datenblaetter/K43_207_EN.pdf",
+      "checked": "2026-10-03",
+      "bytes": 546547,
+      "sha256": "eb4e18fdfc1f55d3c95d69859be24eb22e764712f6e1c211d558f54d7b60bed5"
+    },
+    {
+      "source_id": "P05",
+      "owner": "MAEDLER",
+      "file": "calcolo_cinghie.pdf",
+      "url": "https://smarthost.maedler.de/datenblaetter/zahnriemenantriebe_EN.pdf",
+      "resolved_url": "https://smarthost.maedler.de/datenblaetter/zahnriemenantriebe_EN.pdf",
+      "checked": "2026-10-03",
+      "bytes": 1843479,
+      "sha256": "caad4b18297cd01ea8feb95afda6fbf57f1264f1c2aec6b3874728c70d1686c7"
+    },
+    {
+      "source_id": "P06",
+      "owner": "STEPPERONLINE",
+      "file": "DM542T_V4_manual.pdf",
+      "url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=382/DM542T_V4.0.pdf",
+      "global_catalogue_link": "https://www.omc-stepperonline.com/index.php?route=product/product/get_file&file=382/DM542T_V4.0.pdf",
+      "resolved_url": "https://au-stepperonline.com/index.php?route=product/product/get_file&file=382/DM542T_V4.0.pdf",
+      "checked": "2026-10-03",
+      "bytes": 881949,
+      "sha256": "5e5492778951f206cf5812b743903a508111ac2688aa8a016c2bb71f56d060a7"
+    },
+    {
+      "source_id": "P06",
+      "owner": "STEPPERONLINE",
+      "file": "DM542T_pagina.html",
+      "url": "https://www.omc-stepperonline.com/digital-stepper-driver-1-0-4-2a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t",
+      "resolved_url": "https://www.omc-stepperonline.com/digital-stepper-driver-1-0-4-2a-20-50vdc-for-nema-17-23-24-stepper-motor-dm542t",
+      "checked": "2026-10-03",
+      "bytes": 821282,
+      "sha256": "72a742fac0bf72ef898a05ab0ad55aa1e8b7272f55a304864ece80fa65dd1eec"
+    },
+    {
+      "source_id": "P07",
+      "owner": "Promat / Etex",
+      "file": "PROMASIL_1000L_1100_SUPER_IT.pdf",
+      "url": "https://media.promat.com/pd36064/original/241012037/promasil-1000l--1100-super_tds_it.pdf",
+      "resolved_url": "https://media.promat.com/pd36064/original/241012037/promasil-1000l--1100-super_tds_it.pdf",
+      "checked": "2026-10-03",
+      "bytes": 555304,
+      "sha256": "abf710c7d553b3dfe06a1aba332ba1eb3bf3e72527c228dd5dc5a41651746310"
+    },
+    {
+      "source_id": "P07",
+      "owner": "Promat / Etex (edizione US)",
+      "file": "PROMASIL_1000L_SDS_US.pdf",
+      "url": "https://media.promat.com/doc_682572_us/original/342586981/promat-sds-promasil-1000l-en-us.pdf?brand=promatconstruction&market=us",
+      "resolved_url": "https://media.promat.com/doc_682572_us/original/342586981/promat-sds-promasil-1000l-en-us.pdf?brand=promatconstruction&market=us",
+      "checked": "2026-10-03",
+      "bytes": 165939,
+      "sha256": "990ffbaf30aa513661af24250aa6dd1ec15ba8d1c0878b5c20f044fb0c33c066"
+    }
+  ],
+  "errors": []
+}

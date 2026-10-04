@@ -1,0 +1,65 @@
+{
+  "c1_v4_two_rotating__central": {
+    "input_sha256": "1aa28e8532e68311d1135bd172e220ee6680d3afaea764f4f242975ff3f46178",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c1_v4_two_rotating__front": {
+    "input_sha256": "38b049cea69129adce2cb67a16f78dd59e529927ce86e9c9c829c2ae3193678c",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c2_corner_three_fixed__central": {
+    "input_sha256": "d413b7e0f5d4d368b6174325caca961307314f71050a90367edb4550404abe3f",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c2_corner_three_fixed__front": {
+    "input_sha256": "41da3fb0cb5aa6b72c4f873421dfbaaa13fb0cc1732f7f47c5dee9755f29c2e2",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c3_row_three_fixed__central": {
+    "input_sha256": "897188f6e21ce2248c270eabc1d9aff966614a1a8255441808292a18e7c9c29c",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c3_row_three_fixed__front": {
+    "input_sha256": "3f51001118342ed0224615f9249b38bdf5ca7606c6d4581df9a323bd5578b257",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c4_side_three_fixed__central": {
+    "input_sha256": "a331744f421fde029080c58debe9f1927f5b26eba15a1a047b969c579926c521",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c4_side_three_fixed__front": {
+    "input_sha256": "1a5d04e4799fd4a00f5759e70d7a335511bbe756c7371453b5ae568a72da04b0",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "completed",
+    "actual_time_s": 30.0
+  },
+  "c5_circle_three_fixed__front": {
+    "input_sha256": "a6fce5ea358cd01226e3ce05fbb8d19aae6f990a22a64b183b8d3c84b02ec722",
+    "solver_version": "FDS 6.11.1",
+    "run_family": "coarse_dx40_t30",
+    "status": "running",
+    "actual_time_s": 7.70886
+  }
+}

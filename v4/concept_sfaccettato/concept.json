@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "study_id": "C01",
+  "date": "2026-10-03",
+  "status": "studio_ingombri_non_esecutivo",
+  "units": "mm",
+  "source_geometry": "../quote_v4.json",
+  "aesthetic_reference": "../../design-concepts/14-inox-sfaccettato.png",
+  "thermal_readiness_reference": "../../cfd/home_pc/campaign/readiness.json",
+  "confirmed_requirements": {
+    "use": "domestico_da_esterno",
+    "installation": "appoggio_fisso",
+    "pizza_count": 2,
+    "pizza_reference_diameter_mm": 300,
+    "nominal_bake_seconds": [60, 90],
+    "desired_preheat_minutes": [45, 60],
+    "initial_preheat_acceptance_max_minutes": 60,
+    "external_style": "inox_satinato_sfaccettato_frontale_e_base_neri_senza_angoli_arrotondati",
+    "fire_location": "posteriore_V4"
+  },
+  "packaging_hypotheses": {
+    "hot_liner_mm": 1.5,
+    "outer_skin_mm": 1,
+    "body_insulation_mm": 75,
+    "body_insulation_comparison_mm": [50, 75, 100],
+    "mounting_and_expansion_reserve_mm": 10,
+    "roof_transverse_slope_degrees": 12,
+    "roof_end_slope_degrees": 30,
+    "cooking_stone_mm": 20,
+    "cooking_stone_comparison_mm": [10, 20, 30],
+    "hearth_stone_mm": 30,
+    "underfloor_board_mm": 50,
+    "carrier_reserve_mm": 1.5,
+    "mechanism_clear_height_mm": 120,
+    "mechanism_comparison_mm": [80, 120, 160],
+    "bottom_skin_mm": 1.5,
+    "feet_height_mm": 25,
+    "drive_reservation_width_mm": 140,
+    "drive_reservation_depth_mm": 140,
+    "drive_reservation_height_mm": 100,
+    "drive_service_margin_each_side_mm": 10,
+    "flue_wall_mm": 1,
+    "flue_height_above_collar_mm": 1000,
+    "collar_height_above_ridge_mm": 100,
+    "collector_reservation": {
+      "x_range_mm": [70, 720],
+      "y_range_mm": [-60, 120],
+      "z_range_mm": [180, 215]
+    },
+    "rear_hatch_lower_z_mm": 30,
+    "provisional_stone_density_kg_m3": 2600
+  },
+  "limits": [
+    "Spessori, leghe, prodotti isolanti, giochi, fissaggi e dilatazioni non approvati per produzione.",
+    "La riserva di 10 mm non e un gioco termomeccanico verificato.",
+    "Collettore e azionamenti sono volumi riservati, non componenti selezionati o condotti dimensionati.",
+    "Il profilo interno della volta viene esteso all'avancorpo solo per questo studio di ingombro; il raccordo reale resta da dettagliare.",
+    "Sono previsti attraversamenti di bocca, botola e camino: il margine geometrico non ne verifica isolamento, tenuta o ponti termici.",
+    "La lana di roccia non e un supporto portante: pannello inferiore e appoggi delle pietre devono essere qualificati.",
+    "Le riserve sotto i dischi non verificano supporti, cuscinetti, trasmissione, tolleranze o gestione delle fessure.",
+    "Nessuna nuova CFD, simulazione termica o prova fisica viene eseguita da questo generatore."
+  ]
+}

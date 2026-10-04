@@ -1,0 +1,23 @@
+test_clipping_is_geometric (test_geometry.PackingTests.test_clipping_is_geometric) ... ok
+test_collector_reservation_inside_chamber (test_geometry.PackingTests.test_collector_reservation_inside_chamber) ... ok
+test_dimensions_include_mounting_reserve (test_geometry.PackingTests.test_dimensions_include_mounting_reserve) ... ok
+test_every_cover_plane_has_normal_reserve (test_geometry.PackingTests.test_every_cover_plane_has_normal_reserve) ... ok
+test_full_flue_height_not_render_stub (test_geometry.PackingTests.test_full_flue_height_not_render_stub) ... ok
+test_insulation_variants_are_monotonic (test_geometry.PackingTests.test_insulation_variants_are_monotonic) ... ok
+test_no_front_face_closes_the_mouth (test_geometry.PackingTests.test_no_front_face_closes_the_mouth) ... ok
+test_no_production_approval (test_geometry.PackingTests.test_no_production_approval) ... ok
+test_polyhedron_vertices_inside_all_planes (test_geometry.PackingTests.test_polyhedron_vertices_inside_all_planes) ... ok
+test_preserves_v4_disc_positions (test_geometry.PackingTests.test_preserves_v4_disc_positions) ... ok
+test_renderer_occlusion_is_order_independent (test_geometry.PackingTests.test_renderer_occlusion_is_order_independent) ... ok
+test_renderer_png_is_real_png (test_geometry.PackingTests.test_renderer_png_is_real_png) ... ok
+test_roof_reference (test_geometry.PackingTests.test_roof_reference) ... ok
+test_sections_have_real_extents (test_geometry.PackingTests.test_sections_have_real_extents) ... ok
+test_stone_mass_is_not_total_oven_mass (test_geometry.PackingTests.test_stone_mass_is_not_total_oven_mass) ... ok
+test_stone_thickness_changes_disc_mass (test_geometry.PackingTests.test_stone_thickness_changes_disc_mass) ... ok
+test_support_bounds_dense_samples (test_geometry.PackingTests.test_support_bounds_dense_samples) ... ok
+test_thin_mechanism_case_is_flagged_not_silently_shrunk (test_geometry.PackingTests.test_thin_mechanism_case_is_flagged_not_silently_shrunk) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.254s
+
+OK

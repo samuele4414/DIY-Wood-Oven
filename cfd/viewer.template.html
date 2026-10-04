@@ -1,0 +1,157 @@
+<div id="oven-cfd-viewer" aria-label="Viewer geometrico CFD del forno">
+  <style>
+    #oven-cfd-viewer { color: var(--foreground); font-size: var(--font-size-base); }
+    #oven-cfd-viewer .viewer-head { display:flex; justify-content:space-between; gap:12px; align-items:baseline; flex-wrap:wrap; }
+    #oven-cfd-viewer .viewer-stage { padding: 8px; margin-top: 8px; }
+    #oven-cfd-viewer canvas { display:block; width:100%; height:auto; touch-action:none; background:var(--muted); }
+    #oven-cfd-viewer .viewer-meta { display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    #oven-cfd-viewer .viewer-legend { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    #oven-cfd-viewer .swatch { display:inline-block; width:11px; height:11px; margin-right:4px; vertical-align:-1px; }
+    #oven-cfd-viewer .heatbar { width:100px; height:10px; background:linear-gradient(90deg, var(--blue), var(--yellow), var(--red)); }
+    #oven-cfd-viewer .viewer-note { margin-top:8px; min-height:2.4em; }
+    #oven-cfd-viewer .viewer-status { font-weight:500; }
+    #oven-cfd-viewer .viewer-controls { margin-top:8px; }
+    #oven-cfd-viewer .range-wrap { min-width:150px; }
+    @media (max-width: 440px) { #oven-cfd-viewer .range-wrap { width:100%; } }
+  </style>
+  <div class="viewer-head">
+    <h3>Geometria interna e sezioni CFD</h3>
+    <span id="ov-status" class="viewer-status text-muted" aria-live="polite"></span>
+  </div>
+  <div class="viz-controls viewer-controls">
+    <label class="form-label">Configurazione
+      <select id="ov-case" class="form-select" aria-label="Configurazione forno"></select>
+    </label>
+    <label class="form-label">Canna
+      <select id="ov-flue" class="form-select" aria-label="Variante canna"><option value="front">Frontale</option><option value="central">Centrale</option></select>
+    </label>
+    <label class="form-check form-switch"><input id="ov-roof" class="form-check-input" type="checkbox" checked><span class="form-check-label">Volta trasparente</span></label>
+    <label class="form-check form-switch"><input id="ov-rotate" class="form-check-input" type="checkbox"><span class="form-check-label">Meccanica 2 giri/min</span></label>
+    <label class="form-label">Campo sul piano
+      <select id="ov-field" class="form-select" aria-label="Campo CFD da visualizzare"><option value="none">Solo geometria</option><option value="temperature">Temperatura</option><option value="flow">Velocità</option></select>
+    </label>
+    <label class="form-check form-switch"><input id="ov-fullchimney" class="form-check-input" type="checkbox"><span class="form-check-label">Camino intero</span></label>
+    <label class="form-check form-switch"><input id="ov-top" class="form-check-input" type="checkbox"><span class="form-check-label">Vista dall’alto</span></label>
+    <label class="form-label range-wrap">Inclinazione vista <span id="ov-elev-value" class="tabular-nums">24°</span>
+      <input id="ov-elev" class="form-range" type="range" min="12" max="48" value="24">
+    </label>
+  </div>
+  <div class="card viewer-stage">
+    <canvas id="ov-canvas" role="img" aria-label="Modello tridimensionale interattivo del forno. Trascinare per ruotare la vista."></canvas>
+    <div class="viewer-meta text-small">
+      <div id="ov-dims" class="tabular-nums"></div>
+      <div class="viewer-legend"><span><i class="swatch" id="ov-pizza-swatch"></i>Pizze Ø30</span><span><i class="swatch" id="ov-fire-swatch"></i>Zona legna</span><span id="ov-heat-legend" hidden><i class="heatbar"></i> 25–1000 °C</span></div>
+    </div>
+  </div>
+  <div id="ov-note" class="viewer-note text-small text-muted" aria-live="polite"></div>
+  <script type="application/json" id="ov-data">__OVEN_DATA__</script>
+  <script>
+  (() => {
+    const root = document.getElementById('oven-cfd-viewer');
+    const byId = id => document.getElementById(id);
+    const raw = byId('ov-data').textContent.trim();
+    let DATA = { cases: [], results: {} };
+    try { if (raw && raw !== '__OVEN_DATA__') DATA = JSON.parse(raw); } catch (_) {}
+    const common = DATA.common || {};
+    const merge = c => ({ ...common, ...c, roof: { ...(common.roof || {}), ...(c.roof || {}) }, chimney: { ...(common.chimney || {}), ...(c.chimney || {}) } });
+    const cases = (DATA.cases || []).map(merge);
+    const state = { index: 0, flue: 'front', roof: true, rotate: false, field: 'none', fullChimney: false, top: false, az: -0.65, el: 0.42, dragging: false, px: 0, py: 0, anim: 0 };
+    const canvas = byId('ov-canvas'); const ctx = canvas.getContext('2d');
+    const selectCase = byId('ov-case'); const selectFlue = byId('ov-flue');
+    const status = byId('ov-status'); const note = byId('ov-note'); const dims = byId('ov-dims');
+    const roofToggle = byId('ov-roof'); const rotationToggle = byId('ov-rotate'); const fieldSelect = byId('ov-field'); const fullChimneyToggle = byId('ov-fullchimney'); const topToggle = byId('ov-top'); const elev = byId('ov-elev'); const elevValue = byId('ov-elev-value');
+    const probe = document.createElement('span'); probe.className = 'sr-only'; root.appendChild(probe);
+    let paletteCache = null;
+    const resolved = name => { probe.style.color = `var(${name})`; return getComputedStyle(probe).color; };
+    const palette = () => paletteCache || (paletteCache = ({ fg: resolved('--foreground'), muted: resolved('--muted-foreground'), border: resolved('--border'), card: resolved('--card'), blue: resolved('--blue'), orange: resolved('--orange'), yellow: resolved('--yellow'), red: resolved('--red'), green: resolved('--green'), purple: resolved('--purple'), primary: resolved('--primary'), s1: resolved('--blue'), s2: resolved('--purple'), s3: resolved('--orange'), s4: resolved('--red') }));
+    new MutationObserver(() => { paletteCache = null; draw(current()); }).observe(document.documentElement,{attributes:true,attributeFilter:['class','style','data-theme']});
+    cases.forEach((c, i) => { const o = document.createElement('option'); o.value = i; o.textContent = c.label || c.id || `Caso ${i + 1}`; selectCase.appendChild(o); });
+    const saved = window.openai && window.openai.widgetState;
+    if(saved){const m=saved.modelContent||{},q=saved.privateContent||{},found=cases.findIndex(c=>c.id===m.caseId);if(found>=0)state.index=found;state.flue=m.flue||state.flue;Object.assign(state,{roof:q.roof??state.roof,rotate:q.rotate??state.rotate,field:q.field??state.field,fullChimney:q.fullChimney??state.fullChimney,top:q.top??state.top,el:q.el??state.el});}
+    selectCase.value=String(state.index); selectFlue.value=state.flue; roofToggle.checked=state.roof; rotationToggle.checked=state.rotate; fieldSelect.value=state.field; fullChimneyToggle.checked=state.fullChimney; topToggle.checked=state.top; elev.value=Math.round(state.el*180/Math.PI); elevValue.textContent=`${elev.value}°`;
+    if (!cases.length) { status.textContent = 'Dati geometrici in attesa'; note.textContent = 'Il template è pronto: inserire il JSON nel placeholder __OVEN_DATA__.'; }
+    function current() { return cases[Math.max(0, Math.min(state.index, cases.length - 1))]; }
+    function resultFor(c) { return (DATA.results || {})[`${c.id}__${state.flue}`] || null; }
+    function planPoints(c) {
+      if (!c) return [];
+      if (c.plan && c.plan.kind === 'circle') {
+        const p = c.plan, n = 80, out = [], clip = p.clip_front || 0, ratio = Math.max(-1,Math.min(1,(clip-p.center[1])/p.radius)), start = Math.asin(ratio), stop = Math.PI-start;
+        for (let i = 0; i <= n; i++) { const a = start + (stop-start) * i / n; const x = p.center[0] + p.radius * Math.cos(a); const y = p.center[1] + p.radius * Math.sin(a); out.push([x, y]); }
+        return out;
+      }
+      return (c.plan && c.plan.points) || [[0,0],[c.width || .8,0],[c.width || .8,c.depth || .6],[0,c.depth || .6]];
+    }
+    function insidePlan(c,x,y) {
+      if(c.plan&&c.plan.kind==='circle'){const p=c.plan;return y>=(p.clip_front||0)-1e-7&&Math.hypot(x-p.center[0],y-p.center[1])<=p.radius+1e-7;}
+      const a=planPoints(c);let hit=false;for(let i=0,j=a.length-1;i<a.length;j=i++){const xi=a[i][0],yi=a[i][1],xj=a[j][0],yj=a[j][1];if((yi>y)!=(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)hit=!hit;}return hit;
+    }
+    function spanAt(c,y) {
+      const a=planPoints(c), xs=[]; for(let i=0;i<a.length;i++){const q=a[i],r=a[(i+1)%a.length];if((q[1]<=y&&r[1]>=y)||(r[1]<=y&&q[1]>=y)){if(q[1]===r[1]){xs.push(q[0],r[0]);}else xs.push(q[0]+(y-q[1])*(r[0]-q[0])/(r[1]-q[1]));}}
+      return xs.length?[Math.min(...xs),Math.max(...xs)]:[0,c.width||.8];
+    }
+    function roofZ(c, x, y) {
+      const roof = c.roof || {}; const e = roof.eave ?? .19, peak = roof.peak ?? .28, rise = peak - e;
+      if (roof.kind === 'paraboloid' && c.plan && c.plan.kind === 'circle') { const dx = x - c.plan.center[0], dy = y - c.plan.center[1], rr = c.plan.radius * c.plan.radius; return e + rise * Math.max(0, 1 - (dx*dx + dy*dy) / rr); }
+      const [left,right]=spanAt(c,y), w=Math.max(.001,right-left); return e + rise * Math.max(0, 1 - Math.pow(2*(x-left)/w - 1, 2));
+    }
+    function projectFactory(c, rect) {
+      const az = state.top ? 0 : state.az, el = state.top ? Math.PI/2 : state.el;
+      const plan=planPoints(c), all=[]; plan.forEach(q=>{all.push([q[0],q[1],0],[q[0],q[1],roofZ(c,q[0],q[1])]);});
+      const mouth=c.mouth_width||.72,mx=c.mouth_center_x??(c.width||.8)/2; all.push([mx-mouth/2,-.08,0],[mx+mouth/2,-.08,0],[mx-mouth/2,-.08,.16],[mx+mouth/2,-.08,.16]);
+      const central=(c.plan&&c.plan.kind==='circle')?c.plan.center:[(c.width||.8)/2,(c.depth||.6)/2], chimney=state.flue==='central'?central:((c.chimney&&c.chimney.center)||[(c.width||.8)/2,.045]), z0=state.flue==='front'?.16:roofZ(c,chimney[0],chimney[1]), outlet=(c.chimney&&c.chimney.outlet_height_m)||z0+(c.chimney&&c.chimney.height||1), zTop=state.fullChimney?outlet:Math.min(outlet,z0+.30), cr=(c.chimney&&c.chimney.diameter||.13)/2; all.push([chimney[0]-cr,chimney[1],z0],[chimney[0]+cr,chimney[1],z0],[chimney[0],chimney[1]-cr,z0],[chimney[0],chimney[1]+cr,z0],[chimney[0]-cr,chimney[1],zTop],[chimney[0]+cr,chimney[1],zTop],[chimney[0],chimney[1]-cr,zTop],[chimney[0],chimney[1]+cr,zTop]);
+      const cx=(Math.min(...plan.map(q=>q[0]))+Math.max(...plan.map(q=>q[0])))/2,cy=(Math.min(...plan.map(q=>q[1]))+Math.max(...plan.map(q=>q[1])))/2,ca=Math.cos(az),sa=Math.sin(az),ce=Math.cos(el),se=Math.sin(el);
+      const flat=pt=>{const x=pt[0]-cx,y=pt[1]-cy,z=pt[2]||0,X=ca*x-sa*y,Y=sa*x+ca*y,yy=se*Y+ce*z;return[X,yy,se*Y-ce*z];}; const q=all.map(flat), minX=Math.min(...q.map(v=>v[0])),maxX=Math.max(...q.map(v=>v[0])),minY=Math.min(...q.map(v=>v[1])),maxY=Math.max(...q.map(v=>v[1])),pad=18,scale=Math.min((rect.w-2*pad)/Math.max(.01,maxX-minX),(rect.h-2*pad)/Math.max(.01,maxY-minY));
+      const offsetX=rect.x+(rect.w-(maxX-minX)*scale)/2,offsetY=rect.y+(rect.h-(maxY-minY)*scale)/2;
+      return pt=>{const v=flat(pt);return[offsetX+(v[0]-minX)*scale,offsetY+(maxY-v[1])*scale,v[2]];};
+    }
+    function poly(pr, pts, fill, stroke, alpha=1) { if (!pts.length) return; ctx.save(); ctx.globalAlpha=alpha; ctx.beginPath(); const a=pr(pts[0]);ctx.moveTo(a[0],a[1]); for(let i=1;i<pts.length;i++){const q=pr(pts[i]);ctx.lineTo(q[0],q[1]);}ctx.closePath(); if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.stroke();}ctx.restore(); }
+    function line(pr, pts, stroke, width=1, alpha=1) { if(pts.length<2)return;ctx.save();ctx.globalAlpha=alpha;ctx.beginPath();let a=pr(pts[0]);ctx.moveTo(a[0],a[1]);for(let i=1;i<pts.length;i++){a=pr(pts[i]);ctx.lineTo(a[0],a[1]);}ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();ctx.restore(); }
+    function circle3(pr, c, r, z, fill, stroke, phase=0, detail=36) { const pts=[];for(let i=0;i<=detail;i++){const a=phase+2*Math.PI*i/detail;pts.push([c[0]+r*Math.cos(a),c[1]+r*Math.sin(a),z]);}poly(pr,pts,fill,stroke,.96); return pts; }
+    function drawField(pr, c) {
+      const res=resultFor(c); if(state.field==='none'||!res||res.status!=='completed'||!res.slice)return false;
+      const sl=res.slice, x=sl.x||[], y=sl.y||[];
+      if(state.field==='temperature') {
+        const T=sl.temperature_C;if(!Array.isArray(T))return false; const p=palette(), series=[p.s1,p.s2,p.s3,p.s4];
+        for(let j=0;j<y.length-1;j++)for(let i=0;i<x.length-1;i++){const v=T[j]&&T[j][i];if(!Number.isFinite(v))continue;const u=Math.max(0,Math.min(1,(v-25)/975));const col=series[Math.min(series.length-1,Math.floor(u*series.length))];poly(pr,[[x[i],y[j],sl.z||.1],[x[i+1],y[j],sl.z||.1],[x[i+1],y[j+1],sl.z||.1],[x[i],y[j+1],sl.z||.1]],col,null,.58);}
+        return {kind:'temperature',lo:25,hi:1000};
+      }
+      const U=sl.u_m_s,V=sl.v_m_s;if(!Array.isArray(U)||!Array.isArray(V))return false;const p=palette();let max=0;
+      for(let j=0;j<y.length;j++)for(let i=0;i<x.length;i++){const u=U[j]&&U[j][i],v=V[j]&&V[j][i];if(Number.isFinite(u)&&Number.isFinite(v))max=Math.max(max,Math.hypot(u,v));}
+      if(!max)return false;const step=Math.max(1,Math.ceil(Math.max(x.length,y.length)/15));
+      for(let j=0;j<y.length;j+=step)for(let i=0;i<x.length;i+=step){const u=U[j]&&U[j][i],v=V[j]&&V[j][i];if(!Number.isFinite(u)||!Number.isFinite(v))continue;const mag=Math.hypot(u,v),len=.035*mag/max,xx=x[i],yy=y[j],a=Math.atan2(v,u),tip=[xx+len*Math.cos(a),yy+len*Math.sin(a),sl.z||.1],head=.007;line(pr,[[xx,yy,sl.z||.1],tip],p.blue,1.2,.85);line(pr,[tip,[tip[0]-head*Math.cos(a-.55),tip[1]-head*Math.sin(a-.55),tip[2]]],p.blue,1.2,.85);line(pr,[tip,[tip[0]-head*Math.cos(a+.55),tip[1]-head*Math.sin(a+.55),tip[2]]],p.blue,1.2,.85);}
+      return {kind:'flow',lo:0,hi:max};
+    }
+    function draw(c) {
+      const dpr=Math.min(window.devicePixelRatio||1,2), w=Math.max(280,canvas.clientWidth||640), h=Math.max(300,Math.round(w*.64)); canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+      const p=palette(), rect={x:0,y:0,w,h}, pr=projectFactory(c,rect); if(!c){ctx.fillStyle=p.muted;ctx.fillText('Dati in attesa',16,30);return;}
+      const floor=planPoints(c).map(q=>[q[0],q[1],0]); const wallTop=planPoints(c).map(q=>[q[0],q[1],roofZ(c,q[0],q[1])]);
+      poly(pr,floor,p.card,p.border,.96);
+      const mouth=(c.mouth_width||.72), mx=c.mouth_center_x ?? (c.width||.8)/2, vestibule=[[mx-mouth/2,-.08,0],[mx+mouth/2,-.08,0],[mx+mouth/2,0,0],[mx-mouth/2,0,0]];
+      poly(pr,vestibule,p.card,p.border,.88);
+      if(c.fire_polygon) poly(pr,c.fire_polygon.map(q=>[q[0],q[1],.006]),p.orange,p.fg,.72);
+      const pizzaR=(c.pizza_diameter||.30)/2, discR=(c.disc_diameter||.32)/2;
+      const phase=(state.rotate&&c.rotating)?state.anim*(c.rotation_rpm||2)*2*Math.PI/60:0;
+      (c.pizza_centers||[]).forEach((pc,i)=>{ if(c.rotating) {circle3(pr,pc,discR,.011,p.purple,p.fg,0); circle3(pr,pc,pizzaR,.016,p.yellow,p.fg,0); if(state.rotate)line(pr,[[pc[0],pc[1],.021],[pc[0]+pizzaR*.72*Math.cos(phase+i*Math.PI),pc[1]+pizzaR*.72*Math.sin(phase+i*Math.PI),.021]],p.fg,2,.95);} else circle3(pr,pc,pizzaR,.016,p.yellow,p.fg,0); });
+      const field=drawField(pr,c);
+      if(state.roof){ const n=12; for(let i=0;i<=n;i++){const t=i/n; const x=(c.width||.8)*t; const curve=[]; for(let j=0;j<=12;j++){const y=(c.depth||.6)*j/12; if(insidePlan(c,x,y))curve.push([x,y,roofZ(c,x,y)]);} line(pr,curve,p.muted,1,.55); } for(let j=0;j<=7;j++){const y=(c.depth||.6)*j/7,curve=[];for(let i=0;i<=16;i++){const x=(c.width||.8)*i/16;if(insidePlan(c,x,y))curve.push([x,y,roofZ(c,x,y)]);}line(pr,curve,p.muted,1,.55);} poly(pr,wallTop,null,p.fg,.46); }
+      const central=(c.plan&&c.plan.kind==='circle')?c.plan.center:[(c.width||.8)/2,(c.depth||.6)/2];
+      const chimney=state.flue==='central'?central:((c.chimney&&c.chimney.center)||[(c.width||.8)/2,.045]);
+      const z0=state.flue==='front'?.16:roofZ(c,chimney[0],chimney[1]); const rr=(c.chimney&&c.chimney.diameter||.13)/2; const outlet=(c.chimney&&c.chimney.outlet_height_m)||z0+(c.chimney&&c.chimney.height||1); const chimneyH=state.fullChimney?Math.max(0,outlet-z0):Math.min(.30,Math.max(0,outlet-z0)); const base=circle3(pr,chimney,rr,z0,null,p.fg,0,24); const top=circle3(pr,chimney,rr,z0+chimneyH,null,p.fg,0,24); for(let i=0;i<base.length-1;i++)line(pr,[base[i],top[i]],p.fg,1,.75);
+      line(pr,[...floor,floor[0]],p.fg,1.4,.9); line(pr,[...vestibule,vestibule[0]],p.fg,1.1,.9);
+      line(pr,[[mx-mouth/2,-.08,0],[mx+mouth/2,-.08,0]],p.blue,4,.95); line(pr,[[mx-mouth/2,-.08,0],[mx-mouth/2,-.08,.16],[mx+mouth/2,-.08,.16],[mx+mouth/2,-.08,0]],p.blue,1.4,.95);
+      const eave=(c.roof&&c.roof.eave)||.19; line(pr,[[0,0,0],[mx-mouth/2,0,0]],p.fg,1,.8);line(pr,[[mx+mouth/2,0,0],[c.width||.8,0,0]],p.fg,1,.8);line(pr,[[mx-mouth/2,0,0],[mx-mouth/2,0,eave]],p.fg,1,.8);line(pr,[[mx+mouth/2,0,0],[mx+mouth/2,0,eave]],p.fg,1,.8);
+      const label = (text,x,y,right=false) => {ctx.fillStyle=p.fg;ctx.font='12px sans-serif';ctx.fillText(text,right?Math.max(12,x-ctx.measureText(text).width):x,y);}; label(`${Math.round((c.width||0)*100)} × ${Math.round(((c.depth||0)+.08)*100)} cm interno`,12,h-14); label(`Uscita ${Math.round(outlet*100)} cm / Ø${Math.round(rr*200)} cm`,w-12,20,true); if(field){const res=resultFor(c),sl=res&&res.slice||{},cell=(sl.cell_size_m??res?.cell_size_m??res?.metrics?.cell_size_m),suffix=`z=${Math.round((sl.z||.1)*100)} cm${Number.isFinite(cell)?` · Δ=${Math.round(cell*1000)} mm`:''}`;label(`${field.kind==='flow'?`0–${field.hi.toFixed(2)} m/s`:`${Math.round(field.lo)}–${Math.round(field.hi)} °C`} · ${suffix}`,w-12,h-14,true);}
+    }
+    function refreshInfo() { const c=current(); if(!c)return; const res=resultFor(c); const r=res&&res.status==='completed'?`CFD disponibile · ${res.time_s||'?'} s, media ${((res.mean_window_s||[])[0]??'?')}–${((res.mean_window_s||[])[1]??'?')} s`:'CFD non disponibile per questa variante'; status.textContent=r; const pizza=(c.pizza_centers||[]).length; dims.textContent=`Ingombro interno ${Math.round(c.width*100)} × ${Math.round(((c.depth||0)+.08)*100)} cm · ${pizza} ${pizza===1?'pizza':'pizze'} Ø30 · volta ${Math.round((c.roof?.eave??.19)*100)}–${Math.round((c.roof?.peak??.28)*100)} cm`; note.textContent=c.notes||'Geometria nominale.'; byId('ov-heat-legend').hidden=!(state.field==='temperature'&&res&&res.status==='completed'&&res.slice); const p=palette(); byId('ov-pizza-swatch').style.background=p.yellow; byId('ov-fire-swatch').style.background=p.orange; draw(c); }
+    function persist(){ if(window.openai&&window.openai.setWidgetState) window.openai.setWidgetState({modelContent:{caseId:current()?.id,flue:state.flue},privateContent:{roof:state.roof,rotate:state.rotate,field:state.field,fullChimney:state.fullChimney,top:state.top,el:state.el}}).catch(()=>{}); }
+    selectCase.addEventListener('change',()=>{state.index=Number(selectCase.value);refreshInfo();persist();}); selectFlue.addEventListener('change',()=>{state.flue=selectFlue.value;refreshInfo();persist();});
+    [[roofToggle,'roof'],[rotationToggle,'rotate'],[fullChimneyToggle,'fullChimney'],[topToggle,'top']].forEach(([e,k])=>e.addEventListener('change',()=>{state[k]=e.checked;refreshInfo();if(k==='rotate')maybeAnimate();persist();})); fieldSelect.addEventListener('change',()=>{state.field=fieldSelect.value;refreshInfo();persist();});
+    elev.addEventListener('input',()=>{state.el=Number(elev.value)*Math.PI/180;elevValue.textContent=`${elev.value}°`;draw(current());});
+    canvas.addEventListener('pointerdown',e=>{state.dragging=true;state.px=e.clientX;state.py=e.clientY;canvas.setPointerCapture(e.pointerId);}); canvas.addEventListener('pointermove',e=>{if(!state.dragging)return;state.az+=(e.clientX-state.px)*.012;state.el=Math.max(.16,Math.min(1.25,state.el+(e.clientY-state.py)*.008));elev.value=Math.round(state.el*180/Math.PI);elevValue.textContent=`${elev.value}°`;state.px=e.clientX;state.py=e.clientY;draw(current());}); canvas.addEventListener('pointerup',e=>{state.dragging=false;try{canvas.releasePointerCapture(e.pointerId);}catch(_){ }persist();});
+    const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)'); let animating=false;
+    const tick=t=>{if(!(state.rotate&&current()?.rotating)||reduceMotion?.matches){animating=false;return;}state.anim=t/1000;draw(current());requestAnimationFrame(tick);};
+    const maybeAnimate=()=>{if(!animating&&state.rotate&&current()?.rotating&&!reduceMotion?.matches){animating=true;requestAnimationFrame(tick);}};
+    new ResizeObserver(()=>draw(current())).observe(canvas); refreshInfo(); maybeAnimate();
+  })();
+  </script>
+</div>

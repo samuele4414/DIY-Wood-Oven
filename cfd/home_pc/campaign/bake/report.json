@@ -1,0 +1,532 @@
+{
+  "schema": 1,
+  "stage": "bake",
+  "sample_count": 241,
+  "time_interval_s": [
+    0.0,
+    120.0
+  ],
+  "final_probes": {
+    "mouth_net_y": {
+      "value": 0.01776767,
+      "unit": "kg/s"
+    },
+    "mouth_outward_y_negative": {
+      "value": -0.0084592729,
+      "unit": "kg/s"
+    },
+    "mouth_inward_y_positive": {
+      "value": 0.026226943,
+      "unit": "kg/s"
+    },
+    "mouth_soot_outward_negative": {
+      "value": -1.7699294e-06,
+      "unit": "kg/s"
+    },
+    "flue_net_z": {
+      "value": 0.019580018,
+      "unit": "kg/s"
+    },
+    "flue_outward_z_positive": {
+      "value": 0.019580018,
+      "unit": "kg/s"
+    },
+    "flue_soot_outward_positive": {
+      "value": 1.6406171e-05,
+      "unit": "kg/s"
+    },
+    "pizza_1_gas_temp": {
+      "value": 250.2199,
+      "unit": "C"
+    },
+    "pizza_2_gas_temp": {
+      "value": 236.99515,
+      "unit": "C"
+    },
+    "gas_L": {
+      "value": 250.2199,
+      "unit": "C"
+    },
+    "gas_R": {
+      "value": 236.99515,
+      "unit": "C"
+    },
+    "gas_REAR": {
+      "value": 357.8111,
+      "unit": "C"
+    },
+    "gas_FLUE": {
+      "value": 511.501,
+      "unit": "C"
+    },
+    "pizza_1_C_surface": {
+      "value": 127.5885,
+      "unit": "C"
+    },
+    "pizza_1_C_rad": {
+      "value": 10.797459,
+      "unit": "kW/m2"
+    },
+    "pizza_1_C_conv": {
+      "value": -0.38414586,
+      "unit": "kW/m2"
+    },
+    "pizza_1_C_net": {
+      "value": 10.413313,
+      "unit": "kW/m2"
+    },
+    "pizza_1_C_core": {
+      "value": 99.347505,
+      "unit": "C"
+    },
+    "pizza_1_C_bottom": {
+      "value": 203.0578,
+      "unit": "C"
+    },
+    "pizza_1_C_gas": {
+      "value": 250.2199,
+      "unit": "C"
+    },
+    "pizza_1_L_surface": {
+      "value": 123.20188,
+      "unit": "C"
+    },
+    "pizza_1_L_rad": {
+      "value": 9.4776946,
+      "unit": "kW/m2"
+    },
+    "pizza_1_L_conv": {
+      "value": -0.39487221,
+      "unit": "kW/m2"
+    },
+    "pizza_1_L_net": {
+      "value": 9.0828224,
+      "unit": "kW/m2"
+    },
+    "pizza_1_L_core": {
+      "value": 99.186393,
+      "unit": "C"
+    },
+    "pizza_1_L_bottom": {
+      "value": 202.9294,
+      "unit": "C"
+    },
+    "pizza_1_L_gas": {
+      "value": 231.7199,
+      "unit": "C"
+    },
+    "pizza_1_R_surface": {
+      "value": 143.54081,
+      "unit": "C"
+    },
+    "pizza_1_R_rad": {
+      "value": 11.960435,
+      "unit": "kW/m2"
+    },
+    "pizza_1_R_conv": {
+      "value": -0.53958582,
+      "unit": "kW/m2"
+    },
+    "pizza_1_R_net": {
+      "value": 11.420849,
+      "unit": "kW/m2"
+    },
+    "pizza_1_R_core": {
+      "value": 99.611971,
+      "unit": "C"
+    },
+    "pizza_1_R_bottom": {
+      "value": 203.12005,
+      "unit": "C"
+    },
+    "pizza_1_R_gas": {
+      "value": 244.64664,
+      "unit": "C"
+    },
+    "pizza_1_F_surface": {
+      "value": 122.9016,
+      "unit": "C"
+    },
+    "pizza_1_F_rad": {
+      "value": 9.4808193,
+      "unit": "kW/m2"
+    },
+    "pizza_1_F_conv": {
+      "value": -0.48502266,
+      "unit": "kW/m2"
+    },
+    "pizza_1_F_net": {
+      "value": 8.9957967,
+      "unit": "kW/m2"
+    },
+    "pizza_1_F_core": {
+      "value": 99.149744,
+      "unit": "C"
+    },
+    "pizza_1_F_bottom": {
+      "value": 202.88741,
+      "unit": "C"
+    },
+    "pizza_1_F_gas": {
+      "value": 243.4527,
+      "unit": "C"
+    },
+    "pizza_1_B_surface": {
+      "value": 138.02653,
+      "unit": "C"
+    },
+    "pizza_1_B_rad": {
+      "value": 11.633109,
+      "unit": "kW/m2"
+    },
+    "pizza_1_B_conv": {
+      "value": -0.41894503,
+      "unit": "kW/m2"
+    },
+    "pizza_1_B_net": {
+      "value": 11.214164,
+      "unit": "kW/m2"
+    },
+    "pizza_1_B_core": {
+      "value": 99.519243,
+      "unit": "C"
+    },
+    "pizza_1_B_bottom": {
+      "value": 203.11729,
+      "unit": "C"
+    },
+    "pizza_1_B_gas": {
+      "value": 221.63772,
+      "unit": "C"
+    },
+    "pizza_1_surface": {
+      "value": 127.5885,
+      "unit": "C"
+    },
+    "pizza_2_C_surface": {
+      "value": 130.89127,
+      "unit": "C"
+    },
+    "pizza_2_C_rad": {
+      "value": 11.698537,
+      "unit": "kW/m2"
+    },
+    "pizza_2_C_conv": {
+      "value": -0.39222276,
+      "unit": "kW/m2"
+    },
+    "pizza_2_C_net": {
+      "value": 11.306314,
+      "unit": "kW/m2"
+    },
+    "pizza_2_C_core": {
+      "value": 99.665459,
+      "unit": "C"
+    },
+    "pizza_2_C_bottom": {
+      "value": 206.32034,
+      "unit": "C"
+    },
+    "pizza_2_C_gas": {
+      "value": 236.99515,
+      "unit": "C"
+    },
+    "pizza_2_L_surface": {
+      "value": 151.34204,
+      "unit": "C"
+    },
+    "pizza_2_L_rad": {
+      "value": 12.689477,
+      "unit": "kW/m2"
+    },
+    "pizza_2_L_conv": {
+      "value": -0.64965996,
+      "unit": "kW/m2"
+    },
+    "pizza_2_L_net": {
+      "value": 12.039817,
+      "unit": "kW/m2"
+    },
+    "pizza_2_L_core": {
+      "value": 100.05831,
+      "unit": "C"
+    },
+    "pizza_2_L_bottom": {
+      "value": 206.35612,
+      "unit": "C"
+    },
+    "pizza_2_L_gas": {
+      "value": 242.50436,
+      "unit": "C"
+    },
+    "pizza_2_R_surface": {
+      "value": 125.86605,
+      "unit": "C"
+    },
+    "pizza_2_R_rad": {
+      "value": 10.470556,
+      "unit": "kW/m2"
+    },
+    "pizza_2_R_conv": {
+      "value": -0.4323656,
+      "unit": "kW/m2"
+    },
+    "pizza_2_R_net": {
+      "value": 10.038191,
+      "unit": "kW/m2"
+    },
+    "pizza_2_R_core": {
+      "value": 99.516994,
+      "unit": "C"
+    },
+    "pizza_2_R_bottom": {
+      "value": 206.21163,
+      "unit": "C"
+    },
+    "pizza_2_R_gas": {
+      "value": 302.54341,
+      "unit": "C"
+    },
+    "pizza_2_F_surface": {
+      "value": 124.96684,
+      "unit": "C"
+    },
+    "pizza_2_F_rad": {
+      "value": 10.352737,
+      "unit": "kW/m2"
+    },
+    "pizza_2_F_conv": {
+      "value": -0.46914125,
+      "unit": "kW/m2"
+    },
+    "pizza_2_F_net": {
+      "value": 9.8835962,
+      "unit": "kW/m2"
+    },
+    "pizza_2_F_core": {
+      "value": 99.459616,
+      "unit": "C"
+    },
+    "pizza_2_F_bottom": {
+      "value": 206.16203,
+      "unit": "C"
+    },
+    "pizza_2_F_gas": {
+      "value": 232.13412,
+      "unit": "C"
+    },
+    "pizza_2_B_surface": {
+      "value": 149.20082,
+      "unit": "C"
+    },
+    "pizza_2_B_rad": {
+      "value": 12.368659,
+      "unit": "kW/m2"
+    },
+    "pizza_2_B_conv": {
+      "value": -0.51360334,
+      "unit": "kW/m2"
+    },
+    "pizza_2_B_net": {
+      "value": 11.855055,
+      "unit": "kW/m2"
+    },
+    "pizza_2_B_core": {
+      "value": 99.999704,
+      "unit": "C"
+    },
+    "pizza_2_B_bottom": {
+      "value": 206.38151,
+      "unit": "C"
+    },
+    "pizza_2_B_gas": {
+      "value": 226.78641,
+      "unit": "C"
+    },
+    "pizza_2_surface": {
+      "value": 130.89127,
+      "unit": "C"
+    },
+    "floor_surface": {
+      "value": 327.08448,
+      "unit": "C"
+    }
+  },
+  "interpretation": "Point probes only. Values do not establish whether a pizza is cooked.",
+  "pizzas": [
+    {
+      "pizza": 1,
+      "points": {
+        "C": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 11.164224784152207,
+            "conv": -0.27806081276349953,
+            "net": 10.88616401805478
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1306.3396821665735,
+          "final_temperature_C": {
+            "surface": 127.5885,
+            "core": 99.347505,
+            "bottom": 203.0578
+          }
+        },
+        "L": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 10.165530632287044,
+            "conv": -0.2651323848611606,
+            "net": 9.900398242504066
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1188.047789100488,
+          "final_temperature_C": {
+            "surface": 123.20188,
+            "core": 99.186393,
+            "bottom": 202.9294
+          }
+        },
+        "R": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 12.16694341908826,
+            "conv": -0.31294848414130094,
+            "net": 11.853994930191428
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1422.4793916229714,
+          "final_temperature_C": {
+            "surface": 143.54081,
+            "core": 99.611971,
+            "bottom": 203.12005
+          }
+        },
+        "F": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 10.039922775682559,
+            "conv": -0.32199374467421304,
+            "net": 9.717929045528415
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1166.1514854634097,
+          "final_temperature_C": {
+            "surface": 122.9016,
+            "core": 99.149744,
+            "bottom": 202.88741
+          }
+        },
+        "B": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 11.914845683767835,
+            "conv": -0.25786260682374595,
+            "net": 11.656983139002183
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1398.8379766802618,
+          "final_temperature_C": {
+            "surface": 138.02653,
+            "core": 99.519243,
+            "bottom": 203.11729
+          }
+        }
+      },
+      "final_temperature_range_across_five_probes_C": {
+        "surface": {
+          "min": 122.9016,
+          "max": 143.54081
+        },
+        "core": {
+          "min": 99.149744,
+          "max": 99.611971
+        },
+        "bottom": {
+          "min": 202.88741,
+          "max": 203.12005
+        }
+      }
+    },
+    {
+      "pizza": 2,
+      "points": {
+        "C": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 11.651895619393365,
+            "conv": -0.27521103423699533,
+            "net": 11.376684606719932
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1365.202152806392,
+          "final_temperature_C": {
+            "surface": 130.89127,
+            "core": 99.665459,
+            "bottom": 206.32034
+          }
+        },
+        "L": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 12.543552642871338,
+            "conv": -0.3307802123747205,
+            "net": 12.212772457867175
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1465.532694944061,
+          "final_temperature_C": {
+            "surface": 151.34204,
+            "core": 100.05831,
+            "bottom": 206.35612
+          }
+        },
+        "R": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 10.786317902813819,
+            "conv": -0.26882133635623523,
+            "net": 10.51749663385069
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1262.0995960620828,
+          "final_temperature_C": {
+            "surface": 125.86605,
+            "core": 99.516994,
+            "bottom": 206.21163
+          }
+        },
+        "F": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 10.516107877850448,
+            "conv": -0.31747171182956824,
+            "net": 10.198636185548889
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1223.8363422658667,
+          "final_temperature_C": {
+            "surface": 124.96684,
+            "core": 99.459616,
+            "bottom": 206.16203
+          }
+        },
+        "B": {
+          "time_mean_heat_flux_kW_m2": {
+            "rad": 12.375592972279483,
+            "conv": -0.26692641662051125,
+            "net": 12.108666631001118
+          },
+          "net_heat_flux_time_integral_kJ_m2": 1453.0399957201341,
+          "final_temperature_C": {
+            "surface": 149.20082,
+            "core": 99.999704,
+            "bottom": 206.38151
+          }
+        }
+      },
+      "final_temperature_range_across_five_probes_C": {
+        "surface": {
+          "min": 124.96684,
+          "max": 151.34204
+        },
+        "core": {
+          "min": 99.459616,
+          "max": 100.05831
+        },
+        "bottom": {
+          "min": 206.16203,
+          "max": 206.38151
+        }
+      }
+    }
+  ],
+  "integration": "Trapezoidal integration using actual DEVC sample times.",
+  "spatial_sampling": "C=center, L=left, R=right, F=front, B=back; offsets 9 cm. These are five point probes, not whole-pizza area averages.",
+  "heat_flux_sign": "Signed FDS wall heat fluxes are retained without absolute-value conversion.",
+  "source_run": "C:\\Users\\samue\\Desktop\\forno\\cfd\\home_pc\\campaign\\bake",
+  "input_sha256": "a4786828e2ba92d2ea0b219a931526734d529606ff1d84d333b0d7c40889b1a6",
+  "config_sha256": "8d422cc292f0bdf3127e9582b661ff6880fe5a222d981d28432dcf49023d1f2b"
+}

@@ -1,0 +1,38 @@
+test_archived_manufacturer_sources_exist (test_artifacts.DeliveryChecks.test_archived_manufacturer_sources_exist) ... ok
+test_csv_includes_every_scenario_and_closed_door_budget (test_artifacts.DeliveryChecks.test_csv_includes_every_scenario_and_closed_door_budget) ... ok
+test_dossier_renderer_escapes_raw_HTML (test_artifacts.DeliveryChecks.test_dossier_renderer_escapes_raw_HTML) ... ok
+test_drawn_octagon_has_declared_across_flats_and_orientation (test_artifacts.DeliveryChecks.test_drawn_octagon_has_declared_across_flats_and_orientation) ... ok
+test_four_svg_schemes_are_well_formed_and_labelled (test_artifacts.DeliveryChecks.test_four_svg_schemes_are_well_formed_and_labelled) ... ok
+test_marker_ids_unique_when_embedded_on_one_HTML_page (test_artifacts.DeliveryChecks.test_marker_ids_unique_when_embedded_on_one_HTML_page) ... ok
+test_only_documented_mean_steel_coefficient_is_used (test_artifacts.DeliveryChecks.test_only_documented_mean_steel_coefficient_is_used) ... ok
+test_preliminary_parts_list_is_not_an_order_list (test_artifacts.DeliveryChecks.test_preliminary_parts_list_is_not_an_order_list) ... ok
+test_print_and_preview_have_six_sections_and_no_remote_assets (test_artifacts.DeliveryChecks.test_print_and_preview_have_six_sections_and_no_remote_assets) ... ok
+test_pure_calculation_and_drawings_are_deterministic (test_artifacts.DeliveryChecks.test_pure_calculation_and_drawings_are_deterministic) ... ok
+test_references_to_SVG_markers_exist (test_artifacts.DeliveryChecks.test_references_to_SVG_markers_exist) ... ok
+test_report_has_no_unfilled_placeholders_including_digits (test_artifacts.DeliveryChecks.test_report_has_no_unfilled_placeholders_including_digits) ... ok
+test_body_budget_is_actual_C01_geometry_without_mutating_source (test_checks.ScreeningTests.test_body_budget_is_actual_C01_geometry_without_mutating_source) ... ok
+test_budget_only_for_closed_door (test_checks.ScreeningTests.test_budget_only_for_closed_door) ... ok
+test_corner_of_rectangular_plate_does_not_fit_small_octagon (test_checks.ScreeningTests.test_corner_of_rectangular_plate_does_not_fit_small_octagon) ... ok
+test_door_exact_integral (test_checks.ScreeningTests.test_door_exact_integral) ... ok
+test_expansion_uses_mean_coefficient_and_temperature_difference (test_checks.ScreeningTests.test_expansion_uses_mean_coefficient_and_temperature_difference) ... ok
+test_extra_inlet_losses_reduce_air_supply (test_checks.ScreeningTests.test_extra_inlet_losses_reduce_air_supply) ... ok
+test_flue_area_no_rectangular_area_confusion (test_checks.ScreeningTests.test_flue_area_no_rectangular_area_confusion) ... ok
+test_height_reserves_are_separate_from_C01 (test_checks.ScreeningTests.test_height_reserves_are_separate_from_C01) ... ok
+test_insulated_chimney_does_not_fit_original_collar (test_checks.ScreeningTests.test_insulated_chimney_does_not_fit_original_collar) ... ok
+test_invalid_and_nonfinite_parameters_fail (test_checks.ScreeningTests.test_invalid_and_nonfinite_parameters_fail) ... ok
+test_large_area_increases_supply_with_others_fixed (test_checks.ScreeningTests.test_large_area_increases_supply_with_others_fixed) ... ok
+test_mass_balance_in_every_scenario (test_checks.ScreeningTests.test_mass_balance_in_every_scenario) ... ok
+test_mechanisms_preserve_two_original_centres (test_checks.ScreeningTests.test_mechanisms_preserve_two_original_centres) ... ok
+test_no_approval_and_no_implicit_full_simulation (test_checks.ScreeningTests.test_no_approval_and_no_implicit_full_simulation) ... ok
+test_no_division_by_zero_with_cold_chamber (test_checks.ScreeningTests.test_no_division_by_zero_with_cold_chamber) ... ok
+test_nonfinite_shaft_and_budget_fail (test_checks.ScreeningTests.test_nonfinite_shaft_and_budget_fail) ... ok
+test_old_MATLAB_network_numbers_reproduced (test_checks.ScreeningTests.test_old_MATLAB_network_numbers_reproduced) ... ok
+test_parallel_stack_not_serial_sum (test_checks.ScreeningTests.test_parallel_stack_not_serial_sum) ... ok
+test_pressure_margin_changes_by_applied_wind (test_checks.ScreeningTests.test_pressure_margin_changes_by_applied_wind) ... ok
+test_shaft_heat_scales_with_cross_section (test_checks.ScreeningTests.test_shaft_heat_scales_with_cross_section) ... ok
+test_tool_load_also_produces_overturning_moment (test_checks.ScreeningTests.test_tool_load_also_produces_overturning_moment) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.596s
+
+OK

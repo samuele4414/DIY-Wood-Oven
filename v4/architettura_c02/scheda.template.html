@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno C02 — architettura e verifiche preliminari</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#223542;background:#e9eff2;line-height:1.42}
+*{box-sizing:border-box}body{margin:0}a{color:#206986}nav{max-width:1080px;margin:22px auto;padding:0 18px;font-size:14px}
+nav a{display:inline-block;margin:0 18px 10px 0}main{max-width:1080px;margin:auto}
+.page{position:relative;width:100%;background:white;margin:22px 0;padding:28px 34px;aspect-ratio:277/190}
+.drawing{padding:0;display:flex;align-items:center}.drawing svg{width:100%;height:auto;max-height:100%}
+h1{font-size:31px;line-height:1.13;margin:8px 0 16px}h2{font-size:20px;line-height:1.2;margin:10px 0}h3{font-size:14px;margin:4px 0}
+p{margin:7px 0}ul,ol{padding-left:19px;margin:7px 0}.eyebrow{color:#526673;letter-spacing:1.3px;font-size:12px;text-transform:uppercase}
+.lead{font-size:15px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.banner{background:#edf5f8;border-left:4px solid #267999;padding:12px 16px;margin:14px 0}
+.warning{background:#fff1e5;border-left:4px solid #b97a44;padding:10px 14px;margin:12px 0;font-size:13px}
+.card{border:1px solid #c9d5db;padding:12px 15px;font-size:13px}.number{font-size:24px;line-height:1.2;font-weight:700;color:#267999}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:6px 8px;border-bottom:1px solid #ccd7dd;text-align:left;vertical-align:top}
+th{background:#edf3f6}.compact{font-size:11px}.compact td,.compact th{padding:4px 6px}
+.foot{position:absolute;bottom:14px;left:34px;right:34px;display:flex;justify-content:space-between;border-top:1px solid #c9d5db;padding-top:7px;font-size:10px;color:#526673}
+.material-page{font-size:12px}.material-page h1{font-size:25px}.material-page .grid{gap:20px}.material-page .warning{font-size:11px;padding:7px 10px}
+.sources{font-size:10px;color:#526673}.small{font-size:12px;color:#526673}
+@page{size:A4 landscape;margin:10mm}
+@media print{
+:root{background:white;line-height:1.34;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+nav{display:none}main{max-width:none;margin:0}.page{width:277mm;height:189mm;aspect-ratio:auto;margin:0;padding:7mm 8mm;break-after:page}
+.page:last-child{break-after:auto}.drawing{padding:0}.drawing svg{width:100%;height:100%}
+h1{font-size:25px}h2{font-size:17px}.lead{font-size:13px}.card{font-size:12px;padding:9px 12px}.banner{padding:10px 13px;margin:10px 0}
+.number{font-size:22px}.warning{font-size:12px;margin:10px 0}.grid{gap:20px}
+.foot{bottom:3mm;left:8mm;right:8mm}.material-page{font-size:11px}.material-page h1{font-size:23px}
+.compact{font-size:10px}.compact td,.compact th{padding:3px 5px}.sources{font-size:9px}
+}
+@media screen and (max-width:760px){.page{aspect-ratio:auto;margin:12px 0;padding:20px}.grid{grid-template-columns:1fr;gap:10px}.drawing{padding:0}.foot{position:static;margin-top:15px}.material-page{font-size:13px}}
+</style>
+</head>
+<body>
+<nav aria-label="Consegne">
+<a href="Scheda_C02.pdf">Scarica scheda PDF (6 pagine)</a>
+<a href="rapporto.html">Rapporto completo</a><a href="calcoli_C02.json">Calcoli JSON</a>
+<a href="rete_pressione.csv">Scenari CSV</a><a href="richieste_fornitori.html">Richieste tecniche</a>
+<a href="distinta_preliminare.csv">Distinta preliminare</a>
+<a href="piano_banco.html">Piano del banco</a>
+<a href="../../concept_sfaccettato/output/index.html">Visualizzatore C01 preservato</a>
+</nav>
+<main>
+<section class="page" id="sintesi">
+<div class="eyebrow">Forno due pizze / evoluzione tecnica del concept sfaccettato</div>
+<h1>C02 — architettura prima dei componenti</h1>
+<p class="lead">Studio meccanico, materiali candidati e circuito aria–fumi. Conservati piano 790 × 410,
+dischi Ø320 ai centri V4 e focolare posteriore. <strong>Non è un progetto pronto per fabbricazione.</strong></p>
+<div class="banner"><strong>Configurazione proposta:</strong> due moduli indipendenti con motori laterali,
+pietre flottanti su supporti qualificati, vano 160 netti, aria separata dalla meccanica,
+collettore rialzato e camino coibentato anteriore.</div>
+<div class="grid">
+<div class="card"><h3>Budget del corpo, con piedini</h3><div class="number">@@BODY_SIZE@@ mm</div>
+<p>Incremento rispetto C01: +@@BODY_INCREMENT@@ mm. Collare, camino e raccordi esclusi;
+supporti e attraversamenti non integrati nel CAD.</p></div>
+<div class="card"><h3>Riserve di azionamento laterale</h3><div class="number">160 − 117 = 43 mm</div>
+<p>Nel vano 120 resterebbero solo 3 mm. h45 cartuccia/h70 motore sono riserve:
+nessun codice commerciale selezionato.</p></div>
+</div>
+<div class="grid" style="margin-top:14px">
+<div><h2>Interfacce da correggere</h2><ul class="lead">
+<li>Collare C01 stretto: il DN130/25 reale ha esterno 180.</li>
+<li>Riserva superiore 260; base ottagonale 440 candidata per il budget della piastra.</li>
+<li>Collo 170 × 90 per Ø130: risale fuori dalla vecchia scatola bassa.</li>
+</ul></div>
+<div><h2>Tiraggio: risultato condizionato</h2><p class="lead">90 cm² netti / Ø130 / H1,5:
+margine @@PREFERRED_MARGIN@@ Pa nelle ipotesi favorevoli; @@ADVERSE_MARGIN@@ Pa con T150/K8/vento 3 Pa.</p>
+<p class="lead">Porta aperta: criticità ancora presente nella rete 1D. Nessuna nuova CFD o prova fisica.</p></div>
+</div>
+<div class="warning"><strong>Prestazioni e sicurezza non dimostrate:</strong> preriscaldamento 45–60 min,
+temperature accessibili, captazione/CO, portanza e durata. Prossimo gate: schede/CAD reali,
+montaggio a freddo di un modulo, poi campione termomeccanico strumentato.</div>
+<div class="foot"><span>C02 · 03/10/2026 · fonti produttori archiviate · V4/C01/CFD preservati</span><span>1 /6</span></div>
+</section>
+<section class="page drawing" id="pianta">@@PIANTA@@</section>
+<section class="page drawing" id="disco">@@DISCO@@</section>
+<section class="page drawing" id="aria">@@ARIA@@</section>
+<section class="page drawing" id="camino">@@CAMINO@@</section>
+<section class="page material-page" id="materiali">
+<div class="eyebrow">Materiali e uscita della fase</div>
+<h1>Shortlist qualificabile, non distinta acquisti</h1>
+<table class="compact"><thead><tr><th>Zona</th><th>Candidato</th><th>Gate prima del prototipo</th></tr></thead><tbody>
+<tr><td>Camera/collettore</td><td>310S / 1.4845, confronto 253 MA / 1.4835 [S01]</td><td>Cicli, picchi fiamma, creep, saldatura, condensati e uso alimentare</td></tr>
+<tr><td>Scocca fredda</td><td>304 / 1.4301; 316L con cloruri, scheda fornitura mancante</td><td>Rigidità, fissaggi flottanti, bordi e superficie accessibile</td></tr>
+<tr><td>Pareti/volta</td><td>ProRox WM970 SW, nominale 75 [S02]</td><td>Faccia calda, binder, assestamento e contenimento fibre</td></tr>
+<tr><td>Sotto piano/carrier</td><td>Famiglia PROMASIL, grado aperto [S03]</td><td>lambda/cp, ritiro, umidità e carico; non assunto portante</td></tr>
+<tr><td>Pietre e appoggi</td><td>Cordierite alimentare e ceramici strutturali, prodotto non scelto</td><td>MOCA, shock, flessione, planarità e supporto distribuito</td></tr>
+<tr><td>Rotazione</td><td>2 cartucce + 2 motoriduttori 24 V, codici aperti</td><td>CAD, coppia sporco/caldo, momento pala, grassi e temperature</td></tr>
+<tr><td>Camino</td><td>SUPER ICS DN130/25; 50 su richiesta; DN150 confronto [S04]</td><td>DoP attuale, servizio, flange, sostegni/vento e raccordo al forno</td></tr>
+</tbody></table>
+<div class="warning">WM970: servizio 680 °C; lambda 0,096 a 400 °C / 0,157 a 600 °C W/(m K).
+Un limite materiale non certifica il sandwich o il forno. Tutti gli isolanti incapsulati;
+nessuna fibra esposta ad alimenti/aria di combustione. Il vano 50 °C è solo un obiettivo.</div>
+<div class="grid">
+<div><h2>Sequenza proposta</h2><ol>
+<li><strong>Componenti:</strong> codici, schede, CAD, temperature e carichi.</li>
+<li><strong>Banco a freddo:</strong> portanza, giochi, pala, estrazione.</li>
+<li><strong>Campione caldo:</strong> carrier/sandwich, coppia e picchi dopo arresto.</li>
+<li><strong>Circuito reale:</strong> collettore quotato, nuova CFD calibrata e captazione.</li>
+<li><strong>Forno completo:</strong> 3 avvii freddi, 2 pizze, 5 doppie consecutive, vento e durata.</li>
+</ol></div>
+<div><h2>Calcoli e limiti</h2><p>@@TEST_COUNT@@ test del software superati; @@SCENARIO_COUNT@@ righe di confronto nella rete.
+Le temperature e la legna sono assegnate. H dal colmo caldo al terminale:
+non coincide con i metri commerciali sopra il collare.</p>
+<p>Base ottagonale 440: budget piastra compatibile solo in proiezione;
+sporge @@COLLAR_OVERHANG@@ mm davanti alla pelle C01. Il raccordo/ingombro completo resta da ridisegnare.</p>
+<p>Nessun ordine, contatto con fornitori, nuova CFD o prova fisica effettuati.
+Questa scheda è una sintesi: criteri e caveat nel rapporto e nelle richieste tecniche.</p></div>
+</div>
+<p class="sources">[S01] Outokumpu Therma, novembre 2022, tabella 14 e cicli/creep.
+[S02] ROCKWOOL WM970, PDS PEN-00-2-003-ENG, 16/04/2021.
+[S03] Promat PROMASIL, pagina generale (nessun grado esatto).
+[S04] Schiedel Italia SUPER ICS, pp. stampate 6–7,14,19–20.
+Documenti consultati 03/10/2026; aggiornamento/fornitura da confermare.</p>
+<div class="foot"><span>C02 · screening preliminare · non esecutivo · nessuna approvazione di produzione</span><span>6 /6</span></div>
+</section>
+</main>
+</body>
+</html>

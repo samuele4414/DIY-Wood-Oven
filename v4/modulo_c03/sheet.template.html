@@ -1,0 +1,44 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Forno C03 — modulo a freddo e componenti reali</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e9eff2;color:#223b4b;font:15px/1.4 Arial,sans-serif}a{color:#236b8d}
+nav,main{max-width:1100px;margin:auto}nav{padding:22px 12px 4px;font-size:13px}nav a{display:inline-block;margin:0 18px 10px 0}
+.page{position:relative;background:white;margin:20px 0;padding:27px 32px;aspect-ratio:277/190}.drawing{padding:0}.drawing svg{display:block;width:100%;height:auto}
+h1{font-size:31px;line-height:1.1;margin:7px 0 15px}h2{font-size:19px;margin:12px 0 8px}h3{font-size:14px;margin:0 0 6px}p{margin:8px 0}
+.eyebrow{font-size:12px;color:#587886;letter-spacing:1.2px}.warning{font-size:13px;background:#fff2e5;border-left:4px solid #b5793c;padding:11px 14px;margin:13px 0}
+.banner{background:#eaf3f7;border-left:4px solid #317b9a;padding:13px 16px;margin:16px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:1px solid #c8d5db;padding:13px 15px;font-size:13px}.number{font-size:25px;color:#286d8b;font-weight:bold}ul{padding-left:20px;margin:8px 0}.small{font-size:12px;color:#54707f}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #c7d3d9;padding:6px 8px}th{background:#eef4f6}
+.foot{position:absolute;bottom:15px;left:32px;right:32px;border-top:1px solid #c8d5db;padding-top:7px;font-size:10px;color:#577280;display:flex;justify-content:space-between}
+.scene-wrap{background:white;margin-top:18px;padding:20px}.scene-grid{display:grid;grid-template-columns:1fr 265px;gap:18px}.scene-grid canvas{display:block;width:100%;height:490px;background:#eff4f6;touch-action:none;cursor:grab}
+.controls{font-size:13px}.controls label{display:block;margin:14px 0}.controls button{padding:7px 10px;margin:6px 2px;border:1px solid #a2b8c4;background:#edf4f7;color:#294e63;cursor:pointer}.legend{line-height:1.8}
+@page{size:A4 landscape;margin:10mm}@media print{body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}nav,.scene-wrap{display:none}main{max-width:none;margin:0}.page{width:277mm;height:189mm;aspect-ratio:auto;margin:0;padding:7mm 8mm;break-after:page}.page:last-child{break-after:auto}.drawing{padding:0}.drawing svg{width:100%;height:100%}h1{font-size:25px}h2{font-size:17px}.card{font-size:12px}.number{font-size:22px}.warning{font-size:12px}.foot{bottom:3mm;left:8mm;right:8mm}table{font-size:11px}th,td{padding:5px 7px}}
+@media screen and (max-width:760px){.grid,.scene-grid{grid-template-columns:1fr}.page{aspect-ratio:auto;padding:20px;margin:12px 0}.drawing{padding:0}.foot{position:static;margin-top:18px}.scene-grid canvas{height:390px}}
+</style></head><body>
+<nav><a href="Scheda_C03.pdf">Scheda PDF (5 pagine)</a><a href="rapporto.html">Rapporto completo</a><a href="calcoli_C03.json">Calcoli JSON</a><a href="distinta_candidati.csv">Candidati CSV</a><a href="richieste_tecniche.html">Richieste da revisionare</a><a href="piano_freddo.html">Piano del banco</a><a href="registro_banco_freddo.csv">Registro vuoto</a><a href="../cad/modulo_freddo_C03_NON_ESECUTIVO.step">STEP misto non esecutivo</a><a href="audit_CAD.json">Audit CAD</a><a href="../../architettura_c02/output/index.html">C02 preservata</a></nav>
+<main>@@VIEWER@@
+<section class="page"><div class="eyebrow">FORNO DUE PIZZE / FASE C03 SEPARATA</div><h1>Componenti reali, modulo digitale a freddo</h1>
+<p>Piano790 × 410, dischiØ320 e centri V4 conservati. <strong>Candidati per il futuro banco: non un progetto da costruire.</strong></p>
+<div class="banner"><strong>Proposta:</strong> passo-passo PG5 con cinghia16/32, cartuccia portante separata, motori esterni ai due assi, driver in un quadro fuori vano.</div>
+<div class="grid"><div class="card"><h3>Ingombro di un modulo, nel vano160</h3><div class="number">240 × 180 × @@HEIGHT@@ mm</div><p>Residuo inferiore@@BOTTOM@@ mm grezzo, @@AFTER_RESERVE@@ oltre riserva10. Sedi, tolleranze, cablaggi e collegamento caldo restano aperti.</p></div>
+<div class="card"><h3>Audit del modello misto</h3><div class="number">21 solidi / 0 sovrapposizioni</div><p>Un motore da STEP originale +20 inviluppi. Rilettura STEP coerente; esclusi cinghia solida, viti, tenute, giunto, parti calde e telaio reale.</p></div></div>
+<div class="grid"><div><h2>Due vincoli decisivi</h2><ul><li>Carico scenario@@AXIAL@@ N &gt; limite assiale motore50 N: <strong>la pietra non si appoggia al riduttore.</strong></li><li>TDS3 Nm / curva2 Nm: servizio e coppia lenta da chiarire prima della scelta.</li><li>Driver ambiente≤40 °C; l'obiettivo vano50 °C di C02 non basta.</li></ul></div>
+<div><h2>Manutenzione da dimostrare</h2><p>Abbassamento12 mm e corsa frontale465,5 mm; spazio davanti300, non corsa300.</p><p>Luce280 × 144 lascia solo1 + 1 mm residui verticali dopo margini3. <strong>Non congelare quote e apertura.</strong></p></div></div>
+<div class="warning"><strong>Non approvato per produzione o uso a caldo.</strong> Nessun banco fisico, contatto/ordine, nuova CFD o accensione. Calcoli, @@TEST_COUNT@@ test software e assenza di collisioni nominali non dimostrano portanza, temperatura, cottura o sicurezza del forno.</div>
+<div class="foot"><span>C03 · 03/10/2026 · V4/C01/C02 preservate · materiali/componenti da qualificare</span><span>1 /5</span></div></section>
+<section class="page drawing">@@PLAN@@</section><section class="page drawing">@@MODULE@@</section><section class="page drawing">@@SERVICE@@</section>
+<section class="page"><div class="eyebrow">SHORTLIST / PROSSIMO GATE</div><h1>Codici identificati, scelta ancora condizionata</h1>
+<table><thead><tr><th>Funzione / quantità per modulo</th><th>Candidato</th><th>Prima del banco</th></tr></thead><tbody>
+<tr><td>Motore /1</td><td>17HS19-1684S-PG5<br>57/11; bus24 V tramite driver</td><td>2/3 Nm discordanti; coppia/regolarità a0,6–2 rpm; 100 N radiali a sbalzo da chiarire</td></tr>
+<tr><td>Cartuccia /2 cuscinetti</td><td>SKF7201 BEGAP<br>12 × 32 × 10, universal matching</td><td>DB/precarico, sedi/distanziali, grasso e tenute; cartuccia non commerciale completa</td></tr>
+<tr><td>Pulegge /1 +1</td><td>MAEDLER16221600 /16223200<br>T5,16/32 denti, larghezza10</td><td>Fori8/12 e calettamento da progettare; ingaggio minimo geometrico@@ENGAGEMENT@@, non montaggio approvato</td></tr>
+<tr><td>Cinghia /1</td><td>MAEDLER16261300 /10T5/280<br>C geometrico@@CENTRE@@</td><td>Pretensione e vita; F0=40 N solo scenario → radiale@@RADIAL@@ N; nessuna tensione prescritta</td></tr>
+<tr><td>Driver esterno /1</td><td>DM542T V4.0<br>24 V proposti / ambiente0–40 °C</td><td>Corrente RMS/picco, protezioni/quadro e feedback indipendente; ALM non rileva perdita passi</td></tr>
+<tr><td>Isolante /kit da quotare</td><td>PROMASIL-1000L nominale50</td><td>TDS/SDS Italia attuali, incapsulamento, ritiro e proprietà; non portante</td></tr>
+</tbody></table>
+<div class="warning">Alternativa WGA DC: scheda12 rpm/30 kgf·cm, non8 rpm/22 dello slug. Non inserita nel layout; con2:1 non raggiunge il regime del disco senza altra riduzione/controllo.</div>
+<div class="grid"><div><h2>Uscita della fase</h2><p>Richieste tecniche pronte da revisionare, non inviate. Poi sedi/ritenzioni, interfaccia caldo–freddo, guide e passaggi reali; banco protetto di un solo asse con criteri prima delle prove.</p></div>
+<div><h2>Resta il piano C02</h2><p>Carrier/pietre/appoggi caldi non scelti; circuito aria–fumi e camino non integrati. Prestazioni45–60 min, cottura60–90 s e sicurezza non dimostrate.</p></div></div>
+<p class="small">Fonti: schede/STEP STEPPERONLINE; copia SKF pubblicata daRS (17/03/2025); MAEDLER pp.150/207; Promat IT2018-04. Consultate03/10/2026, attualità da confermare. Dettagli, formule e limiti nel rapporto completo.</p>
+<div class="foot"><span>C03 · shortlist non ordinabile · nessuna prova fisica o approvazione di produzione</span><span>5 /5</span></div></section>
+</main></body></html>

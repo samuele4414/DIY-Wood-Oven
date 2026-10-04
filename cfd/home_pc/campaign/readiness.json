@@ -1,0 +1,22 @@
+{
+  "ready": false,
+  "checks": {
+    "floor_hot": false,
+    "vault_hot": false,
+    "floor_uniform": false,
+    "near_steady": false
+  },
+  "measured": {
+    "floor_min_C": 288.75626,
+    "vault_min_C": 404.52371,
+    "floor_spread_C": 75.60424,
+    "max_rate_C_per_min": 3.0658233227915366
+  },
+  "thresholds": {
+    "floor_min_C": 430,
+    "vault_min_C": 450,
+    "max_floor_spread_C": 50,
+    "max_rate_C_per_min": 3,
+    "window_seconds": 120
+  }
+}

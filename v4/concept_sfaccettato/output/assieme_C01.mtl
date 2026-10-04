@@ -1,0 +1,75 @@
+# Presentation materials only; no certified material properties.
+newmtl shell
+Kd 0.682353 0.717647 0.741176
+d 1.0
+illum 1
+
+newmtl base
+Kd 0.145098 0.176471 0.203922
+d 1.0
+illum 1
+
+newmtl fascia
+Kd 0.090196 0.137255 0.172549
+d 1.0
+illum 1
+
+newmtl threshold
+Kd 0.545098 0.505882 0.443137
+d 1.0
+illum 1
+
+newmtl floor
+Kd 0.788235 0.729412 0.600000
+d 1.0
+illum 1
+
+newmtl discs
+Kd 0.890196 0.831373 0.682353
+d 1.0
+illum 1
+
+newmtl underfloor
+Kd 0.658824 0.725490 0.607843
+d 1.0
+illum 1
+
+newmtl mechanisms
+Kd 0.294118 0.533333 0.635294
+d 0.3
+illum 1
+
+newmtl hearth
+Kd 0.698039 0.580392 0.439216
+d 1.0
+illum 1
+
+newmtl hot_walls
+Kd 0.509804 0.427451 0.356863
+d 1.0
+illum 1
+
+newmtl hot_roof
+Kd 0.592157 0.498039 0.396078
+d 1.0
+illum 1
+
+newmtl collector
+Kd 0.682353 0.482353 0.678431
+d 0.3
+illum 1
+
+newmtl feet
+Kd 0.133333 0.164706 0.188235
+d 1.0
+illum 1
+
+newmtl collar
+Kd 0.580392 0.623529 0.654902
+d 1.0
+illum 1
+
+newmtl flue
+Kd 0.643137 0.686275 0.717647
+d 1.0
+illum 1

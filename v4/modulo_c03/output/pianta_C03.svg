@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850">
+<style>text{font-family:Arial,sans-serif;fill:#233c4b;font-size:19px}.small{font-size:16px}.head{font-size:28px;font-weight:bold}.dim{font-size:17px;fill:#316986}</style>
+<rect width="1300" height="850" fill="white"/>
+<text x="45" y="44" class="head" text-anchor="start">Due moduli indipendenti — pianta di integrazione</text>
+<text x="45" y="76" class="small" text-anchor="start">Centri, piano e dischi V4 invariati; motori collocati verso i lati esterni. Non è l&#x27;assieme completo del forno.</text>
+<text x="45" y="824" class="small" text-anchor="start">C03 · mm nominali · NON ESECUTIVO · nessuna approvazione termica, strutturale o per produzione</text>
+<rect x="110.0" y="155.0" width="1066.5" height="553.5" fill="#f6f0e6" stroke="#6b8390" stroke-width="2" stroke-dasharray=""/>
+<circle cx="393.5" cy="431.75" r="216.0" fill="none" stroke="#bd9f6b" stroke-width="2" stroke-dasharray=""/>
+<rect x="231.5" y="310.25" width="324.0" height="243.00000000000003" fill="none" stroke="#397491" stroke-width="2" stroke-dasharray="7 4"/>
+<circle cx="393.5" cy="431.75" r="36.45" fill="#bacbd3" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<circle cx="286.8886781794461" cy="431.75" r="21.6" fill="#79a5b9" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<line x1="286.8886781794461" y1="431.75" x2="393.5" y2="431.75" stroke="#357b99" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="393.5" y="531.6500000000001" class="small" text-anchor="middle">Modulo 1: 240 × 180</text>
+<text x="393.5" y="591.05" class="small" text-anchor="middle">Disco Ø320 / centro (210;205)</text>
+<line x1="286.8886781794461" y1="372.35" x2="393.5" y2="372.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="286.8886781794461" y1="366.35" x2="286.8886781794461" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="393.5" y1="366.35" x2="393.5" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="340.19433908972303" y="361.35" class="dim" text-anchor="middle">C = 78,97</text>
+<circle cx="893.0" cy="431.75" r="216.0" fill="none" stroke="#bd9f6b" stroke-width="2" stroke-dasharray=""/>
+<rect x="731.0" y="310.25" width="324.0" height="243.00000000000003" fill="none" stroke="#397491" stroke-width="2" stroke-dasharray="7 4"/>
+<circle cx="893.0" cy="431.75" r="36.45" fill="#bacbd3" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<circle cx="999.6113218205539" cy="431.75" r="21.6" fill="#79a5b9" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<line x1="999.6113218205539" y1="431.75" x2="893.0" y2="431.75" stroke="#357b99" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="893.0" y="531.6500000000001" class="small" text-anchor="middle">Modulo 2: 240 × 180</text>
+<text x="893.0" y="591.05" class="small" text-anchor="middle">Disco Ø320 / centro (580;205)</text>
+<line x1="893.0" y1="372.35" x2="999.6113218205539" y2="372.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="893.0" y1="366.35" x2="893.0" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="999.6113218205539" y1="366.35" x2="999.6113218205539" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="946.305660910277" y="361.35" class="dim" text-anchor="middle">C = 78,97</text>
+<line x1="110.0" y1="125.3" x2="1176.5" y2="125.3" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="110.0" y1="119.3" x2="110.0" y2="131.3" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="1176.5" y1="119.3" x2="1176.5" y2="131.3" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="643.25" y="114.3" class="dim" text-anchor="middle">Piano V4 790</text>
+<line x1="555.5" y1="614.0" x2="731.0" y2="614.0" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="555.5" y1="608.0" x2="555.5" y2="620.0" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="731.0" y1="608.0" x2="731.0" y2="620.0" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="643.25" y="603.0" class="dim" text-anchor="middle">Tra moduli 130</text>
+<text x="45" y="760" class="small" text-anchor="start">Cinghia 10 T5/280 · pulegge 16/32 · interasse geometrico senza tensione, deformazione o tolleranze.</text>
+</svg>

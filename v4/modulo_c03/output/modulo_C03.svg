@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850">
+<style>text{font-family:Arial,sans-serif;fill:#233c4b;font-size:19px}.small{font-size:16px}.head{font-size:28px;font-weight:bold}.dim{font-size:17px;fill:#316986}</style>
+<rect width="1300" height="850" fill="white"/>
+<text x="45" y="44" class="head" text-anchor="start">Modulo a freddo — proiezione frontale degli inviluppi</text>
+<text x="45" y="76" class="small" text-anchor="start">Motore da STEP del fornitore nel modello 3D; qui proiezioni semplificate. Viti, tenute e accoppiamento caldo non disegnati.</text>
+<text x="45" y="824" class="small" text-anchor="start">C03 · mm nominali · NON ESECUTIVO · nessuna approvazione termica, strutturale o per produzione</text>
+<rect x="100.0" y="145.0" width="672.0" height="448.0" fill="#f3f7f9" stroke="#66818f" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="100.0" y="514.5999999999999" width="672.0" height="11.2" fill="#6f8997" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="153.28022140922158" y="265.4" width="123.19999999999999" height="215.6" fill="#6eabc0" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="203.6802214092216" y="209.39999999999998" width="22.4" height="56.0" fill="#d3b96c" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="419.2" y="145.0" width="33.599999999999994" height="268.79999999999995" fill="#d3b96c" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="170.08022140922156" y="198.2" width="89.6" height="42.0" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="189.6802214092216" y="240.2" width="50.4" height="16.799999999999997" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="360.4" y="198.2" width="151.2" height="42.0" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="382.79999999999995" y="240.2" width="106.39999999999999" height="16.799999999999997" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<line x1="214.88022140922158" y1="219.2" x2="436.0" y2="219.2" stroke="#283e49" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="371.59999999999997" y="273.79999999999995" width="128.79999999999998" height="125.99999999999999" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="391.2" y="287.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="452.79999999999995" y="287.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="391.2" y="357.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="452.79999999999995" y="357.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="346.4" y="399.79999999999995" width="179.2" height="14.0" fill="#6f8997" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="130.88022140922158" y="254.2" width="168.0" height="11.2" fill="#6f8997" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="100.0" y="184.2" width="672.0" height="5.6" fill="#b6c1c7" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="133.6802214092216" y="265.4" width="16.799999999999997" height="249.2" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="279.28022140922155" y="265.4" width="16.799999999999997" height="249.2" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="352.0" y="413.79999999999995" width="16.799999999999997" height="100.8" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="503.2" y="413.79999999999995" width="16.799999999999997" height="100.8" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<line x1="100.0" y1="635" x2="772.0" y2="635" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="100.0" y1="629" x2="100.0" y2="641" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="772.0" y1="629" x2="772.0" y2="641" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="436.0" y="624" class="dim" text-anchor="middle">Vassoio 240</text>
+<text x="830" y="160" class="small" text-anchor="start">Interfaccia caldo/freddo z−85: aperta</text>
+<text x="830" y="198" class="small" text-anchor="start">Schermo sul cassetto, non sul telaio</text>
+<text x="830" y="236" class="small" text-anchor="start">Pulegge / schermo: 3 mm nominali</text>
+<text x="830" y="274" class="small" text-anchor="start">Cartuccia separata dal motore</text>
+<text x="830" y="312" class="small" text-anchor="start">Cuscinetti: Ø12 × Ø32 × 10</text>
+<text x="830" y="350" class="small" text-anchor="start">Centri 25 / punti pressione 43 (ip.)</text>
+<text x="830" y="388" class="small" text-anchor="start">Altezza inviluppo 136 / vano 160</text>
+<text x="830" y="426" class="small" text-anchor="start">Residuo inferiore 24 mm grezzi</text>
+<text x="830" y="464" class="small" text-anchor="start">14 mm oltre riserva di servizio10</text>
+<text x="830" y="502" class="small" text-anchor="start">Driver fuori vano: ambiente ≤40 °C</text>
+<text x="45" y="720" class="small" text-anchor="start">Percorso carichi da progettare: disco → supporti qualificati → albero/cartucce → telaio → appoggio; non sulla scocca o sull&#x27;isolante.</text>
+<text x="45" y="756" class="small" text-anchor="start">L&#x27;interfaccia superiore, il precarico e i dettagli di montaggio restano aperti: nessun albero costruttivo è definito da questa vista.</text>
+</svg>

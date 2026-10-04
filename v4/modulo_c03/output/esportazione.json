@@ -1,0 +1,20 @@
+{
+  "study_id": "C03",
+  "inputs_sha256": {
+    "index.html": "51ffb3806f1219edf8161510672aec69752468221be98e345359f86939c0f51e",
+    "scheda_stampa.html": "65d8a6bb1a43e8321053bdcbca81fad97ac37916a588b69604d8af0f7a818a1b",
+    "pianta_C03.svg": "275cede5eb7650e797df739f1b1c306c7aa1f7e794737bba49ec443025a8fcac",
+    "modulo_C03.svg": "43e8be1757812a6106669d2f11a2715dc53e332ee71cd59de7d5553d01f4529e",
+    "servizio_C03.svg": "080de170270cc472f04a13265f55221fb72999eb48ee1ba8be29e21da1149ca6"
+  },
+  "exports_sha256": {
+    "Scheda_C03.pdf": "f627da93087f74ea120d13cfd3da3478db99fe3d4627f3ac8deec3f958d4927b",
+    "pianta_C03.png": "97fe695bf137426e4a88ba578950fa298c015bca9df143cd6924eb5d4d8fa4ac",
+    "modulo_C03.png": "b0f7e7719dc6e0dc0e3162ba35448c85f0513a81027043e4c629658dc3c7de64",
+    "servizio_C03.png": "60f3d5c4c59bef73b6009d5292909745bca626f50aa77af23267600dcf02e8dc",
+    "anteprima.png": "37ddcfc32921a728d2976383e1379a3b27a7aacc113fbfb0462da1504aef84b3"
+  },
+  "method": "isolated headless browser",
+  "PDF_page_dictionary_count": 5,
+  "scope": "Visual previews ONLY; non-executive study"
+}

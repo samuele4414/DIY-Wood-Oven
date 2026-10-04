@@ -1,0 +1,5 @@
+# Python >= 3.11. Runner itself uses only the standard library.
+# Numerical postprocessing and optional GIF/video export:
+numpy==2.3.5
+Pillow==12.3.0
+imageio-ffmpeg==0.6.0

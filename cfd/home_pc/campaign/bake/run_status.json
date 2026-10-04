@@ -1,0 +1,22 @@
+{
+  "stage": "bake",
+  "chid": "v4_bake",
+  "status": "completed",
+  "started_utc": "2026-09-24T06:53:39Z",
+  "duration_requested_s": 120,
+  "input_sha256": "a4786828e2ba92d2ea0b219a931526734d529606ff1d84d333b0d7c40889b1a6",
+  "config_sha256": "8d422cc292f0bdf3127e9582b661ff6880fe5a222d981d28432dcf49023d1f2b",
+  "solver": "C:\\Users\\samue\\Documents\\Codex\\2026-09-22\\ci-x20\\work\\fds-6.11.1\\firemodels\\FDS6\\bin\\fds_openmp.exe",
+  "command": [
+    "C:\\Users\\samue\\Documents\\Codex\\2026-09-22\\ci-x20\\work\\fds-6.11.1\\firemodels\\FDS6\\bin\\fds_openmp.exe",
+    "bake.fds"
+  ],
+  "threads": 12,
+  "python_version": "3.12.14",
+  "simulated_time_s": 120.0,
+  "normal_stop": true,
+  "reached_end": true,
+  "elapsed_wall_s": 5032.56,
+  "returncode": 0,
+  "finished_utc": "2026-09-24T08:17:30Z"
+}

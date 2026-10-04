@@ -11,3 +11,18 @@ slprj/
 **/tmp/
 __pycache__/
 *.pyc
+
+# Output grezzi FDS ricostruibili dalle campagne
+*.restart
+*.bf
+*.bf.bnd
+*.sf
+*.sf.bnd
+*.s3d
+*.s3d.sz
+*.smv
+
+# Pacchetti di trasferimento locali (copie dei sorgenti)
+/forno_v4_pc_casa/
+/forno_v4_pc_casa.zip
+/forno_v4_porta_chiusa_pc_casa.zip

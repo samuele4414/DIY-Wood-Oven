@@ -1,0 +1,45 @@
+test_belt_branches_sum (test_checks.NumericalScreening.test_belt_branches_sum) ... ok
+test_equal_pulley_limit (test_checks.NumericalScreening.test_equal_pulley_limit) ... ok
+test_exact_belt_centre (test_checks.NumericalScreening.test_exact_belt_centre) ... ok
+test_heat_is_1D_not_temperature_prediction (test_checks.NumericalScreening.test_heat_is_1D_not_temperature_prediction) ... ok
+test_height_budget (test_checks.NumericalScreening.test_height_budget) ... ok
+test_impossible_belt (test_checks.NumericalScreening.test_impossible_belt) ... ok
+test_invalid_belt_geometry (test_checks.NumericalScreening.test_invalid_belt_geometry) ... ok
+test_invalid_force_inputs (test_checks.NumericalScreening.test_invalid_force_inputs) ... ok
+test_lowered_service_tight_not_qualified (test_checks.NumericalScreening.test_lowered_service_tight_not_qualified) ... ok
+test_moment_and_axial_scenario (test_checks.NumericalScreening.test_moment_and_axial_scenario) ... ok
+test_monotonic_length (test_checks.NumericalScreening.test_monotonic_length) ... ok
+test_pressure_points_not_geometric_centres (test_checks.NumericalScreening.test_pressure_points_not_geometric_centres) ... ok
+test_pretension_high_overloads_catalogue (test_checks.NumericalScreening.test_pretension_high_overloads_catalogue) ... ok
+test_pretension_underflow_not_real_negative_force (test_checks.NumericalScreening.test_pretension_underflow_not_real_negative_force) ... ok
+test_previous_geometry_centres_unchanged (test_checks.NumericalScreening.test_previous_geometry_centres_unchanged) ... ok
+test_pulse_units (test_checks.NumericalScreening.test_pulse_units) ... ok
+test_ratio_not_rounded_five (test_checks.NumericalScreening.test_ratio_not_rounded_five) ... ok
+test_reaction_equilibrium_envelope (test_checks.NumericalScreening.test_reaction_equilibrium_envelope) ... ok
+test_shaft_screening_has_no_strength_approval (test_checks.NumericalScreening.test_shaft_screening_has_no_strength_approval) ... ok
+test_stale_front_reference_rejected (test_checks.NumericalScreening.test_stale_front_reference_rejected) ... ok
+test_startup_torque_inherited_not_measured (test_checks.NumericalScreening.test_startup_torque_inherited_not_measured) ... ok
+test_unlowered_service_fails (test_checks.NumericalScreening.test_unlowered_service_fails) ... ok
+test_workspace_not_translation (test_checks.NumericalScreening.test_workspace_not_translation) ... ok
+test_wrap (test_checks.NumericalScreening.test_wrap) ... ok
+test_bearing_not_assumed_greased (test_delivery.DossierConsistency.test_bearing_not_assumed_greased) ... ok
+test_cad_bbox_matches_budget (test_delivery.DossierConsistency.test_cad_bbox_matches_budget) ... ok
+test_cad_current_and_limited (test_delivery.DossierConsistency.test_cad_current_and_limited) ... ok
+test_candidate_csv_includes_missing_groups (test_delivery.DossierConsistency.test_candidate_csv_includes_missing_groups) ... ok
+test_document_tokens_resolve (test_delivery.DossierConsistency.test_document_tokens_resolve) ... ok
+test_drawings_parse_and_warning (test_delivery.DossierConsistency.test_drawings_parse_and_warning) ... ok
+test_driver_not_connected_directly_to_motor (test_delivery.DossierConsistency.test_driver_not_connected_directly_to_motor) ... ok
+test_false_approval_flags (test_delivery.DossierConsistency.test_false_approval_flags) ... ok
+test_part_envelopes_finite (test_delivery.DossierConsistency.test_part_envelopes_finite) ... ok
+test_print_not_overridden_by_mobile_layout (test_delivery.DossierConsistency.test_print_not_overridden_by_mobile_layout) ... ok
+test_pulley_original_bores_not_proposed_finished_bores (test_delivery.DossierConsistency.test_pulley_original_bores_not_proposed_finished_bores) ... ok
+test_registry_has_no_fake_measurements (test_delivery.DossierConsistency.test_registry_has_no_fake_measurements) ... ok
+test_source_acquisition_complete_and_hashes (test_delivery.DossierConsistency.test_source_acquisition_complete_and_hashes) ... ok
+test_torque_discrepancy_not_erased (test_delivery.DossierConsistency.test_torque_discrepancy_not_erased) ... ok
+test_unknown_token_fails (test_delivery.DossierConsistency.test_unknown_token_fails) ... ok
+test_vendor_STEPS_are_not_envelope_STEP (test_delivery.DossierConsistency.test_vendor_STEPS_are_not_envelope_STEP) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.237s
+
+OK

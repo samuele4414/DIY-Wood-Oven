@@ -1,0 +1,21 @@
+{
+  "study_id": "C02",
+  "method": "isolated headless browser, see export_preview.ps1",
+  "inputs_sha256": {
+    "index.html": "64130aa66136578a9431b8c66125dcdb5bac81a228e224abe0c3d2c2fc22e663",
+    "scheda_stampa.html": "64130aa66136578a9431b8c66125dcdb5bac81a228e224abe0c3d2c2fc22e663",
+    "pianta_moduli.svg": "4e005f46ac71f45d43e602b2540ff53d4bcdc57b861fa08eea6b89565b82e286",
+    "modulo_disco.svg": "7c735233589d3f5d117baab9e59ac8cb0c2b748b0dee4a17122a3f4938855f10",
+    "schema_aria_fumi.svg": "b16d179874df1ef1b3586ecaf92a10f63428c33914c38968e2161335b05cd10f",
+    "collare_tiraggio.svg": "086ee3062a9d1ef37397c70d68741a0eba30f6e610b12ccdfd0c3b8f729f0d13"
+  },
+  "exports_sha256": {
+    "Scheda_C02.pdf": "eb60cad2dae733f0b1f688436ee51fc7a643da25d809b44f7d6a8e295289ffae",
+    "pianta_moduli.png": "5914b3f23407aaeba9bc74c75dfaa5f4504c1914afda689c3c8dfd9ebae4dc21",
+    "modulo_disco.png": "237aee17bfad9249897263256f5a99adbe52aa5954cc6acc3b10b6c41e0345ce",
+    "schema_aria_fumi.png": "338789409b3590cc70001c3780ef93aba40cb1bf245a1b05ed8d13e79c787b52",
+    "collare_tiraggio.png": "5f1b65d7cd7586f1bfd87442c50a1c57b0d10550d1b2d1aa5eb008528133ca11",
+    "anteprima.png": "eadec775a5ae91bc3621faf5f709e2ab4a5d0444be6e3f34d68f7d69b5b21d3e"
+  },
+  "scope": "Browser previews of preliminary SCHEMES, not CAD or manufacturing drawings"
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "geometry_version": "V4",
+  "date": "2026-09-21",
+  "status": "bozza_per_design_non_esecutiva",
+  "language": "it",
+  "units": "mm",
+  "coordinate_system": {
+    "origin": "bordo anteriore del piano di cottura, angolo sinistro, quota superiore del piano",
+    "axes": {
+      "x": "verso destra guardando il forno dalla porta",
+      "y": "verso il retro del forno",
+      "z": "verso l'alto"
+    }
+  },
+  "scope": {
+    "purpose": "base geometrica da consegnare al design; non e un disegno costruttivo",
+    "internal_dimensions_only": true,
+    "external_dimensions": "da_definire_con_struttura_isolamento_e_rivestimento"
+  },
+  "program_constraints": {
+    "cooking_floor": {
+      "material": "cordierite",
+      "width": 790,
+      "depth": 410,
+      "candidate_thicknesses": [10, 20]
+    },
+    "rotating_discs": {
+      "quantity": 2,
+      "diameter": 320,
+      "centres": [[210, 205], [580, 205]],
+      "centre_separation": 370,
+      "base_v4_fixed_centres": true,
+      "change_rule": "I centri possono cambiare solo riallineando accesso pala e supporti/trasmissione inferiori.",
+      "pizza_reference_diameter": 300,
+      "pizza_320_note": "Un disco da 320 mm non garantisce una pizza da 320 mm con gioco operativo."
+    },
+    "functional_constraints": [
+      "Due pizze con rotazione e sostegni inferiori.",
+      "Accesso pala dalla porta anteriore.",
+      "Porta esterna senza interrompere il collegamento tra camera fumi e canna fumaria.",
+      "Alimentazione aria di combustione da progettare.",
+      "Botola posteriore per caricare legna."
+    ]
+  },
+  "current_layout_candidate": {
+    "front_extension_depth": 80,
+    "front_door_plane_y": -80,
+    "door_clear_opening": {"width": 720, "height": 160},
+    "cooking_chamber_y_range": [0, 410],
+    "firebox_y_range": [410, 660],
+    "firebox_depth": 250,
+    "firebox_width_front": 790,
+    "firebox_width_rear": 510,
+    "rear_loading_hatch_clear_opening": {"width": 300, "height": 140},
+    "internal_envelope": {"width": 790, "depth": 740},
+    "internal_envelope_note": "Rettangolo di inviluppo dal piano porta y=-80 al fondo focolare y=660; non e la base esterna."
+  },
+  "roof_and_flue_candidates": {
+    "roof_material": "da_decidere: acciaio isolato oppure refrattario",
+    "roof_profile": "parabolico candidato",
+    "roof_eave_z": 190,
+    "roof_peak_z": 280,
+    "flue": {
+      "centre_xy": [395, 45],
+      "internal_diameter": 130,
+      "collar_diameter": 190,
+      "height_candidates_from_collar": [1000, 1500],
+      "collar_plan_overlap_with_pizzas": "ammessa",
+      "collar_note": "La compatibilita si verifica in sezione: altezza libera, raccolta fumi, pala e distribuzione termica."
+    }
+  },
+  "air_scenarios": {
+    "net_open_area_candidates": [60, 90],
+    "unit": "cm2",
+    "note": "Scenari di verifica, non dimensioni costruttive definitive."
+  },
+  "mechanical_design_notes": {
+    "disc_radial_clearance_hypothesis": 1,
+    "disc_radial_clearance_note": "Gioco radiale da verificare in progetto meccanico; non e una tolleranza di taglio accettata.",
+    "no_executive_hole_size": true,
+    "supports_below_discs": "necessari; geometria e trasmissione da definire."
+  },
+  "change_trigger": {
+    "if_roof_or_firebox_changes": [
+      "rivalutare volume camera",
+      "rivalutare area e distanza dal fuoco",
+      "rivalutare raccolta fumi e tiraggio",
+      "rivalutare accesso pala e supporti dei dischi"
+    ]
+  },
+  "model_status": {
+    "existing_model": "V3 termico e verifica separata della rete di pressione per la geometria compatta",
+    "v4_simulink_validated": false,
+    "note": "V4 e una base geometrica; non esiste ancora una validazione Simulink V4."
+  },
+  "data_sources": [
+    "File locali del progetto forno",
+    "Decisioni e quote concordate nella conversazione del 2026-09-21"
+  ]
+}

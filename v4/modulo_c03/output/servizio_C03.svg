@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850">
+<style>text{font-family:Arial,sans-serif;fill:#233c4b;font-size:19px}.small{font-size:16px}.head{font-size:28px;font-weight:bold}.dim{font-size:17px;fill:#316986}</style>
+<rect width="1300" height="850" fill="white"/>
+<text x="45" y="44" class="head" text-anchor="start">Manutenzione frontale — schema condizionato a freddo</text>
+<text x="45" y="76" class="small" text-anchor="start">Abbassamento ed estrazione sono una proposta di percorso nel vuoto; telaio, guide e sweep nel forno reale ancora da verificare.</text>
+<text x="45" y="824" class="small" text-anchor="start">C03 · mm nominali · NON ESECUTIVO · nessuna approvazione termica, strutturale o per produzione</text>
+<rect x="533.125" y="180.0" width="699.625" height="232.0" fill="#f4f7f9" stroke="#93aab5" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="533.125" y1="400.4" x2="533.125" y2="191.6" stroke="#b28042" stroke-width="2" stroke-dasharray=""/>
+<rect x="942.75" y="180.0" width="261.0" height="197.2" fill="none" stroke="#5e8597" stroke-width="2" stroke-dasharray=""/>
+<rect x="942.75" y="197.4" width="261.0" height="197.2" fill="none" stroke="#b27b34" stroke-width="2" stroke-dasharray="7 4"/>
+<rect x="267.775" y="197.4" width="261.0" height="197.2" fill="#d7e7eb" stroke="#397589" stroke-width="2" stroke-dasharray=""/>
+<text x="398.275" y="153" class="small" text-anchor="middle">Modulo sfilato (abbassato)</text>
+<text x="1073.25" y="153" class="small" text-anchor="middle">In quota / abbassato (tratteggio)</text>
+<text x="547.125" y="436.0" class="small" text-anchor="start">Fronte: luce 280 × 144</text>
+<line x1="98.125" y1="465" x2="533.125" y2="465" stroke="#769aa9" stroke-width="2" stroke-dasharray=""/>
+<line x1="98.125" y1="490" x2="533.125" y2="490" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="98.125" y1="484" x2="98.125" y2="496" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="533.125" y1="484" x2="533.125" y2="496" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="315.625" y="479" class="dim" text-anchor="middle">Spazio anteriore riservato 300</text>
+<line x1="267.775" y1="545" x2="942.75" y2="545" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="267.775" y1="539" x2="267.775" y2="551" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="942.75" y1="539" x2="942.75" y2="551" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="605.2625" y="534" class="dim" text-anchor="middle">Traslazione 465,5</text>
+<text x="45" y="605" class="small" text-anchor="start">1. Forno freddo, alimentazione isolata; sostenere il disco prima di disconnettere l&#x27;interfaccia superiore.</text>
+<text x="45" y="640" class="small" text-anchor="start">2. Liberare ritegni e connettori; abbassare la cassetta di12 mm con un sostegno/guida protetto ancora da progettare.</text>
+<text x="45" y="675" class="small" text-anchor="start">3. Sfilare dal fronte insieme allo schermo. Luce proposta280 × 144; margini residui verticali1 + 1 dopo riserva3 per bordo.</text>
+<text x="45" y="710" class="small" text-anchor="start">4. Non possibile in quota: l&#x27;albero supera il passaggio. Nessuna estrazione dal basso sul piano fisso.</text>
+<text x="45" y="760" class="small" text-anchor="start">Tolleranze, utensili, peso cassetta, raccordi, guide e cablaggi possono invalidare il percorso: porta di servizio NON congelata.</text>
+</svg>

@@ -1,0 +1,25 @@
+Rete tiraggio: 8 verifiche numeriche superate.
+[Warning: Scrollable is set to 'on' on all figures because the Windows accessibility text size setting is greater than 100%.
+To prevent this behavior, revert the text size setting back to 100% and instead use the Windows system display scale setting to increase the size of on-screen elements.] 
+              name               lambdaRear    doorOutKgH    marginLambda2Pa
+    _________________________    __________    __________    _______________
+
+    "Base chiusa"                  1.8658             0         -0.96687    
+    "Presa 30 cm2"                 1.1274             0          -14.069    
+    "Presa 90 cm2"                 2.2733             0           1.4594    
+    "Camino 0.5 m"                 1.4754             0          -3.3727    
+    "Camino 1.5 m"                 2.1831             0            1.439    
+    "Diametro 15 cm"               2.0837             0          0.52001    
+    "Fumi 150 C"                   1.7037             0          -1.8854    
+    "Fumi 100 C"                   1.5444             0          -2.6591    
+    "Perdite K=8"                  1.5499             0          -4.1623    
+    "Vento avverso 3 Pa"           1.3721             0          -3.9669    
+    "Vento avverso 6 Pa"           0.5756             0          -6.9669    
+    "Legna 3.5 kg/h"               2.4221             0           2.0937    
+    "Porta aperta"                0.59088        60.776              NaN    
+    "Aperta, gas 300 C"           0.54422         56.84              NaN    
+    "Aperta, camino 1.5 m"        0.60901        56.859              NaN    
+    "Chiusa H1.5 A90"              2.6562             0           3.8652    
+    "H1.5 A90 T150 K8 vento3"      1.4262             0          -3.4025    
+
+Residuo massimo bilancio massa: 4.94e-14 kg/s.

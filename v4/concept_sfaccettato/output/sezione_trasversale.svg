@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1050" viewBox="0 0 1400 1050" role="img"><title>C01 / SEZIONE TRASVERSALE</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60.000" y="55.000" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#193345" text-anchor="start">C01 / SEZIONE TRASVERSALE</text>
+<text x="60.000" y="88.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Taglio y=205, attraverso entrambi i dischi. Colori = componenti / riserve, NON temperature.</text>
+<line x1="60.000" y1="110.000" x2="1340.000" y2="110.000" stroke="#cbd6dc" stroke-width="1.5"/>
+<polygon points="150.250,670.220 864.350,670.220 864.350,308.007 507.300,232.113 150.250,308.007" fill="#eef2f4" fill-opacity="1" stroke="#465a66" stroke-width="2.2"/>
+<polygon points="150.250,670.220 864.350,670.220 864.350,580.310 150.250,580.310" fill="#e2e9ed" fill-opacity="1" stroke="#193345" stroke-width="1.5"/>
+<polygon points="215.000,520.000 799.600,520.000 799.600,379.400 792.293,376.112 784.985,372.906 777.678,369.785 770.370,366.746 763.062,363.791 755.755,360.918 748.447,358.130 741.140,355.424 733.832,352.802 726.525,350.262 719.217,347.807 711.910,345.434 704.602,343.145 697.295,340.938 689.987,338.816 682.680,336.776 675.372,334.820 668.065,332.947 660.757,331.157 653.450,329.450 646.142,327.827 638.835,326.287 631.527,324.830 624.220,323.456 616.913,322.166 609.605,320.958 602.298,319.835 594.990,318.794 587.683,317.837 580.375,316.962 573.067,316.172 565.760,315.464 558.452,314.840 551.145,314.298 543.837,313.841 536.530,313.466 529.222,313.175 521.915,312.966 514.608,312.842 507.300,312.800 499.993,312.842 492.685,312.966 485.377,313.175 478.070,313.466 470.762,313.841 463.455,314.298 456.148,314.840 448.840,315.464 441.533,316.172 434.225,316.962 426.918,317.837 419.610,318.794 412.303,319.835 404.995,320.958 397.688,322.166 390.380,323.456 383.072,324.830 375.765,326.287 368.457,327.827 361.150,329.450 353.842,331.157 346.535,332.947 339.227,334.820 331.920,336.776 324.613,338.816 317.305,340.938 309.998,343.145 302.690,345.434 295.382,347.807 288.075,350.262 280.767,352.802 273.460,355.424 266.152,358.130 258.845,360.918 251.537,363.791 244.230,366.746 236.923,369.785 229.615,372.906 222.308,376.112 215.000,379.400" fill="#fffaf0" fill-opacity="1" stroke="#23779a" stroke-width="2"/>
+<polygon points="215.000,534.800 799.600,534.800 799.600,520.000 215.000,520.000" fill="#dfd0ad" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="215.000,571.800 799.600,571.800 799.600,534.800 215.000,534.800" fill="#e0eadb" fill-opacity="1" stroke="#719264" stroke-width="1.5"/>
+<line x1="215.000" y1="572.910" x2="799.600" y2="572.910" stroke="#193345" stroke-width="2"/>
+<polygon points="252.000,534.800 488.800,534.800 488.800,520.000 252.000,520.000" fill="#eadbb8" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="318.600,661.710 422.200,661.710 422.200,587.710 318.600,587.710" fill="#d9eaf0" fill-opacity="1" stroke="#23779a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="370.400" y1="587.710" x2="370.400" y2="571.800" stroke="#23779a" stroke-width="4"/>
+<text x="370.400" y="623.600" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#23779a" text-anchor="middle">RISERVA</text>
+<text x="370.400" y="640.620" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#23779a" text-anchor="middle">AZIONAMENTO</text>
+<polygon points="525.800,534.800 762.600,534.800 762.600,520.000 525.800,520.000" fill="#eadbb8" fill-opacity="1" stroke="#ad6630" stroke-width="1.5"/>
+<polygon points="592.400,661.710 696.000,661.710 696.000,587.710 592.400,587.710" fill="#d9eaf0" fill-opacity="1" stroke="#23779a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="644.200" y1="587.710" x2="644.200" y2="571.800" stroke="#23779a" stroke-width="4"/>
+<text x="644.200" y="623.600" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#23779a" text-anchor="middle">RISERVA</text>
+<text x="644.200" y="640.620" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#23779a" text-anchor="middle">AZIONAMENTO</text>
+<line x1="215.000" y1="520.000" x2="799.600" y2="520.000" stroke="#ad6630" stroke-width="2"/>
+<text x="507.300" y="446.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="middle">CAMERA CALDA</text>
+<text x="507.300" y="471.900" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#23779a" text-anchor="middle">volta interna parabolica V4</text>
+<polygon points="240.900,688.720 277.900,688.720 277.900,670.220 240.900,670.220" fill="#26343d" fill-opacity="1" stroke="#193345" stroke-width="1.5"/>
+<polygon points="736.700,688.720 773.700,688.720 773.700,670.220 736.700,670.220" fill="#26343d" fill-opacity="1" stroke="#193345" stroke-width="1.5"/>
+<line x1="150.250" y1="742.000" x2="864.350" y2="742.000" stroke="#607580" stroke-width="1"/>
+<line x1="150.250" y1="747.180" x2="150.250" y2="736.820" stroke="#607580" stroke-width="1"/>
+<line x1="864.350" y1="747.180" x2="864.350" y2="736.820" stroke="#607580" stroke-width="1"/>
+<text x="507.300" y="733.000" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle">965 esterno</text>
+<line x1="100.300" y1="688.720" x2="100.300" y2="232.113" stroke="#607580" stroke-width="1"/>
+<line x1="95.120" y1="688.720" x2="105.480" y2="688.720" stroke="#607580" stroke-width="1"/>
+<line x1="95.120" y1="232.113" x2="105.480" y2="232.113" stroke="#607580" stroke-width="1"/>
+<text x="88.300" y="460.417" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle" transform="rotate(-90 88.3 460.4166555560042)">617,0 corpo + piedini</text>
+<line x1="507.300" y1="669.110" x2="507.300" y2="580.310" stroke="#607580" stroke-width="1"/>
+<line x1="502.120" y1="669.110" x2="512.480" y2="669.110" stroke="#607580" stroke-width="1"/>
+<line x1="502.120" y1="580.310" x2="512.480" y2="580.310" stroke="#607580" stroke-width="1"/>
+<text x="495.300" y="624.710" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#607580" text-anchor="middle" transform="rotate(-90 495.3 624.71)">120 netto</text>
+<line x1="643.641" y1="327.290" x2="657.104" y2="263.955" stroke="#9556a1" stroke-width="2.5"/>
+<text x="668.204" y="249.155" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#9556a1" text-anchor="start">87,5 normale</text>
+<text x="960.000" y="175.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">COME SI COSTRUISCE L&#x27;INVILUPPO</text>
+<text x="960.000" y="205.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">1,5 acciaio + 75 isolante</text>
+<text x="960.000" y="230.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">+ 10 riserva + 1 rivestimento.</text>
+<text x="960.000" y="255.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Distanza misurata NORMALE</text>
+<text x="960.000" y="280.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">a ciascuna falda, non verticale.</text>
+<text x="960.000" y="305.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Le pieghe non invadono il volume</text>
+<text x="960.000" y="330.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">riservato al pacchetto nominale.</text>
+<text x="960.000" y="400.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">SOTTO IL PIANO</text>
+<text x="960.000" y="430.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">20 mm pietra di cottura</text>
+<text x="960.000" y="455.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">50 mm pannello: tipo da qualificare</text>
+<text x="960.000" y="480.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Carrier / appoggi: da progettare</text>
+<text x="960.000" y="505.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">30 mm pietra nel focolare posteriore</text>
+<text x="960.000" y="530.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">120 mm vano netto per meccanica</text>
+<text x="960.000" y="555.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">25 mm piedini: solo riserva</text>
+<text x="960.000" y="625.000" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#23779a" text-anchor="start">LIMITI IMPORTANTI</text>
+<text x="960.000" y="655.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">La lana non sostiene le pietre.</text>
+<text x="960.000" y="680.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Colonne dei dischi: schema riservato.</text>
+<text x="960.000" y="705.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Nessuna verifica di ponti termici.</text>
+<text x="960.000" y="730.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">Nessun componente selezionato.</text>
+<text x="960.000" y="755.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">80 mm netti NON bastano alle</text>
+<text x="960.000" y="780.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">riserve di azionamento attuali.</text>
+<text x="60.000" y="940.000" font-family="Arial,sans-serif" font-size="16" font-weight="400" fill="#607580" text-anchor="start">L&#x27;ingombro stimato è più alto del render: 617 mm nello scenario 75/120. Ridurlo richiede riprogettare il pacchetto.</text>
+<line x1="60.000" y1="990.000" x2="1340.000" y2="990.000" stroke="#cbd6dc" stroke-width="1.5"/>
+<text x="60.000" y="1017.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#607580" text-anchor="start">C01 · STUDIO NON ESECUTIVO · Nessun profilo di taglio, dimensionamento strutturale o validazione termica.</text>
+<text x="1340.000" y="1017.000" font-family="Arial,sans-serif" font-size="15" font-weight="400" fill="#607580" text-anchor="end">Quote in mm</text>
+</svg>

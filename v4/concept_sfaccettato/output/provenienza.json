@@ -1,0 +1,36 @@
+{
+  "study_id": "C01",
+  "generated_utc": "2026-10-03T20:09:39.686724+00:00",
+  "source_sha256": {
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\concept.json": "e89cb406a24574cd62897f64e667012c78a8886ac17a79d51e5c840c051bc20b",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\quote_v4.json": "84442bef32289bf48372a56830f4c1b63d7904e8e05d914d1e2c707ac7f147b1",
+    "C:\\Users\\samue\\Desktop\\forno\\design-concepts\\14-inox-sfaccettato.png": "ad5e3ea71675ec16b408f1b71454efc7b3ae5d45be780b6c4d80b8ece57d47ed",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\geometry.py": "dea240e71496d002fb00e962a32fa5c930e5afe6607ec8ac9b488df9047af057",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\build_study.py": "29508125ff106d0f0d2545bded63a2f45c19819e505c5f4b200aede1f008778b",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\render_scene.py": "a8bc61a5f47f6e7d7d92742c1baa34ba9040572ce4f95d74cb68a93d1b39a81f",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\viewer.template.html": "e7c2c4d79b1690bdc9d42ed51f12d923a99cb70c4041a3d2cf32b03b6e9092d0",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\test_geometry.py": "91882abdb246cf5673a4bde3ec6de0bb9b91e44cbc811c1096c90c6b7fc53e66",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\test_viewer.cjs": "eba5f2b0bf6ce4cf995a9ef2e0a79ce26e3b7688b0352d2b28aeea079f4f7551",
+    "C:\\Users\\samue\\Desktop\\forno\\v4\\concept_sfaccettato\\export_preview.ps1": "f2fb2389fed6c304295b9b9d6c58b8c26da250244265f072f5d19ae6a78975c0",
+    "C:\\Users\\samue\\Desktop\\forno\\cfd\\home_pc\\campaign\\readiness.json": "7ebd2d6457b5a249e436b78db8fab6875fd3491fb0c1d5de61fd30001f7936ac"
+  },
+  "thermal_solver_started": false,
+  "v4_source_modified": false,
+  "output_sha256": {
+    "anteprima.html": "b2eb34f3fde1bc8dd9fa45fddf3d1511618191fd4c079533dbba32d410ea3e4f",
+    "assieme.svg": "c49f8dc71fe6086add4f8da6ec5b402cc4327b8b2e2b25af21e6d8091d67eb7b",
+    "assieme_C01.mtl": "27d09fc4e81e0fbed329bd4959b7d2082299df55c3867c18192e90bac9c8ee3d",
+    "assieme_C01.obj": "41f4e392ec7b5cee4cdd6daa2c402ca4c9bf449add60cd4fa6f9c4fa092a00e7",
+    "confronto_ingombri.csv": "dd7d899e8f5d8d16d672389e35178230e6540eb3757399ea1a143d3ec9c7d496",
+    "index.html": "0ea11f949fa7fa21b793eee70c29fda2ea9e7deeadd6c2e6d6f8f81c870ff4b2",
+    "ingombri_C01.dxf": "fc52fc42ed0498a7bd450bd3bdabac32d39e470f4f4401a27996f001b42fa2a2",
+    "PIANO_VERIFICHE.md": "65482982274a11bbb5d42176bffffb8e453ed53b7e9ef5c2d568b111a300e37d",
+    "pianta.svg": "536a5bd0c3cc57bf0af18346c779eee1f120d79f3598ac16a7af57cfc191b0eb",
+    "RAPPORTO_C01.md": "241941789cd6ae100087af48fd98c4b85c33189a1be55ffa2fe66749aa222ee2",
+    "scheda_stampa.html": "c07b449e163af274669af28458a272fd9cf29aa62bc4a3142c6d45d5fff6a038",
+    "sezione_longitudinale.svg": "e8b7b83e16c2f9cbd980d08dcb8a931815eefa9c50b6ac914c75a80ad6ae46ae",
+    "sezione_trasversale.svg": "60bad4690c9a6f3dedee5ac669256f923a0ab84f5889aeeba3964b6d8d6e03e8",
+    "test_generatore.log": "43b728a7e0a79c2665e52a29557bd20c5b7abd22d418252d1228cd4ad48aa2a2",
+    "verifica_geometrica.json": "4da28c3fce080828172a5ecfb6e21fbef5d9cddaed38a36aa92b5b5d7d1578ce"
+  }
+}

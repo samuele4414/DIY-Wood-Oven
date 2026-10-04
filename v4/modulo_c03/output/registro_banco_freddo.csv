@@ -1,0 +1,11 @@
+﻿id;prova_pianificata;stato;configurazione_seriali_revisioni;data_ora;operatore;criteri_approvati_prima_prova;strumenti_calibrazione;incertezza;carichi_reali;velocita_misurata_rpm;coppia_spunto_Nm;coppia_marcia_Nm;tensione_cinghia_N;temperatura_aria_motore_cartucce_driver_C;corrente_misurata_A_tipo;eccentricita_oscillazione_mm;durata_ripetizioni;file_grezzi;anomalie;esito_revisore
+BF01;Montaggio;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF02;Geometria;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF03;Pretensione;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF04;Velocita;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF05;Coppia;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF06;Carico_momento;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF07;Temperatura_freddo;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF08;Manutenzione;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF09;Guasti;NON_ESEGUITA;;;;;;;;;;;;;;;;;;
+BF10;Cicli;NON_ESEGUITA;;;;;;;;;;;;;;;;;;

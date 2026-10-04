@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "config_sha256": "8d422cc292f0bdf3127e9582b661ff6880fe5a222d981d28432dcf49023d1f2b",
+  "stages": {
+    "preheat": {
+      "directory": "preheat",
+      "input": "preheat.fds",
+      "chid": "v4_preheat",
+      "duration_s": 3600
+    },
+    "bake": {
+      "directory": "bake",
+      "input": "bake.fds",
+      "chid": "v4_bake",
+      "duration_s": 120
+    }
+  },
+  "preheat_input_sha256": "76caacbaf9a130a841c529e338468f99ad525ca637d04219d63cce54161ea26d",
+  "generator_sha256": {
+    "pipeline.py": "7689895d52c5dcad95ffaf0026ebee2344e7a45288fea4741347a10206037218",
+    "../fds_writer.py": "90d910dd8462c0bee6f655b448704088e4cc4ccc8463b3c5b4084aac12931fa5",
+    "../cases.json": "0f782d98d4794fe619d9af4a49d82158d33e9c5e52e4099921ec97ab2a45f3c2"
+  }
+}

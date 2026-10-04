@@ -1,0 +1,92 @@
+[
+  {
+    "case_id": "c1_v4_two_rotating",
+    "pizza_count": 2,
+    "nominal_internal_bbox_cm": [
+      79.0,
+      74.0
+    ],
+    "floor_area_m2": 0.4864,
+    "fire_zone_area_m2": 0.1625,
+    "occupied_diameter_cm": 32.0,
+    "minimum_wall_gap_cm": 4.5,
+    "minimum_fire_zone_gap_cm": 4.5,
+    "minimum_inter_item_gap_cm": 5.0,
+    "notes": "Riferimento geometrico V4; piano anteriore 790 × 410 mm, due dischi Ø320 mm."
+  },
+  {
+    "case_id": "c2_corner_three_fixed",
+    "pizza_count": 3,
+    "nominal_internal_bbox_cm": [
+      79.0,
+      79.0
+    ],
+    "floor_area_m2": 0.5609,
+    "fire_zone_area_m2": 0.09,
+    "occupied_diameter_cm": 30.0,
+    "minimum_wall_gap_cm": 4.0,
+    "minimum_fire_zone_gap_cm": 4.0,
+    "minimum_inter_item_gap_cm": 4.79,
+    "notes": "Focolare nominale 300 × 300 mm; pizza posteriore senza corridoio rettilineo per la pala tra le due anteriori."
+  },
+  {
+    "case_id": "c3_row_three_fixed",
+    "pizza_count": 3,
+    "nominal_internal_bbox_cm": [
+      106.0,
+      74.0
+    ],
+    "floor_area_m2": 0.6996,
+    "fire_zone_area_m2": 0.265,
+    "occupied_diameter_cm": 30.0,
+    "minimum_wall_gap_cm": 4.0,
+    "minimum_fire_zone_gap_cm": 5.5,
+    "minimum_inter_item_gap_cm": 4.0,
+    "notes": "Piano anteriore 1060 × 410 mm. Bocca allargata a 990 mm: il confronto include questa variazione e le sue maggiori perdite."
+  },
+  {
+    "case_id": "c4_side_three_fixed",
+    "pizza_count": 3,
+    "nominal_internal_bbox_cm": [
+      110.0,
+      75.0
+    ],
+    "floor_area_m2": 0.737,
+    "fire_zone_area_m2": 0.2077,
+    "occupied_diameter_cm": 30.0,
+    "minimum_wall_gap_cm": 5.0,
+    "minimum_fire_zone_gap_cm": 5.0,
+    "minimum_inter_item_gap_cm": 3.0,
+    "notes": "Fascia legna larga 310 mm; bocca centrata sul piano utile, non sulla larghezza totale. Manovra delle pizze posteriori da verificare."
+  },
+  {
+    "case_id": "c5_circle_three_fixed",
+    "pizza_count": 3,
+    "nominal_internal_bbox_cm": [
+      100.0,
+      92.7
+    ],
+    "floor_area_m2": 0.70936,
+    "fire_zone_area_m2": 0.0868,
+    "occupied_diameter_cm": 30.0,
+    "minimum_wall_gap_cm": 4.7,
+    "minimum_fire_zone_gap_cm": 4.0,
+    "minimum_inter_item_gap_cm": 4.0,
+    "notes": "Cerchio troncato sulla corda anteriore da 720 mm. Focolare 310 × 280 mm; la forma circolare non garantisce una migliore efficienza di ingombro."
+  },
+  {
+    "case_id": "c6_circle_two_rotating",
+    "pizza_count": 2,
+    "nominal_internal_bbox_cm": [
+      90.0,
+      80.0
+    ],
+    "floor_area_m2": 0.5456,
+    "fire_zone_area_m2": 0.06531,
+    "occupied_diameter_cm": 32.0,
+    "minimum_wall_gap_cm": 3.0,
+    "minimum_fire_zone_gap_cm": 7.05,
+    "minimum_inter_item_gap_cm": 2.0,
+    "notes": "Cerchio troncato sulla corda anteriore da 720 mm. Focolare poco profondo (210 mm), ciocchi da 250 mm orientati trasversalmente; autonomia da verificare."
+  }
+]

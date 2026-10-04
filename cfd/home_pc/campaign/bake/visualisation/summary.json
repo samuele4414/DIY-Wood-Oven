@@ -1,0 +1,21 @@
+{
+  "stage": "bake",
+  "duration_s": 120,
+  "readiness_override": true,
+  "pizzas": [
+    {
+      "pizza": 1,
+      "surface_min_C": 122.9016,
+      "surface_max_C": 143.54081,
+      "core_min_C": 99.149744,
+      "core_max_C": 99.611971
+    },
+    {
+      "pizza": 2,
+      "surface_min_C": 124.96684,
+      "surface_max_C": 151.34204,
+      "core_min_C": 99.459616,
+      "core_max_C": 100.05831
+    }
+  ]
+}

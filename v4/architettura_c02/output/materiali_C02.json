@@ -1,0 +1,215 @@
+{
+  "date_checked": "2026-10-03",
+  "status": "shortlist_per_richiesta_tecnica_non_distinta_acquisti",
+  "quantity_note": "Quantita per gruppi funzionali, non metrature o codici ordinabili; nessuna selezione o acquisto approvato.",
+  "items": [
+    {
+      "id": "M01",
+      "study_quantity": "1 camera + 1 collettore (kit da dettagliare)",
+      "zone": "Camera calda e collettore",
+      "candidate": "Outokumpu Therma 310S / EN 1.4845; confronto 253 MA / EN 1.4835",
+      "study_dimension": "Pelle 1,5 mm come C01, non verificata strutturalmente",
+      "source_id": "S01",
+      "verified_facts": "310S: 1050 C indicativi in aria; coefficiente medio 20-600 C = 18,8e-6/K; densita 7800 kg/m3. 253 MA: 1150 C indicativi in aria.",
+      "release_gate": "Resistenza a cicli, deformazioni/creep, saldatura, condensa, contaminanti e documentazione per uso alimentare. Il limite in aria non e un limite del forno completo."
+    },
+    {
+      "id": "M02",
+      "study_quantity": "2 ripartitori + protezioni fiamma da definire",
+      "zone": "Zona fiamma, parti sacrificali e ripartitori di carico",
+      "candidate": "310S; alternativa 253 MA se il ciclo/ambiente ne giustifica il costo",
+      "study_dimension": "Prova lamiera 1,5/2/3 mm, non modifica automatica della camera",
+      "source_id": "S01",
+      "verified_facts": "Le due leghe sono descritte dal produttore per attrezzature da forno; le proprieta a caldo e la stabilita differiscono.",
+      "release_gate": "Picchi di temperatura reali, deformazione, ossidazione, superficie pulibile, ripartizione carico pietra; niente fissaggio rigido acciaio-pietra."
+    },
+    {
+      "id": "M03",
+      "study_quantity": "1 kit scocca e telaio",
+      "zone": "Scocca fredda, pannelli e telaio inferiore",
+      "candidate": "Inox 304 / EN 1.4301; 316L / EN 1.4404 da valutare con cloruri e installazione",
+      "study_dimension": "Scocca 1 mm C01; telaio e rinforzi da dimensionare",
+      "source_id": null,
+      "verified_facts": "Nessuna scheda della fornitura di lamiera acquisita in C02; nessun valore numerico assegnato al telaio.",
+      "release_gate": "Ambiente, finitura, saldature e drenaggio; rigidita, appoggi, temperatura accessibile e bordi ripiegati non taglienti."
+    },
+    {
+      "id": "M04",
+      "study_quantity": "1 kit pareti/volta; metratura non definita",
+      "zone": "Isolamento volta e pareti",
+      "candidate": "ROCKWOOL ProRox WM 970 variante SW con rete/filo inox; WM 960 come confronto",
+      "study_dimension": "75 mm nominali; disponibilita dello spessore da confermare",
+      "source_id": "S02",
+      "verified_facts": "WM 970: servizio massimo 680 C EN 14706, densita 128 kg/m3. Lambda = 0,096 a 400 C, 0,123 a 500 C, 0,157 a 600 C W/(m K). SW disponibile su richiesta.",
+      "release_gate": "Temperatura della faccia calda, ritiro, binder e primo riscaldamento, giunti e assestamento. Mai esposta a fumi/alimenti, mai supporto portante. Nessuna pellicola alluminata sul lato caldo."
+    },
+    {
+      "id": "M05",
+      "study_quantity": "1 kit sotto piano + riempimento 2 carrier; metratura non definita",
+      "zone": "Isolamento sotto piano e riempimento dei carrier",
+      "candidate": "Famiglia Promat PROMASIL in silicato di calcio; grado esatto da qualificare",
+      "study_dimension": "50 mm nominali, chiuso in involucro; non assunto portante",
+      "source_id": "S03",
+      "verified_facts": "La pagina produttore descrive pannelli rigidi leggeri per isolamento di riserva nei forni. Dati di un grado specifico non acquisiti.",
+      "release_gate": "Grado/SDS, lambda(T), densita/cp, ritiro, umidita, resistenza e creep a caldo. Il nome di famiglia non autorizza a usare la resistenza di un altro prodotto."
+    },
+    {
+      "id": "M06",
+      "study_quantity": "2 dischi + 1 kit piano fisso/focolare",
+      "zone": "Piano fisso e due dischi",
+      "candidate": "Cordierite specifica per piano alimentare; fornitura ancora non individuata",
+      "study_dimension": "Dischi Ø320 x 20; focolare 30 mm, prove 10/20/30 per cottura",
+      "source_id": null,
+      "verified_facts": "Densita 2600 kg/m3 e alpha 3e-6/K sono SOLO assunzioni di screening, non dati di un prodotto selezionato.",
+      "release_gate": "MOCA per uso previsto, lambda/cp/alpha, shock termico, resistenza a flessione, tolleranze/planarita e risultati pizza. Non scegliere solo per temperatura massima."
+    },
+    {
+      "id": "M07",
+      "study_quantity": "2 gruppi di appoggi; numero/area da qualificare",
+      "zone": "Distanziali portanti tra ripartitore caldo e carrier",
+      "candidate": "Supporti ceramici strutturali qualificati; composizione e fornitore da scegliere",
+      "study_dimension": "Tre zone d'appoggio distribuite come schema, non tre carichi puntuali sulla pietra",
+      "source_id": null,
+      "verified_facts": "Nessuna proprieta del componente reale disponibile. Il pannello isolante di M05 non sostituisce questi appoggi.",
+      "release_gate": "Compressione/creep a temperatura, flessione pietra, distribuzione carico, ponti termici, ritenzione dei frammenti e dilatazioni libere."
+    },
+    {
+      "id": "M08",
+      "study_quantity": "2 moduli; ciascuno con 1 cartuccia e 1 motoriduttore",
+      "zone": "Cuscinetti, alberi, motori e trasmissione",
+      "candidate": "Due cartucce portanti indipendenti e due motoriduttori 24 V; marche/codici non selezionati",
+      "study_dimension": "Moduli 240 x 180; cartuccia h45 e motore h70 sono riserve, non cataloghi",
+      "source_id": null,
+      "verified_facts": "Vano aria obiettivo 50 C solo preliminare; niente limite generico 120 C applicato a ogni cuscinetto.",
+      "release_gate": "Ingombri reali, carichi/coppia avvio, temperatura di anelli/grasso/tenute/avvolgimenti, uso continuo, bassa velocita, grado IP e ricambi."
+    },
+    {
+      "id": "M09",
+      "study_quantity": "1 sistema; moduli/altezza effettiva da definire",
+      "zone": "Camino, adattatore e terminale",
+      "candidate": "Schiedel SUPER ICS DN130 coibentato 25; confronto variante 50 su richiesta e DN150",
+      "study_dimension": "Catalogo: DN130/25 diametro esterno 180; tubo 7,68 kg/m; H1000 ha h utile 955",
+      "source_id": "S04",
+      "verified_facts": "Catalogo pagine stampate 6/7/14: DN130/25 disponibile, classificazioni T450 e T600 con distanze diverse; 50 mm dal DN130 su richiesta. Piastra DN130 A238/B306 a pagina 19.",
+      "release_gate": "Codice e DoP/istruzioni aggiornati per Italia, temperatura/fuliggine/combustibile, reale DN/esterno/flange, sostegno indipendente, vento e pulizia. T600 non certifica il forno o il collare artigianale."
+    }
+  ],
+  "documented_material_curves": {
+    "WM970_lambda_W_mK": [
+      [
+        50,
+        0.04
+      ],
+      [
+        100,
+        0.045
+      ],
+      [
+        150,
+        0.051
+      ],
+      [
+        200,
+        0.058
+      ],
+      [
+        250,
+        0.066
+      ],
+      [
+        300,
+        0.075
+      ],
+      [
+        350,
+        0.085
+      ],
+      [
+        400,
+        0.096
+      ],
+      [
+        500,
+        0.123
+      ],
+      [
+        600,
+        0.157
+      ],
+      [
+        680,
+        0.188
+      ]
+    ],
+    "WM970_density_kg_m3": 128,
+    "WM970_max_service_C": 680,
+    "310S_mean_expansion_20_to_T_per_K": [
+      [
+        600,
+        1.88e-05
+      ],
+      [
+        800,
+        1.94e-05
+      ],
+      [
+        1000,
+        2e-05
+      ]
+    ],
+    "310S_conductivity_W_mK": [
+      [
+        20,
+        15
+      ],
+      [
+        500,
+        19
+      ],
+      [
+        800,
+        24
+      ]
+    ],
+    "note": "Tabelle archiviate per il successivo modello; NON applicate a un calcolo termico completo in C02. La media di alpha non va integrata come alpha istantaneo."
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "owner": "Outokumpu",
+      "title": "Therma range datasheet, novembre 2022",
+      "url": "https://www.outokumpu.com/en/products/product-ranges/therma",
+      "archive": "fonti/Outokumpu_Therma_datasheet.pdf",
+      "locations": "Pagine PDF 1-2, 4-7, 11 e 12-13; tabella 14 per alpha/k/densita",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "S02",
+      "owner": "ROCKWOOL Technical Insulation",
+      "title": "ProRox WM 970, PDS PEN-00-2-003-ENG, 16.04.2021",
+      "url": "https://rti.rockwool.com/en/products/prorox-wm-970/",
+      "archive": "fonti/ROCKWOOL_ProRox_WM970.pdf",
+      "locations": "Scheda singola e pagina attuale del produttore; variante SW e lambda(T)",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "S03",
+      "owner": "Promat / Etex",
+      "title": "PROMASIL: low density high temperature insulation board",
+      "url": "https://www.promat.com/en/industry/products-solutions/high-temperature-insulation/boards-hti/promasil/",
+      "archive": "fonti/Promat_PROMASIL_pagina.html",
+      "locations": "Pagina generale; non una scheda di PROMASIL 1000L o di un grado esatto",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "S04",
+      "owner": "Schiedel Italia",
+      "title": "SUPER ICS: scheda catalogo e pagina italiana",
+      "url": "https://www.schiedel.com/it/prodotti/canne-fumarie/canne-fumarie-in-acciaio-inox/super-ics",
+      "archive": "fonti/Schiedel_SUPER_ICS_catalogo.pdf",
+      "locations": "PDF pp.1/2/9/14/15, numerazione stampata 6/7/14/19/20; pagina web archiviata separatamente",
+      "checked": "2026-10-03"
+    }
+  ],
+  "archive_root_from_output": ".."
+}

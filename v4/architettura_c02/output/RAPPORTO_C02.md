@@ -1,0 +1,290 @@
+# C02 — architettura meccanica, materiali e aria–fumi
+
+**Proposta preliminare, non esecutiva.** Si mantengono piano 790 × 410,
+dischi Ø320 e centri V4 (210;205)/(580;205), focolare posteriore e scarico
+anteriore. Nessun file V4/C01, MATLAB o CFD preesistente viene modificato.
+Sono stati eseguiti nuovi calcoli di screening, NON una nuova CFD o prove fisiche.
+
+## 1. Configurazione da portare alla scelta componenti
+
+| Sottosistema | Proposta C02 | Motivo / condizione |
+|---|---|---|
+| Dischi | Due azionamenti indipendenti, rimovibili | Un blocco non trascina necessariamente l'altro; comando separato |
+| Pietre | Appoggio distribuito flottante, senza incollaggio o serraggio rigido all'acciaio | Dilatazioni e fragilità; eventuali frammenti devono restare trattenuti |
+| Carrier | Isolante incapsulato; distanziali portanti qualificati; riserva telaio 15 mm | Non attribuire portanza alla lana o a un pannello senza dati |
+| Cuscinetti | Cartuccia portante sul telaio inferiore, separata dal riduttore | Peso, pala e disallineamenti non affidati all'albero del motore |
+| Motori | Motoriduttori laterali 24 V, trasmissione in vano schermato | Meno altezza che una catena di componenti coassiali |
+| Vano | 160 mm netti per il primo prototipo; 120 da recuperare solo con CAD di componenti reali | Margine per giunti, fissaggi, cablaggi e calore |
+| Manutenzione | Due moduli estraibili anteriormente, dopo disaccoppiamento a freddo | Appoggio fisso: 25 mm di piedini NON permettono estrazione dal basso |
+| Aria | Presa dedicata posteriore, condotto chiuso separato dalla meccanica | Non usare la bocca o il vano motori come unico percorso aria |
+| Captazione | Fessura alta + collettore rialzato + raccordo continuo al camino | Il solo foro sul tetto non ha superato il precedente screening a porta aperta |
+| Camino | Sistema coibentato dichiarato per il servizio; Ø130 come confronto iniziale | Classificazione, raccordi e sostegni da verificare sul prodotto reale |
+
+La trasmissione a cinghia dentata è candidata SOLO nel vano qualificato freddo.
+Se la temperatura non lo consente, confrontare trasmissione metallica o
+delocalizzazione dei motori: non chiamare un vano «freddo» solo perché è isolato.
+Alimentatore di sicurezza e controllo in posizione protetta dall'acqua e dal calore;
+nessun cablaggio esecutivo viene definito qui.
+
+## 2. Catena di carico e termica dei dischi
+
+Pietra → ripartitore caldo con appoggio ampio → distanziali strutturali
+termicamente qualificati → carrier irrigidito → albero → cartuccia portante →
+telaio. Il pannello isolante riempie il volume ma non è assunto portante.
+Il ripartitore deve permettere scorrimento/dilatazione senza concentrare
+tre carichi puntuali sulla pietra. Vanno verificati flessione, planarità a caldo,
+sbalzo al bordo, tenuta ai frammenti e giochi. I tre appoggi sono un principio,
+non un dimensionamento approvato.
+
+Il gruppo pietra/carrier ruota; la schermatura del vano e la protezione contro
+farina/cenere restano fisse. Gli attraversamenti richiedono un labirinto
+ispezionabile e un elemento raccoglibriciole: NON un'apertura libera ai motori,
+NON una guarnizione che striscia sul disco senza averne misurato attrito e calore.
+Un giunto deve trasmettere coppia senza irrigidire termicamente il piano.
+
+- Pietra singola 20 mm: **4,18 kg**, con densità ancora ipotizzata.
+- Assieme con extra 2,5 kg e pizza 0,5 kg: **7,18 kg**.
+- Carico assiale di screening con 40 N di spinta pala: **110,5 N**.
+- La stessa spinta al bordo Ø320 genera **6,4 Nm** di momento
+  ribaltante: verificare cartuccia e telaio anche a momento, non solo a peso.
+- Con `M = mu · F · r + M_tenuta`, r=15 mm, tenuta 0,2 Nm,
+  mu=0,03/0,08/0,15: avvio di screening circa **0,75–1,35 Nm**,
+  incluso moltiplicatore ipotizzato 3. NON è la coppia del cuscinetto reale:
+  non risolve attrito di cenere, impuntamento, componenti o guarnizioni scelte.
+- Intervallo candidato 0,3/0,6/1 rpm: in 90 s, 0,45/0,9/1,5 giri.
+  La rotazione non prova cottura uniforme: confrontare le tre velocità.
+
+Prima di acquistare motori: misurare coppia a freddo/a caldo e attrito sporco;
+richiedere coppia continua e spunto dopo riduzione, uso continuo e range termico.
+Arresto accessibile, limitazione coppia/corrente e nessun riavvio automatico
+dopo mancanza corrente o blocco. Carter contro accesso alle trasmissioni:
+la bassa velocità non elimina il rischio di pizzicamento.
+
+### Dilatazioni: perché niente pietra serrata nella lamiera
+
+310S: alpha MEDIO 20–600 °C = 18,8e-6/K dalla scheda Outokumpu, tabella 14.
+Ripartitore Ø310 a 600 °C: crescita diametrale **3,38 mm**.
+Pietra Ø320 a 450 °C con alpha ASSUNTO 3e-6/K: **0,41 mm**.
+La differenza di deformazione equivalente su 320 mm è **3,08 mm**.
+Le temperature sono scenari, non previsioni e non sono uguali per tutte le parti.
+
+**Questo NON dimostra che il gioco radiale V4 di 1 mm sia insufficiente.**
+Quel gioco è tra disco e piano fisso, non tra pietra e ripartitore d'acciaio:
+dipende da materiali dei due bordi, transitori termici, eccentricità,
+oscillazione assiale e sporco. Confrontare 1/2/3 mm su banco protetto;
+non emettere profili di taglio prima della prova. I ponti nominali tra i fori
+sono 48/46/44 mm, quelli anteriori 44/43/42 mm: nessuna verifica a flessione.
+Piano fisso preferibilmente modulare e appoggiato al proprio telaio,
+non una lastra fragile sostenuta attraverso i soli ponti stretti.
+
+### Ponte termico dell'albero
+
+Esempio monodimensionale `Q=k A ΔT/L`, k=20 W/(m K), L=80 mm, ΔT=300 K:
+Ø12 pieno **8,48 W**, Ø12/8 cavo **4,71 W**, Ø18 pieno
+**19,09 W**, PER albero. È un confronto di conduzione, non la
+temperatura del cuscinetto. Esclusi irraggiamento, contatti, altri appoggi,
+guarnizioni e transitorio. Un albero cavo non è automaticamente resistente.
+Verificare dopo-spegnimento: il picco nella meccanica può arrivare più tardi.
+
+## 3. Ingombri: evoluzione della C01, non sostituzione silenziosa
+
+Per modulo si riservano 240 × 180 in pianta. I due rettangoli rimangono
+sotto il piano nominale, separati da **130 mm**; non verificano
+fissaggi, tensionamento, cablaggio o percorso di estrazione completo.
+
+| Architettura riservata | Altezza richiesta | Residuo vano 120 | Residuo vano 160 |
+|---|---:|---:|---:|
+| Motore laterale: 12 + 25 + max(45;70) + 10 | 117 | 3 | 43 |
+| Coassiale: 12 + 45 + 20 + 70 + 10 | 157 | -37 | 3 |
+
+Tutte le altezze sono riserve, NON dimensioni di modelli commerciali già scelti.
+Tre millimetri residui non sono un margine convincente di montaggio/manutenzione.
+Proposta: laterale + 160 netti. Carrier da 1,5 a 15 mm di altezza riservata,
+vano da 120 a 160: incremento stimato **53,5 mm** rispetto C01.
+
+Mantenendo le altre ipotesi, corpo con piedini circa **965 ×
+915 × 671 mm**, collare, camino e raccordi esclusi. Il nuovo
+collettore/collare NON è un assieme CAD integrato già verificato: questa altezza
+è il budget del corpo, non un ingombro totale definitivo.
+Riservare 300 mm di spazio servizio frontale. A freddo: togliere pietra e
+carrier rimovibili, sostenere il gruppo, disaccoppiare, quindi estrarre la
+cartuccia dal fronte senza sollevare tutto il forno. Occorre dimostrarlo
+su CAD e montaggio a freddo, non eseguirlo su un forno caldo.
+
+## 4. Aria dedicata: aree libere e perdite distinte
+
+Presa posteriore regolabile e anti-pioggia → condotto chiuso → distributori
+laterali del focolare. Evitare interferenza con botola posteriore e supporti
+della pietra. Risalita ed uscite laterali sono ancora uno schema funzionale,
+non coordinate di foratura. La meccanica ha ventilazione separata.
+Niente collegamento aperto tra focolare, briciole e vano elettrico.
+
+Confrontare **60/90/120 cm² NETTI**. Se una griglia fosse libera al 60%,
+servirebbero 100/150/200 cm² LORDI, poi si aggiungono le perdite della griglia.
+Esempio 300 × 50 mm = 150 cm² lordi, non 150 netti con quella griglia.
+Con 90 netti, una prima ripartizione di AREA 60 primaria + 30 secondaria è
+solo una variabile di prova: **non garantisce la stessa ripartizione di portata**.
+Braci e condotti in parallelo vanno modellati/misurati separatamente.
+
+La presa può essere regolata ma non approviamo posizioni «chiuso» durante
+combustione: flusso minimo e comportamento in guasto sono da verificare.
+Nessuna serranda aggiunta può interrompere lo scarico fumi; il regolatore
+eventuale del camino va concordato con un tecnico, non dedotto dal render.
+
+### Nuova rete di pressione, senza CFD
+
+Porting trasparente della rete MATLAB precedente: stessa densità ideale,
+apertura bidirezionale, conservazione massa inclusa legna gasificata,
+con nuove sensitività di perdita della presa. Riprodotti il caso base
+lambda≈1,87, margine≈−0,97 Pa e uscita bocca aperta≈60,8 kg/h.
+
+Legna IMPOSTA 4,5 kg/h, umidità 20%, gas camera IMPOSTI 500 °C, media canna
+250 °C, ambiente 25 °C; Cd=0,65, Darcy=0,03 e K fumi=4. Per lambda=2:
+aria **45,2 kg/h**, **38,1 m³/h** all'ambiente.
+La potenza CFD 18,75 kW non è trasferita a questa rete e nessuna combustione
+reale dei ciocchi viene simulata. I parametri non sono una carica operativa.
+
+| Caso | Lambda dalla presa | Gas uscenti dalla bocca kg/h | Margine chiusa a lambda=2 Pa |
+|---|---:|---:|---:|
+| Base 60 / Ø130 / H1 / Ka0 | 1,87 | 0,0 | -0,97 |
+| C02 90 / Ø130 / H1,5 / Ka2 | 2,31 | 0,0 | 2,23 |
+| C02 stessa presa / porta aperta | 0,67 | 57,4 | — |
+| C02 T150 / Kfumi8 / vento 3 Pa | 1,28 | 0,0 | -5,04 |
+| C02 T100 / Kfumi8 / vento 3 Pa | 0,99 | 0,0 | -6,05 |
+| Confronto Ø150 / stesse ipotesi | 2,61 | 0,0 | 3,76 |
+| Vento 10 Pa / inversione prevista | 0,00 | 0,0 | -7,77 |
+
+Punto di confronto C02: presa 90 netti, Ø130, H1,5, K aggiuntivo presa=2:
+margine **2,23 Pa** nelle sole ipotesi favorevoli.
+Con T150 °C/Kfumi8/pressione avversa del vento 3 Pa diventa **-5,04 Pa**. Il deficit mostra
+che 90 cm² non è una dimensione universalmente adeguata.
+Con porta aperta la rete continua a prevedere **57,4 kg/h di GAS**
+uscenti: non massa di fumo/CO e non una prova sul nuovo collettore tridimensionale.
+
+**H della rete è dal colmo caldo z280 al terminale**, come nel modello MATLAB;
+H1,5 non significa 1,5 m di moduli commerciali sopra il collare. L'aumento
+di quota e le perdite del raccordo sono da risolvere nella futura geometria.
+Non attribuiamo un guadagno di tiraggio gratuito al collare rialzato.
+I casi a temperature imposte non risolvono il bilancio energetico; una
+temperatura assegnata può non essere sostenibile nel forno reale.
+
+## 5. Captazione e collo: il volume C01 non è un condotto
+
+Proposta per Ø130: ingresso LIBERO 640 × 30 = **192 cm²**;
+collo LIBERO 170 × 90 = **153 cm²**; tubo Ø130 = **132,7 cm²**.
+La fessura con pelli 1,5 ha inviluppo 643 × 33 e sta nella riserva C01
+650 × 35 SOLO all'ingresso. Il collo alto non ci sta: deve risalire,
+attraversare la volta con un adattatore e raccordarsi in modo graduale.
+
+Restringendo direttamente da 640 a 130 mantenendo h30, il passaggio sarebbe
+39 cm², solo **29,4%** dell'area del tubo.
+Con larghezza 130 servono almeno 102 mm di altezza per eguagliare l'area,
+senza che ciò garantisca basse perdite. Il collo 170 × 90 NON è adeguato
+al confronto Ø150 secondo il criterio prudenziale di area ≥ tubo:
+153 < 176,7 cm². La variante Ø150 richiede un collettore proprio.
+
+Nessun criterio di area dimostra captazione: servono forma reale, perdite,
+stratificazione e prova apertura frontale/ricarica posteriore. Tenere una
+spalla/raccolta superiore che non scenda nella luce candidata 720 × 160;
+dimensionare i labbri e il raccordo prima della nuova CFD. Prevedere pulizia
+del collettore e tenuta dopo dilatazione senza scaricare peso sulla volta.
+
+## 6. Collare e camino reale: correzione importante della C01
+
+Il collare C01 ha in cima ottagono circoscritto Ø152, circa **140,4 mm
+tra facce** prima di sottrarre la pelle. Non contiene un camino coibentato.
+Il catalogo italiano SUPER ICS riporta per DN130/25 diametro esterno 180,
+non 132 del tubo monoparete illustrativo della C01.
+
+Riservare inizialmente **260 mm tra facce nella parte superiore**; il budget
+illustrativo DN130, pelli 1/1, isolamento locale 50 e margine 10 per lato chiede
+256 mm includendo anche la cover da 1 mm. Non sono dimensioni del prodotto
+Schiedel da 50, ancora da chiedere. Per DN150/50 lo stesso budget chiede 276:
+la riserva 260 non basta. La quota 260 è tra facce ESTERNE della cover.
+
+**Non basta il diametro:** la piastra di supporto DN130/25 del catalogo è
+A238/B306 mm. Con 10 per lato e cover 1, il rettangolo di budget è 260 × 328.
+Un ottagono regolare non lo contiene solo perché supera 328: anche i vertici
+del rettangolo devono passare le facce a 45°. Si assumono normali delle facce
+lungo X/Y e a 45°, non l'orientamento del collare originale C01. Occorrono almeno
+**415,8 mm tra facce esterne** nel budget prudenziale.
+**La prima idea di base 340 viene quindi scartata per l'ottagono regolare.**
+Riserva di confronto 440, oppure base sfaccettata asimmetrica da disegnare.
+Con asse V4 (395;45), una base 440 tra facce sporge in pianta di
+**7,5 mm** davanti alla pelle C01: raccordo e scocca vanno
+ridisegnati prima di dichiarare l'ingombro completo. Le quote A/B sono
+trattate come inviluppo rettangolare prudenziale; CAD effettivo da richiedere.
+Il collare superiore 260 NON verifica piastra o interfaccia strutturale.
+Il peso del tubo DN130/25 è 7,68 kg/m: 1,5 m valgono 11,52 kg prima di
+terminali e raccordi. Peso e vento vanno al telaio, non alla scocca da 1 mm
+o alla volta da 1,5. Non sovrainterpretare il claim «3 m senza tiranti»:
+presuppone supporti del sistema, non valida questo forno.
+
+Nel catalogo, H1000 ha h utile 955 e H500 h utile 455: la somma utile 1410
+non è 1500. Raccordi, innesti, terminale e la definizione dell'altezza idraulica
+vanno quotati. Verificare DoP attuale, combustibile, regime a secco,
+temperatura (T450/T600), fuliggine e distanze a combustibili pertinenti.
+Le distanze G50/G75/G25 del catalogo non sono temperature sicure al tatto.
+Non trasferire la certificazione del camino al forno o al collare personalizzato.
+
+## 7. Materiali: shortlist documentata, non acquisti
+
+| Zona /ID | Candidato e dati acquisiti | Verifiche ancora richieste |
+|---|---|---|
+| Camera calda e collettore /M01 | Outokumpu Therma 310S / EN 1.4845; confronto 253 MA / EN 1.4835 [S01]. Pelle 1,5 mm come C01, non verificata strutturalmente. 310S: 1050 C indicativi in aria; coefficiente medio 20-600 C = 18,8e-6/K; densita 7800 kg/m3. 253 MA: 1150 C indicativi in aria. | Resistenza a cicli, deformazioni/creep, saldatura, condensa, contaminanti e documentazione per uso alimentare. Il limite in aria non e un limite del forno completo. |
+| Zona fiamma, parti sacrificali e ripartitori di carico /M02 | 310S; alternativa 253 MA se il ciclo/ambiente ne giustifica il costo [S01]. Prova lamiera 1,5/2/3 mm, non modifica automatica della camera. Le due leghe sono descritte dal produttore per attrezzature da forno; le proprieta a caldo e la stabilita differiscono. | Picchi di temperatura reali, deformazione, ossidazione, superficie pulibile, ripartizione carico pietra; niente fissaggio rigido acciaio-pietra. |
+| Scocca fredda, pannelli e telaio inferiore /M03 | Inox 304 / EN 1.4301; 316L / EN 1.4404 da valutare con cloruri e installazione [nessuna scheda esatta]. Scocca 1 mm C01; telaio e rinforzi da dimensionare. Nessuna scheda della fornitura di lamiera acquisita in C02; nessun valore numerico assegnato al telaio. | Ambiente, finitura, saldature e drenaggio; rigidita, appoggi, temperatura accessibile e bordi ripiegati non taglienti. |
+| Isolamento volta e pareti /M04 | ROCKWOOL ProRox WM 970 variante SW con rete/filo inox; WM 960 come confronto [S02]. 75 mm nominali; disponibilita dello spessore da confermare. WM 970: servizio massimo 680 C EN 14706, densita 128 kg/m3. Lambda = 0,096 a 400 C, 0,123 a 500 C, 0,157 a 600 C W/(m K). SW disponibile su richiesta. | Temperatura della faccia calda, ritiro, binder e primo riscaldamento, giunti e assestamento. Mai esposta a fumi/alimenti, mai supporto portante. Nessuna pellicola alluminata sul lato caldo. |
+| Isolamento sotto piano e riempimento dei carrier /M05 | Famiglia Promat PROMASIL in silicato di calcio; grado esatto da qualificare [S03]. 50 mm nominali, chiuso in involucro; non assunto portante. La pagina produttore descrive pannelli rigidi leggeri per isolamento di riserva nei forni. Dati di un grado specifico non acquisiti. | Grado/SDS, lambda(T), densita/cp, ritiro, umidita, resistenza e creep a caldo. Il nome di famiglia non autorizza a usare la resistenza di un altro prodotto. |
+| Piano fisso e due dischi /M06 | Cordierite specifica per piano alimentare; fornitura ancora non individuata [nessuna scheda esatta]. Dischi Ø320 x 20; focolare 30 mm, prove 10/20/30 per cottura. Densita 2600 kg/m3 e alpha 3e-6/K sono SOLO assunzioni di screening, non dati di un prodotto selezionato. | MOCA per uso previsto, lambda/cp/alpha, shock termico, resistenza a flessione, tolleranze/planarita e risultati pizza. Non scegliere solo per temperatura massima. |
+| Distanziali portanti tra ripartitore caldo e carrier /M07 | Supporti ceramici strutturali qualificati; composizione e fornitore da scegliere [nessuna scheda esatta]. Tre zone d'appoggio distribuite come schema, non tre carichi puntuali sulla pietra. Nessuna proprieta del componente reale disponibile. Il pannello isolante di M05 non sostituisce questi appoggi. | Compressione/creep a temperatura, flessione pietra, distribuzione carico, ponti termici, ritenzione dei frammenti e dilatazioni libere. |
+| Cuscinetti, alberi, motori e trasmissione /M08 | Due cartucce portanti indipendenti e due motoriduttori 24 V; marche/codici non selezionati [nessuna scheda esatta]. Moduli 240 x 180; cartuccia h45 e motore h70 sono riserve, non cataloghi. Vano aria obiettivo 50 C solo preliminare; niente limite generico 120 C applicato a ogni cuscinetto. | Ingombri reali, carichi/coppia avvio, temperatura di anelli/grasso/tenute/avvolgimenti, uso continuo, bassa velocita, grado IP e ricambi. |
+| Camino, adattatore e terminale /M09 | Schiedel SUPER ICS DN130 coibentato 25; confronto variante 50 su richiesta e DN150 [S04]. Catalogo: DN130/25 diametro esterno 180; tubo 7,68 kg/m; H1000 ha h utile 955. Catalogo pagine stampate 6/7/14: DN130/25 disponibile, classificazioni T450 e T600 con distanze diverse; 50 mm dal DN130 su richiesta. Piastra DN130 A238/B306 a pagina 19. | Codice e DoP/istruzioni aggiornati per Italia, temperatura/fuliggine/combustibile, reale DN/esterno/flange, sostegno indipendente, vento e pulizia. T600 non certifica il forno o il collare artigianale. |
+
+WM970: lambda(T) varia molto; a 400 °C è 0,096, a 600 °C 0,157 W/(m K).
+Non sostituire questi dati con una lambda edilizia costante a temperatura
+ambiente. Servizio 680 °C non implica legante inalterato, portanza o
+compatibilità alimentare. Le fibre restano incapsulate, con giunti e
+primo riscaldamento qualificati; la faccia calda deve restare entro il
+servizio reale dichiarato con margine motivato. Dove non è possibile,
+non si approva il sandwich previsto: occorre rivederlo con il fornitore.
+
+Nessuna temperatura esterna o prontezza 45–60 min è calcolata in C02.
+La campagna precedente da 3600 s resta non pronta e con materiali diversi.
+
+## 8. Uscita della fase e gate successivo
+
+**Architettura proposta:** laterale 160, carrier flottante, aria separata,
+collettore rialzato, camino coibentato e collare da ingrandire.
+**Restano aperti:** codici reali per pietre/supporti/motori/cuscinetti/isolanti,
+raccordo integrato, tolleranze, temperatura vano, captazione e conformità.
+
+1. Compilare `RICHIESTE_FORNITORI.md` e ricevere CAD + schede di almeno una
+   configurazione completa; nessun contatto o ordine è stato fatto da questo studio.
+2. Integrare i componenti nel CAD e dimostrare estrazione frontale, montaggio,
+   accesso pala e carichi del camino; prima lavorare a freddo su un modulo disco.
+3. Campione carrier/sandwich: coppia e temperature reali; isolamento dei
+   frammenti/fibre, appoggi e giochi dopo cicli controllati.
+4. Nuova CFD del circuito aria–collettore quotato, con perdite/materiali reali,
+   maglia e calibrazione: non avviare una campagna completa su riserve vuote.
+5. Prototipo strumentato: avvio, ricarica, vento, porta aperta/chiusa, due pizze,
+   cinque doppie consecutive e recupero; poi screening di durata e preserie.
+
+## Provenienza e riproducibilità
+
+33 test numerici superati; massimo residuo di massa nella rete
+**1.55e-14 kg/s**. È validazione del calcolo, non del forno.
+`assunzioni.json` distingue proprietà documentate da ipotesi;
+`materiali_candidati.json` contiene fonti, date e curve da trasferire ai modelli.
+`output/calcoli_C02.json`/CSV includono tutte le sensitività;
+`output/distinta_preliminare.csv` elenca gruppi e quantità di studio, senza
+codici ordinabili o metrature congelate. `output/materiali_C02.json` esporta
+la shortlist e le curve documentate (archivi nella cartella C02, un livello sopra).
+`output/provenienza.json` registra hash delle fonti e dei file preesistenti letti.
+Le tavole sono schemi/riserve, non profili esecutivi, e non sostituiscono C01.
+
+### Fonti produttori consultate e archiviate
+- [S01 — Outokumpu: Therma range datasheet, novembre 2022](https://www.outokumpu.com/en/products/product-ranges/therma). Archivio `fonti/Outokumpu_Therma_datasheet.pdf`; Pagine PDF 1-2, 4-7, 11 e 12-13; tabella 14 per alpha/k/densita; consultato 2026-10-03.
+- [S02 — ROCKWOOL Technical Insulation: ProRox WM 970, PDS PEN-00-2-003-ENG, 16.04.2021](https://rti.rockwool.com/en/products/prorox-wm-970/). Archivio `fonti/ROCKWOOL_ProRox_WM970.pdf`; Scheda singola e pagina attuale del produttore; variante SW e lambda(T); consultato 2026-10-03.
+- [S03 — Promat / Etex: PROMASIL: low density high temperature insulation board](https://www.promat.com/en/industry/products-solutions/high-temperature-insulation/boards-hti/promasil/). Archivio `fonti/Promat_PROMASIL_pagina.html`; Pagina generale; non una scheda di PROMASIL 1000L o di un grado esatto; consultato 2026-10-03.
+- [S04 — Schiedel Italia: SUPER ICS: scheda catalogo e pagina italiana](https://www.schiedel.com/it/prodotti/canne-fumarie/canne-fumarie-in-acciaio-inox/super-ics). Archivio `fonti/Schiedel_SUPER_ICS_catalogo.pdf`; PDF pp.1/2/9/14/15, numerazione stampata 6/7/14/19/20; pagina web archiviata separatamente; consultato 2026-10-03.

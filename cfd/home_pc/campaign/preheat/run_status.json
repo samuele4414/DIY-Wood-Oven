@@ -1,0 +1,32 @@
+{
+  "stage": "preheat",
+  "chid": "v4_preheat",
+  "status": "completed",
+  "started_utc": "2026-09-22T12:05:17Z",
+  "duration_requested_s": 3600,
+  "input_sha256": "76caacbaf9a130a841c529e338468f99ad525ca637d04219d63cce54161ea26d",
+  "config_sha256": "8d422cc292f0bdf3127e9582b661ff6880fe5a222d981d28432dcf49023d1f2b",
+  "solver": "C:\\Users\\samue\\Documents\\Codex\\2026-09-22\\ci-x20\\work\\fds-6.11.1\\firemodels\\FDS6\\bin\\fds_openmp.exe",
+  "command": [
+    "C:\\Users\\samue\\Documents\\Codex\\2026-09-22\\ci-x20\\work\\fds-6.11.1\\firemodels\\FDS6\\bin\\fds_openmp.exe",
+    "preheat_restart_12.fds"
+  ],
+  "threads": 12,
+  "python_version": "3.12.14",
+  "simulated_time_s": 3600.0,
+  "normal_stop": true,
+  "reached_end": true,
+  "elapsed_wall_s": 138405.67,
+  "restart_started_utc": "2026-09-22T14:09:45Z",
+  "restart_input_sha256": "fc95a9aabf201a266dfdb50b49753cdeef2f007e8e21ffbf17a05d908dc96469",
+  "restart_checkpoint_sha256": {
+    "v4_preheat_1.restart": "79b63a335f185d7e6fe40de568651e2034b6f32115e75eea604c52d0defd9a2d",
+    "v4_preheat_2.restart": "eb8d5c3d1938c085b528ebb9018036965030564b8b58968bbf38ff5b2cbe7cac"
+  },
+  "restart_from_simulated_time_s": 261.35404,
+  "previous_elapsed_wall_s": 7407.64,
+  "backup_directory": "C:\\Users\\samue\\Documents\\Codex\\2026-09-22\\ci-x20\\outputs\\forno_v4_pc_casa\\cfd\\home_pc\\checkpoint_before_12_threads",
+  "solver_pid": 10452,
+  "returncode": 0,
+  "finished_utc": "2026-09-24T02:33:05Z"
+}

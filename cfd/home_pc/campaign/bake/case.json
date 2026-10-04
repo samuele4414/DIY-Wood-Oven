@@ -1,0 +1,101 @@
+{
+  "pizza_diameter": 0.3,
+  "disc_diameter": 0.32,
+  "rotation_rpm": 0,
+  "front_extension": 0.08,
+  "mouth_width": 0.72,
+  "mouth_height": 0.16,
+  "roof": {
+    "kind": "barrel",
+    "peak": 0.28,
+    "eave": 0.19
+  },
+  "chimney": {
+    "diameter": 0.13,
+    "height": 1.0,
+    "outlet_height_m": 1.28,
+    "center": [
+      0.395,
+      0.045
+    ]
+  },
+  "ambient_temperature_C": 25,
+  "fire_hrr_kw": 18.75,
+  "wood_reference_kg_h": 4.5,
+  "wood_reference_lhv_MJ_kg": 15,
+  "wind_m_s": 0,
+  "notes": "Riferimento geometrico V4; piano anteriore 790 × 410 mm, due dischi Ø320 mm.",
+  "id": "v4_bake",
+  "label": "v4_bake",
+  "width": 0.79,
+  "depth": 0.66,
+  "plan": {
+    "kind": "polygon",
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        0.79,
+        0
+      ],
+      [
+        0.79,
+        0.41
+      ],
+      [
+        0.65,
+        0.66
+      ],
+      [
+        0.14,
+        0.66
+      ],
+      [
+        0,
+        0.41
+      ]
+    ]
+  },
+  "pizza_centers": [
+    [
+      0.21,
+      0.205
+    ],
+    [
+      0.58,
+      0.205
+    ]
+  ],
+  "rotating": false,
+  "fire_polygon": [
+    [
+      0,
+      0.41
+    ],
+    [
+      0.79,
+      0.41
+    ],
+    [
+      0.65,
+      0.66
+    ],
+    [
+      0.14,
+      0.66
+    ]
+  ],
+  "burner_bounds": [
+    0.27,
+    0.52,
+    0.475,
+    0.625
+  ],
+  "layout_id": "c1_v4_two_rotating",
+  "flue_position": "front",
+  "thermal_model": "Transferred hot solid profiles; cold pizza",
+  "pizza_initial_C": 25,
+  "pizza_present": true
+}

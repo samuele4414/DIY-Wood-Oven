@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "config_sha256": "8d422cc292f0bdf3127e9582b661ff6880fe5a222d981d28432dcf49023d1f2b",
+  "preheat_input_sha256": "3e84619f484ea5f8c5f3ebf662c13fed97c8df06e3ab78f92c637497f0175cbe",
+  "reference_open_input_sha256": "76caacbaf9a130a841c529e338468f99ad525ca637d04219d63cce54161ea26d",
+  "stages": {
+    "preheat": {
+      "directory": "preheat",
+      "input": "preheat.fds",
+      "chid": "v4_preheat_door",
+      "duration_s": 3600
+    },
+    "bake": {
+      "directory": "bake",
+      "input": "bake.fds",
+      "chid": "v4_bake",
+      "duration_s": 120
+    }
+  },
+  "note": "Only preheat is prepared. Do not run bake for this comparison."
+}

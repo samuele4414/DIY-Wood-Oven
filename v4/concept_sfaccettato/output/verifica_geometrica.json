@@ -1,0 +1,306 @@
+{
+  "scope": "geometry_generator_only_NOT_physical_validation",
+  "tests_run": 18,
+  "tests_passed": true,
+  "baseline": "I75_M120",
+  "summary": {
+    "width_mm": 965.0,
+    "depth_mm": 915.0,
+    "body_height_with_feet_mm": 617.0360660648537,
+    "ridge_z_from_cooking_floor_mm": 389.0360660648536,
+    "height_with_flue_1000_mm": 1717.0360660648537,
+    "height_with_flue_1500_mm": 2217.036066064854,
+    "nominal_roof_insulation_space_mm": 85.0,
+    "drive_required_clear_height_mm": 120,
+    "drive_reservations_fit": true,
+    "front_skin_to_disc_centres_mm": 372.5,
+    "paddle_side_margin_mm": 5.0,
+    "stone_mass_only_kg": 29.41292107085256,
+    "one_disc_mass_kg": 4.182088140458732,
+    "is_production_approved": false
+  },
+  "normal_offset_checks": [
+    {
+      "plane": "side_0",
+      "normal": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "side_1",
+      "normal": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "side_2",
+      "normal": [
+        0.8725060159497201,
+        0.48860336893184325,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "side_3",
+      "normal": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "side_4",
+      "normal": [
+        -0.8725060159497201,
+        0.48860336893184325,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "side_5",
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "front_bevel_-1",
+      "normal": [
+        -0.7071067811865475,
+        -0.7071067811865475,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "front_bevel_1",
+      "normal": [
+        0.7071067811865475,
+        -0.7071067811865475,
+        0.0
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "roof_0_-1",
+      "normal": [
+        -0.20791169081775934,
+        0,
+        0.9781476007338057
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "roof_0_1",
+      "normal": [
+        0.20791169081775934,
+        0,
+        0.9781476007338057
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "roof_1_-1",
+      "normal": [
+        0,
+        -0.49999999999999994,
+        0.8660254037844387
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    },
+    {
+      "plane": "roof_1_1",
+      "normal": [
+        0,
+        0.49999999999999994,
+        0.8660254037844387
+      ],
+      "normal_hot_to_outer_mm": 87.5
+    }
+  ],
+  "all_variants": [
+    {
+      "id": "I50_M80",
+      "summary": {
+        "width_mm": 915.0000000000001,
+        "depth_mm": 865.0,
+        "body_height_with_feet_mm": 551.4775511932279,
+        "ridge_z_from_cooking_floor_mm": 363.4775511932279,
+        "height_with_flue_1000_mm": 1651.477551193228,
+        "height_with_flue_1500_mm": 2151.477551193228,
+        "nominal_roof_insulation_space_mm": 60.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": false,
+        "front_skin_to_disc_centres_mm": 347.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I50_M120",
+      "summary": {
+        "width_mm": 915.0000000000001,
+        "depth_mm": 865.0,
+        "body_height_with_feet_mm": 591.4775511932279,
+        "ridge_z_from_cooking_floor_mm": 363.4775511932279,
+        "height_with_flue_1000_mm": 1691.477551193228,
+        "height_with_flue_1500_mm": 2191.477551193228,
+        "nominal_roof_insulation_space_mm": 60.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": true,
+        "front_skin_to_disc_centres_mm": 347.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I50_M160",
+      "summary": {
+        "width_mm": 915.0000000000001,
+        "depth_mm": 865.0,
+        "body_height_with_feet_mm": 631.4775511932279,
+        "ridge_z_from_cooking_floor_mm": 363.4775511932279,
+        "height_with_flue_1000_mm": 1731.477551193228,
+        "height_with_flue_1500_mm": 2231.477551193228,
+        "nominal_roof_insulation_space_mm": 60.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": true,
+        "front_skin_to_disc_centres_mm": 347.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I75_M80",
+      "summary": {
+        "width_mm": 965.0,
+        "depth_mm": 915.0,
+        "body_height_with_feet_mm": 577.0360660648537,
+        "ridge_z_from_cooking_floor_mm": 389.0360660648536,
+        "height_with_flue_1000_mm": 1677.0360660648537,
+        "height_with_flue_1500_mm": 2177.036066064854,
+        "nominal_roof_insulation_space_mm": 85.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": false,
+        "front_skin_to_disc_centres_mm": 372.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I75_M120",
+      "summary": {
+        "width_mm": 965.0,
+        "depth_mm": 915.0,
+        "body_height_with_feet_mm": 617.0360660648537,
+        "ridge_z_from_cooking_floor_mm": 389.0360660648536,
+        "height_with_flue_1000_mm": 1717.0360660648537,
+        "height_with_flue_1500_mm": 2217.036066064854,
+        "nominal_roof_insulation_space_mm": 85.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": true,
+        "front_skin_to_disc_centres_mm": 372.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I75_M160",
+      "summary": {
+        "width_mm": 965.0,
+        "depth_mm": 915.0,
+        "body_height_with_feet_mm": 657.0360660648537,
+        "ridge_z_from_cooking_floor_mm": 389.0360660648536,
+        "height_with_flue_1000_mm": 1757.0360660648537,
+        "height_with_flue_1500_mm": 2257.036066064854,
+        "nominal_roof_insulation_space_mm": 85.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": true,
+        "front_skin_to_disc_centres_mm": 372.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I100_M80",
+      "summary": {
+        "width_mm": 1015.0,
+        "depth_mm": 965.0000000000001,
+        "body_height_with_feet_mm": 602.5945809364794,
+        "ridge_z_from_cooking_floor_mm": 414.59458093647936,
+        "height_with_flue_1000_mm": 1702.5945809364794,
+        "height_with_flue_1500_mm": 2202.5945809364794,
+        "nominal_roof_insulation_space_mm": 110.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": false,
+        "front_skin_to_disc_centres_mm": 397.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I100_M120",
+      "summary": {
+        "width_mm": 1015.0,
+        "depth_mm": 965.0000000000001,
+        "body_height_with_feet_mm": 642.5945809364794,
+        "ridge_z_from_cooking_floor_mm": 414.59458093647936,
+        "height_with_flue_1000_mm": 1742.5945809364794,
+        "height_with_flue_1500_mm": 2242.5945809364794,
+        "nominal_roof_insulation_space_mm": 110.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": true,
+        "front_skin_to_disc_centres_mm": 397.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    },
+    {
+      "id": "I100_M160",
+      "summary": {
+        "width_mm": 1015.0,
+        "depth_mm": 965.0000000000001,
+        "body_height_with_feet_mm": 682.5945809364794,
+        "ridge_z_from_cooking_floor_mm": 414.59458093647936,
+        "height_with_flue_1000_mm": 1782.5945809364794,
+        "height_with_flue_1500_mm": 2282.5945809364794,
+        "nominal_roof_insulation_space_mm": 110.0,
+        "drive_required_clear_height_mm": 120,
+        "drive_reservations_fit": true,
+        "front_skin_to_disc_centres_mm": 397.5,
+        "paddle_side_margin_mm": 5.0,
+        "stone_mass_only_kg": 29.41292107085256,
+        "one_disc_mass_kg": 4.182088140458732,
+        "is_production_approved": false
+      }
+    }
+  ],
+  "production_approved": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "cell_size_m": 0.025,
+  "preheat_seconds": 3600,
+  "bake_seconds": 120,
+  "ambient_C": 25,
+  "pizza_initial_C": 25,
+  "fire_kw": 18.75,
+  "fire_ramp_seconds": 60,
+  "radiative_fraction": 0.35,
+  "food": {
+    "thickness_m": 0.006,
+    "density_kg_m3": 650,
+    "conductivity_W_mK": 0.4,
+    "base_cp_kJ_kgK": 3.0,
+    "water_mass_fraction": 0.5,
+    "latent_heat_kJ_kg": 2257,
+    "phase_band_C": [
+      95,
+      105
+    ],
+    "contact_transition_m": 0.0001
+  },
+  "readiness": {
+    "floor_min_C": 430,
+    "vault_min_C": 450,
+    "max_floor_spread_C": 50,
+    "max_rate_C_per_min": 3,
+    "window_seconds": 120
+  },
+  "notes": [
+    "Readiness thresholds are editable engineering assumptions, not a certified cooking specification.",
+    "V4 geometry, front chimney and fire position retained: do not artificially extend the flame.",
+    "Generic prescribed wood gas, not calibrated oak pyrolysis.",
+    "Independent 1D thermal columns; provisional inner steel liner and insulation.",
+    "Apparent heat capacity delays heating around 100 C; it does not model water mass loss or browning.",
+    "Discs remain stationary in CFD. No claim of cooked pizza or validated exterior touch temperature."
+  ]
+}

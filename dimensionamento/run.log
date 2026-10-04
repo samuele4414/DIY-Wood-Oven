@@ -1,0 +1,47 @@
+Dimensionamento: 9 verifiche superate.
+Dimensioni 1/13: candidato_25cm; target 450 C, massimo 120 min.
+  Target non raggiunto: 442.07 C dopo 120 min; cottura non simulata.
+Dimensioni 2/13: focolare_14cm; target 450 C, massimo 120 min.
+  Target raggiunto in 61.70 min; carico a 450.00 C.
+Dimensioni 3/13: focolare_20cm; target 450 C, massimo 120 min.
+  Target raggiunto in 110.09 min; carico a 450.00 C.
+Dimensioni 4/13: focolare_30cm; target 450 C, massimo 120 min.
+  Target non raggiunto: 435.19 C dopo 120 min; cottura non simulata.
+Dimensioni 5/13: volta_25cm; target 450 C, massimo 120 min.
+  Target non raggiunto: 443.79 C dopo 120 min; cottura non simulata.
+Dimensioni 6/13: volta_30cm; target 450 C, massimo 120 min.
+  Target non raggiunto: 440.86 C dopo 120 min; cottura non simulata.
+Dimensioni 7/13: bocca_alta_14cm; target 450 C, massimo 120 min.
+  Target non raggiunto: 449.41 C dopo 120 min; cottura non simulata.
+Dimensioni 8/13: bocca_larga_60cm; target 450 C, massimo 120 min.
+  Target raggiunto in 96.46 min; carico a 450.00 C.
+Dimensioni 9/13: camino_diametro_15cm; target 450 C, massimo 120 min.
+  Target non raggiunto: 372.70 C dopo 120 min; cottura non simulata.
+Dimensioni 10/13: camino_altezza_50cm; target 450 C, massimo 120 min.
+  Target raggiunto in 39.35 min; carico a 450.00 C.
+Dimensioni 11/13: volta_refrattaria; target 450 C, massimo 120 min.
+  Target non raggiunto: 374.63 C dopo 120 min; cottura non simulata.
+Dimensioni 12/13: legna_4_5kg_h; target 450 C, massimo 120 min.
+  Target raggiunto in 34.14 min; carico a 450.00 C.
+Dimensioni 13/13: legna_4_5kg_h_pietra_20mm; target 450 C, massimo 120 min.
+  Target raggiunto in 58.60 min; carico a 450.00 C.
+Confronto salvato in C:\Users\samue\Desktop\forno\dimensionamento\results
+[Warning: Scrollable is set to 'on' on all figures because the Windows accessibility text size setting is greater than 100%.
+To prevent this behavior, revert the text size setting back to 100% and instead use the Windows system display scale setting to increase the size of on-screen elements.] 
+               name                reached    preheatMinutes    endPreheatPlateC    dropUpperPlateBakeK
+    ___________________________    _______    ______________    ________________    ___________________
+
+    "candidato_25cm"                false            NaN             442.07                  NaN       
+    "focolare_14cm"                 true            61.7                450               144.82       
+    "focolare_20cm"                 true          110.09                450               145.11       
+    "focolare_30cm"                 false            NaN             435.19                  NaN       
+    "volta_25cm"                    false            NaN             443.79                  NaN       
+    "volta_30cm"                    false            NaN             440.86                  NaN       
+    "bocca_alta_14cm"               false            NaN             449.41                  NaN       
+    "bocca_larga_60cm"              true          96.456                450               145.08       
+    "camino_diametro_15cm"          false            NaN              372.7                  NaN       
+    "camino_altezza_50cm"           true          39.352                450               143.51       
+    "volta_refrattaria"             false            NaN             374.63                  NaN       
+    "legna_4_5kg_h"                 true          34.142                450               142.83       
+    "legna_4_5kg_h_pietra_20mm"     true          58.604                450               100.43       
+

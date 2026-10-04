@@ -1,0 +1,26 @@
+Generated with built-in image_gen.
+
+14 INOX — generation
+
+Use case: product-mockup.
+Create a highly refined photorealistic industrial design concept render of ONE wide low TWO-PIZZA countertop oven, a new original faceted stainless steel technical sculpture. The geometry should be intentionally angular and planar, with the architectural restraint and raw satin stainless appearance suggested by a Cybertruck, without resembling or copying a vehicle.
+ESSENTIAL GEOMETRY:
+- Low and broad proportions, a horizontal mass substantially wider than it is tall, deep enough for a cooking chamber.
+- A roof made of just a few large inclined flat sheet-metal planes, meeting at a crisp distinct longitudinal central ridge. Strong visible folds. No dome, curved roof, rounded edges or soft pillow shapes.
+- Polygonal sidewalls formed from a few decisive folds and large immaculate uninterrupted planar panels. No decorative triangle mesh, no busy origami.
+- Front shoulders cut on sharp oblique bevel planes. Crisp geometry, with subtly hemmed safe sheet edges rather than razor thin blade edges.
+- ONE uninterrupted matte-black horizontal band across the frontal width, containing a broad rectangular oven mouth. The mouth has square corners and refractory stone cooking floor; show two pizzas next to each other inside to communicate capacity.
+- Slightly inset matte-black plinth under the metal body, integrated clean mechanism compartment, no tall legs, no exposed skeleton.
+- Chimney at rear roof with a short faceted external collar and straight satin metal flue above it; preserve believable functional flue proportions. Simple polygonal chimney silhouette.
+- Flush rear access hatch, aligned sheet seams, thermally isolated discreet hatch handle at rear (it need not be visible from this front view).
+MATERIALS: exterior unpainted satin stainless steel with restrained linear grain and realistic controlled reflections, matte black front band and recessed plinth ONLY. No chrome trim, no large projecting handles, barely any visible fasteners, service panel joints aligned to geometric folds.
+DESIGN INTENT: outer aesthetic shell is independent of insulated internal thermal chamber; leave the actual interior dark, with warm amber fire glow and the refractory floor visible. This is an aesthetic exploration, not a validated engineering drawing.
+PRESENTATION: single entire object centered in a landscape image, generously framed, slightly elevated three-quarter FRONT view showing front width, folded roof and right side, neutral light gray seamless studio backdrop and gray ground, beautiful soft product lighting, accurate material textures, premium restrained industrial design visualization. No captions, no text, no logos, no vehicle parts, no wheels, no kitchen, no people, no tools or extra accessories. Avoid softness and curves throughout the exterior.
+
+14 INOX — front fascia correction
+
+Use case: precise-object-edit. Image 1 is the edit target. Make ONE precise finishing correction to this product render: recolor only the broad horizontal brushed silver strip directly below the rectangular oven mouth to matte black matching the existing top and side mouth surround. This completes a single continuous black horizontal front fascia around the rectangular opening. Keep the oblique outer front shoulder panels satin stainless steel. Preserve absolutely everything else: exact low broad faceted roof geometry and ridge, steel side panels, chamfered shoulders, chimney with polygonal collar, recessed black base, two pizzas, fire, stone, camera position, image framing, background and lighting. Do not add or remove components, do not round anything, no text.
+
+15 BLACK STEALTH — finish edit
+
+Use case: precise-object-edit. Image 1 is the edit target and the exact oven geometry reference. Create a BLACK STEALTH FINISH VARIANT of this exact same product photograph. Change ONLY the exterior satin stainless steel silver finish on roof, angular side panels, oblique shoulders, chimney collar and chimney pipe to a premium restrained satin black coating. Keep the existing front fascia and inset base deep matte black, with subtle finish contrast against the satin black body. Let studio highlights gently reveal the large flat inclined roof planes, central ridge and decisive folds; no luminous outlines or added colors. Preserve identical geometry, size, low broad two-pizza proportions, square rectangular opening, exact camera and framing, chimney position and form, panel seams, two pizzas, flames, cooking stone, background and lighting. No rounded forms, no added vents, no decorative triangle facets, no logos or text, no extra components. Photorealistic product design render.

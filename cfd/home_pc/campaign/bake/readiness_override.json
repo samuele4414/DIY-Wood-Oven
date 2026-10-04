@@ -1,0 +1,30 @@
+{
+  "authorized_utc": "2026-09-24T06:53:38Z",
+  "user_request": "parti con la cottura",
+  "scope": "Waive readiness thresholds only; use actual completed preheat profiles.",
+  "readiness": {
+    "ready": false,
+    "checks": {
+      "floor_hot": false,
+      "vault_hot": false,
+      "floor_uniform": false,
+      "near_steady": false
+    },
+    "measured": {
+      "floor_min_C": 288.75626,
+      "vault_min_C": 404.52371,
+      "floor_spread_C": 75.60424,
+      "max_rate_C_per_min": 3.0658233227915366
+    },
+    "thresholds": {
+      "floor_min_C": 430,
+      "vault_min_C": 450,
+      "max_floor_spread_C": 50,
+      "max_rate_C_per_min": 3,
+      "window_seconds": 120
+    }
+  },
+  "pipeline_sha256": "7689895d52c5dcad95ffaf0026ebee2344e7a45288fea4741347a10206037218",
+  "launcher_sha256": "5ca1cdd9c0d308fbbafd1b78e0d18e92f12b06d3463708068c60c2e9121ceaec",
+  "threads": 12
+}

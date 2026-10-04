@@ -1,0 +1,157 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Forno C03 — modulo a freddo e componenti reali</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e9eff2;color:#223b4b;font:15px/1.4 Arial,sans-serif}a{color:#236b8d}
+nav,main{max-width:1100px;margin:auto}nav{padding:22px 12px 4px;font-size:13px}nav a{display:inline-block;margin:0 18px 10px 0}
+.page{position:relative;background:white;margin:20px 0;padding:27px 32px;aspect-ratio:277/190}.drawing{padding:0}.drawing svg{display:block;width:100%;height:auto}
+h1{font-size:31px;line-height:1.1;margin:7px 0 15px}h2{font-size:19px;margin:12px 0 8px}h3{font-size:14px;margin:0 0 6px}p{margin:8px 0}
+.eyebrow{font-size:12px;color:#587886;letter-spacing:1.2px}.warning{font-size:13px;background:#fff2e5;border-left:4px solid #b5793c;padding:11px 14px;margin:13px 0}
+.banner{background:#eaf3f7;border-left:4px solid #317b9a;padding:13px 16px;margin:16px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:1px solid #c8d5db;padding:13px 15px;font-size:13px}.number{font-size:25px;color:#286d8b;font-weight:bold}ul{padding-left:20px;margin:8px 0}.small{font-size:12px;color:#54707f}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #c7d3d9;padding:6px 8px}th{background:#eef4f6}
+.foot{position:absolute;bottom:15px;left:32px;right:32px;border-top:1px solid #c8d5db;padding-top:7px;font-size:10px;color:#577280;display:flex;justify-content:space-between}
+.scene-wrap{background:white;margin-top:18px;padding:20px}.scene-grid{display:grid;grid-template-columns:1fr 265px;gap:18px}.scene-grid canvas{display:block;width:100%;height:490px;background:#eff4f6;touch-action:none;cursor:grab}
+.controls{font-size:13px}.controls label{display:block;margin:14px 0}.controls button{padding:7px 10px;margin:6px 2px;border:1px solid #a2b8c4;background:#edf4f7;color:#294e63;cursor:pointer}.legend{line-height:1.8}
+@page{size:A4 landscape;margin:10mm}@media print{body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}nav,.scene-wrap{display:none}main{max-width:none;margin:0}.page{width:277mm;height:189mm;aspect-ratio:auto;margin:0;padding:7mm 8mm;break-after:page}.page:last-child{break-after:auto}.drawing{padding:0}.drawing svg{width:100%;height:100%}h1{font-size:25px}h2{font-size:17px}.card{font-size:12px}.number{font-size:22px}.warning{font-size:12px}.foot{bottom:3mm;left:8mm;right:8mm}table{font-size:11px}th,td{padding:5px 7px}}
+@media screen and (max-width:760px){.grid,.scene-grid{grid-template-columns:1fr}.page{aspect-ratio:auto;padding:20px;margin:12px 0}.drawing{padding:0}.foot{position:static;margin-top:18px}.scene-grid canvas{height:390px}}
+</style></head><body>
+<nav><a href="Scheda_C03.pdf">Scheda PDF (5 pagine)</a><a href="rapporto.html">Rapporto completo</a><a href="calcoli_C03.json">Calcoli JSON</a><a href="distinta_candidati.csv">Candidati CSV</a><a href="richieste_tecniche.html">Richieste da revisionare</a><a href="piano_freddo.html">Piano del banco</a><a href="registro_banco_freddo.csv">Registro vuoto</a><a href="../cad/modulo_freddo_C03_NON_ESECUTIVO.step">STEP misto non esecutivo</a><a href="audit_CAD.json">Audit CAD</a><a href="../../architettura_c02/output/index.html">C02 preservata</a></nav>
+<main>
+<section class="page"><div class="eyebrow">FORNO DUE PIZZE / FASE C03 SEPARATA</div><h1>Componenti reali, modulo digitale a freddo</h1>
+<p>Piano790 × 410, dischiØ320 e centri V4 conservati. <strong>Candidati per il futuro banco: non un progetto da costruire.</strong></p>
+<div class="banner"><strong>Proposta:</strong> passo-passo PG5 con cinghia16/32, cartuccia portante separata, motori esterni ai due assi, driver in un quadro fuori vano.</div>
+<div class="grid"><div class="card"><h3>Ingombro di un modulo, nel vano160</h3><div class="number">240 × 180 × 136 mm</div><p>Residuo inferiore24 mm grezzo, 14 oltre riserva10. Sedi, tolleranze, cablaggi e collegamento caldo restano aperti.</p></div>
+<div class="card"><h3>Audit del modello misto</h3><div class="number">21 solidi / 0 sovrapposizioni</div><p>Un motore da STEP originale +20 inviluppi. Rilettura STEP coerente; esclusi cinghia solida, viti, tenute, giunto, parti calde e telaio reale.</p></div></div>
+<div class="grid"><div><h2>Due vincoli decisivi</h2><ul><li>Carico scenario110,5 N &gt; limite assiale motore50 N: <strong>la pietra non si appoggia al riduttore.</strong></li><li>TDS3 Nm / curva2 Nm: servizio e coppia lenta da chiarire prima della scelta.</li><li>Driver ambiente≤40 °C; l'obiettivo vano50 °C di C02 non basta.</li></ul></div>
+<div><h2>Manutenzione da dimostrare</h2><p>Abbassamento12 mm e corsa frontale465,5 mm; spazio davanti300, non corsa300.</p><p>Luce280 × 144 lascia solo1 + 1 mm residui verticali dopo margini3. <strong>Non congelare quote e apertura.</strong></p></div></div>
+<div class="warning"><strong>Non approvato per produzione o uso a caldo.</strong> Nessun banco fisico, contatto/ordine, nuova CFD o accensione. Calcoli, 40 test software e assenza di collisioni nominali non dimostrano portanza, temperatura, cottura o sicurezza del forno.</div>
+<div class="foot"><span>C03 · 03/10/2026 · V4/C01/C02 preservate · materiali/componenti da qualificare</span><span>1 /5</span></div></section>
+<section class="page drawing"><svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850">
+<style>text{font-family:Arial,sans-serif;fill:#233c4b;font-size:19px}.small{font-size:16px}.head{font-size:28px;font-weight:bold}.dim{font-size:17px;fill:#316986}</style>
+<rect width="1300" height="850" fill="white"/>
+<text x="45" y="44" class="head" text-anchor="start">Due moduli indipendenti — pianta di integrazione</text>
+<text x="45" y="76" class="small" text-anchor="start">Centri, piano e dischi V4 invariati; motori collocati verso i lati esterni. Non è l&#x27;assieme completo del forno.</text>
+<text x="45" y="824" class="small" text-anchor="start">C03 · mm nominali · NON ESECUTIVO · nessuna approvazione termica, strutturale o per produzione</text>
+<rect x="110.0" y="155.0" width="1066.5" height="553.5" fill="#f6f0e6" stroke="#6b8390" stroke-width="2" stroke-dasharray=""/>
+<circle cx="393.5" cy="431.75" r="216.0" fill="none" stroke="#bd9f6b" stroke-width="2" stroke-dasharray=""/>
+<rect x="231.5" y="310.25" width="324.0" height="243.00000000000003" fill="none" stroke="#397491" stroke-width="2" stroke-dasharray="7 4"/>
+<circle cx="393.5" cy="431.75" r="36.45" fill="#bacbd3" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<circle cx="286.8886781794461" cy="431.75" r="21.6" fill="#79a5b9" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<line x1="286.8886781794461" y1="431.75" x2="393.5" y2="431.75" stroke="#357b99" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="393.5" y="531.6500000000001" class="small" text-anchor="middle">Modulo 1: 240 × 180</text>
+<text x="393.5" y="591.05" class="small" text-anchor="middle">Disco Ø320 / centro (210;205)</text>
+<line x1="286.8886781794461" y1="372.35" x2="393.5" y2="372.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="286.8886781794461" y1="366.35" x2="286.8886781794461" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="393.5" y1="366.35" x2="393.5" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="340.19433908972303" y="361.35" class="dim" text-anchor="middle">C = 78,97</text>
+<circle cx="893.0" cy="431.75" r="216.0" fill="none" stroke="#bd9f6b" stroke-width="2" stroke-dasharray=""/>
+<rect x="731.0" y="310.25" width="324.0" height="243.00000000000003" fill="none" stroke="#397491" stroke-width="2" stroke-dasharray="7 4"/>
+<circle cx="893.0" cy="431.75" r="36.45" fill="#bacbd3" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<circle cx="999.6113218205539" cy="431.75" r="21.6" fill="#79a5b9" stroke="#698a99" stroke-width="2" stroke-dasharray=""/>
+<line x1="999.6113218205539" y1="431.75" x2="893.0" y2="431.75" stroke="#357b99" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="893.0" y="531.6500000000001" class="small" text-anchor="middle">Modulo 2: 240 × 180</text>
+<text x="893.0" y="591.05" class="small" text-anchor="middle">Disco Ø320 / centro (580;205)</text>
+<line x1="893.0" y1="372.35" x2="999.6113218205539" y2="372.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="893.0" y1="366.35" x2="893.0" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="999.6113218205539" y1="366.35" x2="999.6113218205539" y2="378.35" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="946.305660910277" y="361.35" class="dim" text-anchor="middle">C = 78,97</text>
+<line x1="110.0" y1="125.3" x2="1176.5" y2="125.3" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="110.0" y1="119.3" x2="110.0" y2="131.3" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="1176.5" y1="119.3" x2="1176.5" y2="131.3" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="643.25" y="114.3" class="dim" text-anchor="middle">Piano V4 790</text>
+<line x1="555.5" y1="614.0" x2="731.0" y2="614.0" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="555.5" y1="608.0" x2="555.5" y2="620.0" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="731.0" y1="608.0" x2="731.0" y2="620.0" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="643.25" y="603.0" class="dim" text-anchor="middle">Tra moduli 130</text>
+<text x="45" y="760" class="small" text-anchor="start">Cinghia 10 T5/280 · pulegge 16/32 · interasse geometrico senza tensione, deformazione o tolleranze.</text>
+</svg>
+</section><section class="page drawing"><svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850">
+<style>text{font-family:Arial,sans-serif;fill:#233c4b;font-size:19px}.small{font-size:16px}.head{font-size:28px;font-weight:bold}.dim{font-size:17px;fill:#316986}</style>
+<rect width="1300" height="850" fill="white"/>
+<text x="45" y="44" class="head" text-anchor="start">Modulo a freddo — proiezione frontale degli inviluppi</text>
+<text x="45" y="76" class="small" text-anchor="start">Motore da STEP del fornitore nel modello 3D; qui proiezioni semplificate. Viti, tenute e accoppiamento caldo non disegnati.</text>
+<text x="45" y="824" class="small" text-anchor="start">C03 · mm nominali · NON ESECUTIVO · nessuna approvazione termica, strutturale o per produzione</text>
+<rect x="100.0" y="145.0" width="672.0" height="448.0" fill="#f3f7f9" stroke="#66818f" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="100.0" y="514.5999999999999" width="672.0" height="11.2" fill="#6f8997" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="153.28022140922158" y="265.4" width="123.19999999999999" height="215.6" fill="#6eabc0" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="203.6802214092216" y="209.39999999999998" width="22.4" height="56.0" fill="#d3b96c" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="419.2" y="145.0" width="33.599999999999994" height="268.79999999999995" fill="#d3b96c" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="170.08022140922156" y="198.2" width="89.6" height="42.0" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="189.6802214092216" y="240.2" width="50.4" height="16.799999999999997" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="360.4" y="198.2" width="151.2" height="42.0" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="382.79999999999995" y="240.2" width="106.39999999999999" height="16.799999999999997" fill="#bacbd2" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<line x1="214.88022140922158" y1="219.2" x2="436.0" y2="219.2" stroke="#283e49" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="371.59999999999997" y="273.79999999999995" width="128.79999999999998" height="125.99999999999999" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="391.2" y="287.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="452.79999999999995" y="287.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="391.2" y="357.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="452.79999999999995" y="357.79999999999995" width="28.0" height="28.0" fill="#ba899b" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="346.4" y="399.79999999999995" width="179.2" height="14.0" fill="#6f8997" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="130.88022140922158" y="254.2" width="168.0" height="11.2" fill="#6f8997" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="100.0" y="184.2" width="672.0" height="5.6" fill="#b6c1c7" stroke="#617a87" stroke-width="2" stroke-dasharray=""/>
+<rect x="133.6802214092216" y="265.4" width="16.799999999999997" height="249.2" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="279.28022140922155" y="265.4" width="16.799999999999997" height="249.2" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="352.0" y="413.79999999999995" width="16.799999999999997" height="100.8" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="503.2" y="413.79999999999995" width="16.799999999999997" height="100.8" fill="none" stroke="#617a87" stroke-width="2" stroke-dasharray="3 3"/>
+<line x1="100.0" y1="635" x2="772.0" y2="635" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="100.0" y1="629" x2="100.0" y2="641" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="772.0" y1="629" x2="772.0" y2="641" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="436.0" y="624" class="dim" text-anchor="middle">Vassoio 240</text>
+<text x="830" y="160" class="small" text-anchor="start">Interfaccia caldo/freddo z−85: aperta</text>
+<text x="830" y="198" class="small" text-anchor="start">Schermo sul cassetto, non sul telaio</text>
+<text x="830" y="236" class="small" text-anchor="start">Pulegge / schermo: 3 mm nominali</text>
+<text x="830" y="274" class="small" text-anchor="start">Cartuccia separata dal motore</text>
+<text x="830" y="312" class="small" text-anchor="start">Cuscinetti: Ø12 × Ø32 × 10</text>
+<text x="830" y="350" class="small" text-anchor="start">Centri 25 / punti pressione 43 (ip.)</text>
+<text x="830" y="388" class="small" text-anchor="start">Altezza inviluppo 136 / vano 160</text>
+<text x="830" y="426" class="small" text-anchor="start">Residuo inferiore 24 mm grezzi</text>
+<text x="830" y="464" class="small" text-anchor="start">14 mm oltre riserva di servizio10</text>
+<text x="830" y="502" class="small" text-anchor="start">Driver fuori vano: ambiente ≤40 °C</text>
+<text x="45" y="720" class="small" text-anchor="start">Percorso carichi da progettare: disco → supporti qualificati → albero/cartucce → telaio → appoggio; non sulla scocca o sull&#x27;isolante.</text>
+<text x="45" y="756" class="small" text-anchor="start">L&#x27;interfaccia superiore, il precarico e i dettagli di montaggio restano aperti: nessun albero costruttivo è definito da questa vista.</text>
+</svg>
+</section><section class="page drawing"><svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850">
+<style>text{font-family:Arial,sans-serif;fill:#233c4b;font-size:19px}.small{font-size:16px}.head{font-size:28px;font-weight:bold}.dim{font-size:17px;fill:#316986}</style>
+<rect width="1300" height="850" fill="white"/>
+<text x="45" y="44" class="head" text-anchor="start">Manutenzione frontale — schema condizionato a freddo</text>
+<text x="45" y="76" class="small" text-anchor="start">Abbassamento ed estrazione sono una proposta di percorso nel vuoto; telaio, guide e sweep nel forno reale ancora da verificare.</text>
+<text x="45" y="824" class="small" text-anchor="start">C03 · mm nominali · NON ESECUTIVO · nessuna approvazione termica, strutturale o per produzione</text>
+<rect x="533.125" y="180.0" width="699.625" height="232.0" fill="#f4f7f9" stroke="#93aab5" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="533.125" y1="400.4" x2="533.125" y2="191.6" stroke="#b28042" stroke-width="2" stroke-dasharray=""/>
+<rect x="942.75" y="180.0" width="261.0" height="197.2" fill="none" stroke="#5e8597" stroke-width="2" stroke-dasharray=""/>
+<rect x="942.75" y="197.4" width="261.0" height="197.2" fill="none" stroke="#b27b34" stroke-width="2" stroke-dasharray="7 4"/>
+<rect x="267.775" y="197.4" width="261.0" height="197.2" fill="#d7e7eb" stroke="#397589" stroke-width="2" stroke-dasharray=""/>
+<text x="398.275" y="153" class="small" text-anchor="middle">Modulo sfilato (abbassato)</text>
+<text x="1073.25" y="153" class="small" text-anchor="middle">In quota / abbassato (tratteggio)</text>
+<text x="547.125" y="436.0" class="small" text-anchor="start">Fronte: luce 280 × 144</text>
+<line x1="98.125" y1="465" x2="533.125" y2="465" stroke="#769aa9" stroke-width="2" stroke-dasharray=""/>
+<line x1="98.125" y1="490" x2="533.125" y2="490" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="98.125" y1="484" x2="98.125" y2="496" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="533.125" y1="484" x2="533.125" y2="496" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="315.625" y="479" class="dim" text-anchor="middle">Spazio anteriore riservato 300</text>
+<line x1="267.775" y1="545" x2="942.75" y2="545" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="267.775" y1="539" x2="267.775" y2="551" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<line x1="942.75" y1="539" x2="942.75" y2="551" stroke="#587b8b" stroke-width="2" stroke-dasharray=""/>
+<text x="605.2625" y="534" class="dim" text-anchor="middle">Traslazione 465,5</text>
+<text x="45" y="605" class="small" text-anchor="start">1. Forno freddo, alimentazione isolata; sostenere il disco prima di disconnettere l&#x27;interfaccia superiore.</text>
+<text x="45" y="640" class="small" text-anchor="start">2. Liberare ritegni e connettori; abbassare la cassetta di12 mm con un sostegno/guida protetto ancora da progettare.</text>
+<text x="45" y="675" class="small" text-anchor="start">3. Sfilare dal fronte insieme allo schermo. Luce proposta280 × 144; margini residui verticali1 + 1 dopo riserva3 per bordo.</text>
+<text x="45" y="710" class="small" text-anchor="start">4. Non possibile in quota: l&#x27;albero supera il passaggio. Nessuna estrazione dal basso sul piano fisso.</text>
+<text x="45" y="760" class="small" text-anchor="start">Tolleranze, utensili, peso cassetta, raccordi, guide e cablaggi possono invalidare il percorso: porta di servizio NON congelata.</text>
+</svg>
+</section>
+<section class="page"><div class="eyebrow">SHORTLIST / PROSSIMO GATE</div><h1>Codici identificati, scelta ancora condizionata</h1>
+<table><thead><tr><th>Funzione / quantità per modulo</th><th>Candidato</th><th>Prima del banco</th></tr></thead><tbody>
+<tr><td>Motore /1</td><td>17HS19-1684S-PG5<br>57/11; bus24 V tramite driver</td><td>2/3 Nm discordanti; coppia/regolarità a0,6–2 rpm; 100 N radiali a sbalzo da chiarire</td></tr>
+<tr><td>Cartuccia /2 cuscinetti</td><td>SKF7201 BEGAP<br>12 × 32 × 10, universal matching</td><td>DB/precarico, sedi/distanziali, grasso e tenute; cartuccia non commerciale completa</td></tr>
+<tr><td>Pulegge /1 +1</td><td>MAEDLER16221600 /16223200<br>T5,16/32 denti, larghezza10</td><td>Fori8/12 e calettamento da progettare; ingaggio minimo geometrico16, non montaggio approvato</td></tr>
+<tr><td>Cinghia /1</td><td>MAEDLER16261300 /10T5/280<br>C geometrico78,97</td><td>Pretensione e vita; F0=40 N solo scenario → radiale79,41 N; nessuna tensione prescritta</td></tr>
+<tr><td>Driver esterno /1</td><td>DM542T V4.0<br>24 V proposti / ambiente0–40 °C</td><td>Corrente RMS/picco, protezioni/quadro e feedback indipendente; ALM non rileva perdita passi</td></tr>
+<tr><td>Isolante /kit da quotare</td><td>PROMASIL-1000L nominale50</td><td>TDS/SDS Italia attuali, incapsulamento, ritiro e proprietà; non portante</td></tr>
+</tbody></table>
+<div class="warning">Alternativa WGA DC: scheda12 rpm/30 kgf·cm, non8 rpm/22 dello slug. Non inserita nel layout; con2:1 non raggiunge il regime del disco senza altra riduzione/controllo.</div>
+<div class="grid"><div><h2>Uscita della fase</h2><p>Richieste tecniche pronte da revisionare, non inviate. Poi sedi/ritenzioni, interfaccia caldo–freddo, guide e passaggi reali; banco protetto di un solo asse con criteri prima delle prove.</p></div>
+<div><h2>Resta il piano C02</h2><p>Carrier/pietre/appoggi caldi non scelti; circuito aria–fumi e camino non integrati. Prestazioni45–60 min, cottura60–90 s e sicurezza non dimostrate.</p></div></div>
+<p class="small">Fonti: schede/STEP STEPPERONLINE; copia SKF pubblicata daRS (17/03/2025); MAEDLER pp.150/207; Promat IT2018-04. Consultate03/10/2026, attualità da confermare. Dettagli, formule e limiti nel rapporto completo.</p>
+<div class="foot"><span>C03 · shortlist non ordinabile · nessuna prova fisica o approvazione di produzione</span><span>5 /5</span></div></section>
+</main></body></html>

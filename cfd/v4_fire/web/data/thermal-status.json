@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "run": "C:\\Users\\samue\\Desktop\\forno\\cfd\\runs\\v4_thermal_dx25_t60",
+  "duration_s": 60,
+  "started_utc": "2026-09-22T08:55:05Z",
+  "input_sha256": "dba14aa79ff244a03d46056e3ef4536844a93fdfac7c7d908b2430cf00c24af4",
+  "last_measurements": {
+    "Time": 60.0,
+    "mouth_net_y": 0.018946119,
+    "mouth_outward_y_negative": -0.0068278205,
+    "mouth_inward_y_positive": 0.025773939,
+    "mouth_soot_outward_negative": -2.0469645e-06,
+    "flue_net_z": 0.019963834,
+    "flue_outward_z_positive": 0.019963834,
+    "flue_soot_outward_positive": 1.6519826e-05,
+    "pizza_1_gas_temp": 176.80503,
+    "pizza_2_gas_temp": 194.15696,
+    "pizza_1_surface": 45.148717,
+    "pizza_1_flux": 2.1552026,
+    "pizza_2_surface": 44.893465,
+    "pizza_2_flux": 2.0927958,
+    "floor_surface": 33.939994
+  },
+  "volume_path": "thermal-data/volume.json"
+}

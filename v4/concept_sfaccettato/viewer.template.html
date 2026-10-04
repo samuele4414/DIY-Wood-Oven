@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forno C01 — studio d'ingombro inox sfaccettato</title>
+<style>
+:root{color-scheme:light;--ink:#193345;--muted:#607580;--line:#cbd6dc;--paper:#fff;--bg:#edf1f4;--accent:#23779a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",Arial,sans-serif}header,main,footer{max-width:1440px;margin:auto;padding:25px 32px}header{display:flex;justify-content:space-between;gap:24px;align-items:center}h1{font-size:30px;line-height:1.15;margin:5px 0 10px}h2{font-size:21px;margin:0 0 15px}h3{font-size:16px}p{margin:8px 0}.eyebrow{letter-spacing:.13em;font-size:12px;font-weight:700;color:var(--accent)}.badge{border:1px solid #b88a42;background:#fff6e4;color:#775017;padding:8px 12px;font-weight:600;white-space:nowrap}.warning{background:#fff5df;border-left:4px solid #be8a35;padding:15px 20px;margin-bottom:24px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 315px;gap:20px}.panel{background:var(--paper);border:1px solid var(--line);padding:22px;margin-bottom:20px}.scene{padding:0;position:relative;min-width:0}.scene canvas{display:block;width:100%;height:670px;touch-action:none;cursor:grab;background:linear-gradient(#f9fbfc,#e4ebef)}.scene canvas:active{cursor:grabbing}.scene-top{position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;gap:10px;pointer-events:none;font-size:12px}.scene-top span{background:#ffffffe8;border:1px solid var(--line);padding:6px 9px}.scene-caption{padding:12px 18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.controls label{display:block;margin:15px 0 5px;font-weight:600}.controls select{width:100%;padding:9px;border:1px solid #acbbc5;background:white;color:var(--ink);font:inherit}.controls .check{display:flex;gap:8px;align-items:flex-start;font-weight:400}.controls input{margin-top:5px;accent-color:var(--accent)}.buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}button{background:#edf3f6;border:1px solid #a8bdc9;padding:7px 10px;color:var(--ink);font:inherit;cursor:pointer}button:hover{background:#dceaf1}.metrics{margin-top:20px;border-top:1px solid var(--line);padding-top:12px}.metric{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e7edf1;padding:7px 0;font-size:13px}.metric strong{text-align:right}.fit{margin-top:12px;padding:10px;font-size:13px;background:#e8f0f4;border-left:3px solid #60899e}.fit.bad{background:#fce9e3;border-color:#b15c42;color:#813f2d}.downloads{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}a{color:#226a91;text-decoration:none}a:hover{text-decoration:underline}.reference-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.reference-grid img{width:100%;display:block;border:1px solid var(--line)}.reference-grid ul{padding-left:20px}.reference-grid li{margin:10px 0}.muted{color:var(--muted);font-size:13px}.technical{padding:0}.technical summary{padding:18px 22px;cursor:pointer;font-weight:600;font-size:18px}.technical svg{display:block;width:100%;height:auto;border-top:1px solid var(--line)}.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:14px}.legend i{display:inline-block;width:11px;height:11px;margin-right:6px;border:1px solid #b4bec5}.table-scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left}th{background:#edf3f6}tr.active{background:#e4f0f7}tr.bad td:last-child{color:#a1482e}footer{color:var(--muted);font-size:13px}.pill{display:inline-block;margin:4px 7px 4px 0;padding:4px 8px;border:1px solid var(--line);font-size:12px}
+@media(max-width:950px){.layout,.reference-grid{grid-template-columns:1fr}.scene canvas{height:580px}header{align-items:flex-start}.badge{white-space:normal;font-size:12px}header,main,footer{padding:20px}h1{font-size:25px}}
+@media print{header,main,footer{max-width:none}.controls,.downloads{display:none}.layout,.reference-grid{display:block}.scene{break-inside:avoid}.technical{break-before:page}.technical svg{max-height:90vh}.badge{white-space:normal}}
+</style>
+</head>
+<body>
+<header><div><div class="eyebrow">FORNO / C01 · SVILUPPO DA V4</div><h1>Inox sfaccettato — studio d'ingombro</h1><p>Due pizze · appoggio fisso outdoor · preriscaldamento desiderato 45–60 minuti</p></div><div class="badge">NON ESECUTIVO<br>Non approvato per produzione</div></header>
+<main>
+<div class="warning"><b>Questo è un modello geometrico, non una simulazione del forno.</b> Spessori e componenti sono ipotesi; nessuna verifica di temperatura della scocca, tiraggio, struttura o cottura viene dedotta da queste viste.</div>
+<div class="layout">
+ <section class="panel scene" aria-label="Visualizzazione tridimensionale">
+  <div class="scene-top"><span id="scene-state">Assieme nominale · camino completo</span><span id="case-label">I75_M120</span></div>
+  <canvas id="scene" aria-label="Modello geometrico 3D del forno: trascina per ruotare, rotella per zoomare"></canvas>
+  <div class="scene-caption" id="scene-caption">Trascina per ruotare, rotella per zoomare. Colori = componenti e riserve, non temperature.</div>
+ </section>
+ <aside class="panel controls">
+  <h2>Confronta gli ingombri</h2>
+  <label for="insulation">Isolamento corpo, mm</label><select id="insulation"><option>50</option><option selected>75</option><option>100</option></select>
+  <label for="mechanism">Vano meccanico netto, mm</label><select id="mechanism"><option>80</option><option selected>120</option><option>160</option></select>
+  <label for="flue">Canna candidata sopra collare, mm</label><select id="flue"><option selected>1000</option><option>1500</option></select>
+  <label class="check"><input type="checkbox" id="cutaway"><span>Apri scocca e volta per vedere le riserve interne</span></label>
+  <label class="check"><input type="checkbox" id="body-only"><span>Inquadra il corpo: camino troncato <b>solo graficamente</b></span></label>
+  <div class="buttons"><button id="front">Fronte</button><button id="side">Lato</button><button id="top">Pianta</button><button id="reset">Assieme</button></div>
+  <div class="metrics" id="metrics"></div><div class="fit" id="fit"></div>
+  <div class="legend"><span><i style="background:#e3d4ae"></i>Pietra</span><span><i style="background:#4b88a2"></i>Riserve meccaniche</span><span><i style="background:#ae7bad"></i>Riserva collettore</span></div>
+ </aside>
+</div>
+<div class="downloads"><a href="scheda_stampa.html" target="_blank" rel="noopener">Scheda stampabile</a><a href="RAPPORTO_C01.md">Rapporto completo</a><a href="PIANO_VERIFICHE.md">Piano prove</a><a href="ingombri_C01.dxf">Riferimento DXF (mm)</a><a href="assieme_C01.obj">Superfici OBJ (mm)</a><a href="assieme_C01.mtl">Materiali MTL</a><a href="confronto_ingombri.csv">Confronto CSV</a><a href="verifica_geometrica.json">Controlli geometrici</a></div>
+<section class="panel reference-grid">
+ <div><h2>Il riferimento estetico scelto</h2><img src="@@REFERENCE@@" alt="Render estetico del forno inox sfaccettato scelto dall'utente"><p class="muted">Immagine preesistente, mantenuta senza modifiche. Non sono ricavate quote dalla fotografia.</p></div>
+ <div><h2>Cosa cambia quando inseriamo la tecnica</h2><ul>
+  <li><b>Corpo più alto:</b> 617 mm nello scenario 75/120, inclusi piedini, per tenere spazio a pietre, isolamento e meccanica.</li>
+  <li><b>Camino anteriore:</b> mantenuto l'asse V4 (395;45). Il prompt estetico lo colloca dietro; spostarlo richiede un confronto dei fumi.</li>
+  <li><b>Focolare posteriore:</b> la fiamma disegnata non definisce posizione, potenza o circuito d'aria.</li>
+  <li><b>Tunnel frontale più profondo:</b> 372,5 mm dalla pelle esterna ai centri dei dischi; serve prova pala reale.</li>
+  <li><b>Falde controllate geometricamente:</b> distanze normali, non semplice aggiunta verticale dell'isolamento.</li>
+  <li><b>Non basta abbassare lo zoccolo:</b> il vano 80 mm non contiene le riserve attuali da 100 mm più margini.</li>
+ </ul><p class="muted">Nessun foro d'aria, profilo di taglio, motore, cuscinetto, giunto o gioco termico è approvato da questo studio.</p></div>
+</section>
+<section class="panel"><h2>Nove scenari geometrici</h2><div class="table-scroll"><table><thead><tr><th>Caso</th><th>Isolante</th><th>Vano</th><th>Pianta mm</th><th>Corpo+piedini mm</th><th>Riserve azionamenti</th></tr></thead><tbody id="variants"></tbody></table></div><p class="muted">Compatibilità riferita SOLO alle scatole riservate, non a componenti reali o alle temperature dei motori.</p></section>
+<details class="panel technical" open><summary>Pianta quotata — baseline I75_M120</summary>@@pianta.svg@@</details>
+<details class="panel technical"><summary>Sezione trasversale — attraverso i dischi</summary>@@sezione_trasversale.svg@@</details>
+<details class="panel technical"><summary>Sezione longitudinale — camino proiettato e vista completa</summary>@@sezione_longitudinale.svg@@</details>
+<section class="panel"><h2>Prossimi gate prima del prototipo</h2><span class="pill">Circuito aria + collettore</span><span class="pill">Prodotti e leghe reali</span><span class="pill">Carrier + trasmissione</span><span class="pill">Prove pala / manutenzione</span><span class="pill">Modelli aggiornati</span><span class="pill">Prototipo strumentato</span><p>La precedente campagna CFD da un'ora non è questa configurazione: usa pietra 30 mm e isolante generico 50 mm. Il suo criterio di prontezza è fallito; non trasferiamo prestazioni o temperature della scocca alla C01.</p></section>
+</main>
+<footer>Funziona offline, senza CDN, server o librerie esterne. OBJ = superfici/riserve non manifatturabili, DXF = riferimento nominale, non profili di taglio. Fonte della camera: v4/quote_v4.json. Hash e verifiche nei JSON.</footer>
+<script>
+"use strict";
+const cases=@@DATA@@;
+const $=id=>document.getElementById(id);
+const canvas=$("scene"),ctx=canvas.getContext("2d");
+const number=n=>new Intl.NumberFormat("it-IT",{maximumFractionDigits:1}).format(n);
+let yaw=.55,pitch=.40,zoom=1,drag=null;
+const current=()=>cases.find(c=>c.insulation_mm===Number($("insulation").value)&&c.mechanism_clear_height_mm===Number($("mechanism").value));
+function project(p){const x=Math.cos(yaw)*p[0]+Math.sin(yaw)*p[1],d=-Math.sin(yaw)*p[0]+Math.cos(yaw)*p[1];return [x,-Math.cos(pitch)*p[2]-Math.sin(pitch)*d,Math.cos(pitch)*d-Math.sin(pitch)*p[2]];}
+function clipTop(points,z){const out=[];for(let i=0;i<points.length;i++){const a=points[i],b=points[(i+1)%points.length],insideA=a[2]<=z,insideB=b[2]<=z;if(insideA)out.push(a);if(insideA!==insideB){const t=(z-a[2])/(b[2]-a[2]);out.push(a.map((v,j)=>v+t*(b[j]-v)));}}return out.length>=3?out:[];}
+function shade(hex,p){const a=p[1].map((v,i)=>v-p[0][i]),b=p[2].map((v,i)=>v-p[0][i]);const n=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],length=Math.hypot(...n);if(length<1e-8)return hex;const light=[.259,-.432,.864],strength=.62+.38*Math.abs(n.reduce((s,v,i)=>s+v*light[i]/length,0));return "#"+[1,3,5].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*strength).toString(16).padStart(2,"0")).join("");}
+function rasterize(faces,scale,ox,oy){
+ const W=canvas.width,H=canvas.height,image=ctx.createImageData(W,H),pixels=image.data,depths=new Float32Array(W*H);depths.fill(Infinity);
+ const objects=faces.map(f=>{const colour=shade(f.face.colour,f.points);return {face:f.face,points:f.mapped.map(p=>[ox+p[0]*scale,oy+p[1]*scale,p[2]]),rgb:[1,3,5].map(i=>parseInt(colour.slice(i,i+2),16))};});
+ for(const o of objects){if(o.face.group==='collector')continue;const pts=o.points;for(let i=1;i<pts.length-1;i++){
+  const a=pts[0],b=pts[i],c=pts[i+1],den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);if(Math.abs(den)<1e-10)continue;
+  const x0=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0]))),x1=Math.min(W-1,Math.ceil(Math.max(a[0],b[0],c[0]))),y0=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),y1=Math.min(H-1,Math.ceil(Math.max(a[1],b[1],c[1])));
+  for(let y=y0;y<=y1;y++){const yy=y+.5-c[1];for(let x=x0;x<=x1;x++){const xx=x+.5-c[0],wa=((b[1]-c[1])*xx+(c[0]-b[0])*yy)/den,wb=((c[1]-a[1])*xx+(a[0]-c[0])*yy)/den,wc=1-wa-wb;if(Math.min(wa,wb,wc)<-1e-8)continue;const z=wa*a[2]+wb*b[2]+wc*c[2],index=y*W+x;if(z<depths[index]){depths[index]=z;const p=index*4;pixels[p]=o.rgb[0];pixels[p+1]=o.rgb[1];pixels[p+2]=o.rgb[2];pixels[p+3]=255;}}}
+ }}
+ // Outline original face edges only, with depth testing. No decorative triangle mesh.
+ for(const o of objects){const pts=o.points,rgb=o.face.group==='collector'?[149,86,161]:[70,89,100];for(let i=0;i<pts.length;i++){const a=pts[i],b=pts[(i+1)%pts.length],steps=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))));for(let n=0;n<=steps;n++){const t=n/steps,x=Math.round(a[0]+t*(b[0]-a[0])),y=Math.round(a[1]+t*(b[1]-a[1]));if(x<0||x>=W||y<0||y>=H)continue;const index=y*W+x,z=a[2]+t*(b[2]-a[2]);if(z<=depths[index]+1.5/scale){const p=index*4;pixels[p]=rgb[0];pixels[p+1]=rgb[1];pixels[p+2]=rgb[2];pixels[p+3]=255;}}}}
+ ctx.putImageData(image,0,0);
+}
+function draw(){
+ const c=current();if(!c||!ctx)return;
+ const rect=canvas.getBoundingClientRect(),ratio=1,W=rect.width,H=rect.height;
+ canvas.width=Math.round(W*ratio);canvas.height=Math.round(H*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,W,H);
+ const cut=$("cutaway").checked,bodyOnly=$("body-only").checked,flueH=Number($("flue").value),clipZ=c.summary.ridge_z_from_cooking_floor_mm+250;
+ const hidden=cut?new Set(["shell","base","fascia","hot_roof","collar"]):new Set(["mechanisms","collector","underfloor"]);
+ const faces=[];
+ for(const face of c.mesh){if(hidden.has(face.group))continue;let points=face.points.map(p=>face.group==="flue"?[p[0],p[1],c.collar_top_z_mm+(p[2]-c.collar_top_z_mm)*flueH/1000]:p);if(bodyOnly&&face.group==="flue")points=clipTop(points,clipZ);if(points.length<3)continue;const mapped=points.map(project);faces.push({face,points,mapped,depth:mapped.reduce((s,p)=>s+p[2],0)/mapped.length});}
+ const pts=faces.flatMap(f=>f.mapped);if(!pts.length)return;
+ const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+ const scale=Math.min((W-80)/(xmax-xmin),(H-100)/(ymax-ymin))*zoom,ox=W/2-(xmin+xmax)/2*scale,oy=H/2+15-(ymin+ymax)/2*scale;
+ rasterize(faces,scale,ox,oy);
+ $("scene-state").textContent=(cut?"Scocca e volta aperte":"Assieme nominale")+(bodyOnly?" · camino TRONCATO nella vista":" · camino COMPLETO");
+ $("scene-caption").textContent=bodyOnly?`Vista del corpo: canna tagliata SOLO graficamente. Altezza candidata reale sopra collare: ${flueH} mm; nessuna approvazione del tiraggio.`:"Trascina per ruotare, rotella per zoomare. Canna completa. Colori = componenti e riserve, non temperature.";
+ $("case-label").textContent=c.id;
+ document.body.dataset.viewerReady="true";
+ canvas.dataset.drawnFaces=String(faces.length);
+}
+function update(){
+ const c=current(),s=c.summary,flueH=Number($("flue").value);
+ $("metrics").innerHTML=[['Larghezza',number(s.width_mm)+' mm'],['Profondità',number(s.depth_mm)+' mm'],['Corpo con piedini',number(s.body_height_with_feet_mm)+' mm'],['Con canna selezionata',number(s[flueH===1000?'height_with_flue_1000_mm':'height_with_flue_1500_mm'])+' mm'],['Sola pietra, massa indicativa',number(s.stone_mass_only_kg)+' kg']].map(([a,b])=>`<div class="metric"><span>${a}</span><strong>${b}</strong></div>`).join('');
+ $("fit").className='fit'+(s.drive_reservations_fit?'':' bad');
+ $("fit").textContent=s.drive_reservations_fit?'Riserve azionamenti compatibili geometricamente. NON sono componenti selezionati o una verifica termica.':'Vano insufficiente: le riserve da 100 mm più 10+10 mm richiedono 120 mm netti. Non ridotte automaticamente.';
+ $("variants").innerHTML=cases.map(v=>`<tr class="${v.id===c.id?'active ':''}${v.summary.drive_reservations_fit?'':'bad'}"><td>${v.id}</td><td>${v.insulation_mm} mm</td><td>${v.mechanism_clear_height_mm} mm</td><td>${number(v.summary.width_mm)} × ${number(v.summary.depth_mm)}</td><td>${number(v.summary.body_height_with_feet_mm)}</td><td>${v.summary.drive_reservations_fit?'Solo riserva compatibile':'NO: vano insufficiente'}</td></tr>`).join('');
+ draw();
+}
+for(const id of ['insulation','mechanism','flue','cutaway','body-only'])$(id).addEventListener('change',()=>{zoom=1;update();});
+for(const [id,angles]of [['front',[0,0]],['side',[Math.PI/2,0]],['top',[0,Math.PI/2]],['reset',[.55,.40]]])$(id).addEventListener('click',()=>{[yaw,pitch]=angles;zoom=1;draw();});
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch=Math.max(-.1,Math.min(Math.PI/2,pitch+(e.clientY-drag[1])*.006));drag=[e.clientX,e.clientY];draw();});
+canvas.addEventListener('pointerup',()=>{drag=null;});canvas.addEventListener('pointercancel',()=>{drag=null;});
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.5,Math.min(2.5,zoom*Math.exp(-e.deltaY*.001)));draw();},{passive:false});
+window.addEventListener('resize',draw);update();
+</script>
+</body>
+</html>
